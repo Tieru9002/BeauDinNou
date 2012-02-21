@@ -32,42 +32,49 @@ class User extends CI_Controller {
                     $errors["user"] = "Adresa de e-mail deja exista in baza de date";
 
                 if (count($errors) == 0) {
-                    $user_id = $this->Usermod->insertUser($email, $pass);
+                    $code_elements = md5($email."iar".$pass."beau");
+                    $user_id = $this->Usermod->insertUser($email, $pass, $code_elements);
                 }
-
-                $data["errors"] = $errors;                                    
+                                                   
 
                 if (count($errors) == 0) {
-                    $data["success"] = 1;
-                    $config = Array(
-                    'protocol' => 'smtp',
-                    'smtp_host' => 'ssl://smtp.googlemail.com',
-                    'smtp_port' => 465,
-                    'smtp_user' => 'gmail.login@googlemail.com',
-                    'smtp_pass' => 'your_password',
-                );
-                $this->load->library('email', $config);
-                $this->email->set_newline("\r\n");
+                                        
+                    $this->load->library('email');
+            
+                    $config['protocol'] = "smtp";
+                    $config['smtp_host'] = "ssl://smtp.googlemail.com";
+                    $config['smtp_port'] = "465";
+                    $config['smtp_user'] = "iarbeauro@gmail.com";//also valid for Google Apps Accounts
+                    $config['smtp_pass'] = "rotopercutor";
+                    $config['charset'] = "utf-8";
+                    $config['mailtype'] = "html";
+                    $config['newline'] = "\r\n";
 
-                $this->email->from('gmail.login@googlemail.com', 'Your Name');
-                $this->email->to('recipient@destination.tld');
+                    $this->email->initialize($config);        
+                    
+                    $this->email->from('form@emailtodomain.com', 'YOUR_NAME');
+                    $list = array($email);
+                    $this->email->to($list);
+                    $this->email->subject('Activarea contului iarbeau.ro');
+                    $text = '<h1>Ti-ai facut cont la noi pe site</h1> <br /> <a href="http://localhost/iarbeau/index.php/User/activateaccount/'.$user_id.'/'.$code_elements.'">Click aici</a> pentru a activa contul.'; 
+                    $this->email->message($text); //Your cool html5 ;P
+                    $this->email->set_alt_message(strip_tags('<h1>TEXT MSG<h1>')); //Only text
 
-                $this->email->subject(' CodeIgniter Rocks Socks ');
-                $this->email->message('Hello World');
-
-
-                if (!$this->email->send())
+                    if ( ! $this->email->send())
+                    {
                     show_error($this->email->print_debugger());
-                else
-                    echo 'Your e-mail has been sent!';  
+                    } else {
+                    echo('DONE');        
+                    }   
+                    
+
                 }
-                else
+                else{
+                    $data["errors"] = $errors;
                     $data["success"] = 0;
+                }
             }                       
 
-            echo "<pre>";
-            var_Dump($data["errors"]);
-            echo "</pre>";                
             $data["rootcats"] = $this->Productmod->getRootCategories();
             $data['popular'] = $this->Productmod->getPopularProducts();
             $data["base_url"] = base_url();
@@ -81,8 +88,7 @@ class User extends CI_Controller {
     public function login() {
         $this->load->model("Usermod");
         $msg = "";
-        $data = array();
-        
+        $data = array();        
         if (!$this->islogged()) {
             if ($this->input->post("login") == "success") {
                 $email = $this->input->post("email");
@@ -140,6 +146,29 @@ class User extends CI_Controller {
     public function islogged () {
         if ($this->session->userdata("logged_in") == TRUE)
             return 1;
+    }
+    
+    public function activateAccount ($id, $code) {
+        $this->load->model("Usermod"); 
+        
+        $user_data = $this->Usermod->getUserDetails($id);
+        if ($user_data["user_code"] == $code ) {
+            $this->Usermod->activateUser($id);
+            
+            $userdata = $this->Usermod->getUserDetails($id);       
+            $usersess = array(
+            'nume'      => $userdata["nume"],
+            'prenume'   => $userdata["prenume"],
+            'email'     => $userdata["email"],
+            'level'     => $userdata["level"],
+            'logged_in' => $userdata["status"]
+            );
+        $this->session->set_userdata($usersess);
+        }
+        
+        
+        
+        redirect('', 'refresh');                
     }
 }
 ?>

@@ -32,53 +32,8 @@
 		
 			<!-- Cart incl. Summary, Product List & View Cart Link -->
 			
-                        {include file='cartsummary.tpl'}
+                        {include file='cartsummary.tpl'}						
 			
-			<!-- Popular Products -->
-			<section id="popular">
-            
-				<h2>Chestii Populare Ramura Soare</h2>
-				<ul>
-					<li class="even">
-						<div class="product-preview"><a href="product.htm" title="E-Book"><img src="assets/product-6.jpg" alt="E-Book" /></a></div>
-						<a href="product.htm" title="E-Book"><b>E-Book</b></a>
-						<small>29.00</small>
-					</li>
-					<li class="odd">
-						<div class="product-preview"><a href="product.htm" title="Generic Cards"><img src="assets/product-5.jpg" alt="Generic Cards" /></a></div>
-						<a href="product.htm" title="Generic Business Cards"><b>Generic Cards</b></a>
-						<small>12.99</small>
-					</li>
-					<li class="even">
-						<div class="product-preview"><a href="product.htm" title="Rockstar Freelancer"><img src="assets/product-4.jpg" alt="Rockstar Freelancer" /></a></div>
-						<a href="product.htm" title="Rockstar Freelancer Paperback"><b>Rockstar Freelancer</b></a>
-						<small>29.00</small>
-					</li>
-					<li class="odd">
-						<div class="product-preview"><a href="product.htm" title="Moo Cards"><img src="assets/product-2.jpg" alt="Moo Cards" /></a></div>
-						<a href="product.htm" title="Moo Cards"><b>Moo Cards</b></a>
-						<small>33.00 <del>34.99</del></small>
-					</li>
-					<li class="even">
-						<div class="product-preview"><a href="product.htm" title="Rockable Cards"><img src="assets/product-3.jpg" alt="Rockable Cards" /></a></div>
-						<a href="product.htm" title="Rockable Cards"><b>Rockable Cards</b></a>
-						<small>7.99</small>
-					</li>
-				</ul>
-                
-			</section>
-			<!-- Tag Filter -->
-			<section id="tags">
-				<h2>Categorii</h2>
-				<ul>
-					<li class="even"><a href="collection.htm" title="Advertisement">Advertisement</a></li>
-					<li class="odd"><a href="collection.htm" title="Book">Book</a></li>
-					<li class="even"><a href="collection.htm" title="Brochure">Brochure</a></li>
-					<li class="odd"><a href="collection.htm" title="Business Cards">Business Cards</a></li>
-					<li class="even"><a href="collection.htm" title="Paperback">Paperback</a></li>
-					<li class="odd"><a href="collection.htm" title="E-Book">E-Book</a></li>
-				</ul>
-			</section>
             
             <!--Log In Window-->
             {include file="login_form.tpl"}

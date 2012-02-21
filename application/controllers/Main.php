@@ -1,7 +1,44 @@
 <?php
 class Main extends CI_Controller {
     
-        public function index ()  {                                    
+        public function index ()  {          
+            
+            $this->load->model("Usermod");            
+            if (!$this->session->userdata("logged_in")) {
+            if ($this->input->post("login") == "success") {
+                $email = $this->input->post("email");
+                $pass = $this->input->post("pass");
+                
+                $pass = md5($pass);                        
+
+                $id = "";                
+                $id = $this->Usermod->login($email, $pass);
+
+                if ($id) {                    
+                    $userdata = $this->Usermod->checkUserDetails($id);                    
+
+                    $usersess = array(
+                       'nume'      => $userdata["nume"],
+                       'prenume'   => $userdata["prenume"],
+                       'email'     => $userdata["email"],
+                       'level'     => $userdata["level"],
+                       'logged_in' => TRUE
+                   );
+
+                   $this->session->set_userdata($usersess);
+                }      
+                
+                if ($this->session->userdata("logged_in") == TRUE) {
+                $msg = "Bine ai venit ".$this->session->userdata("prenume");
+                $data["msg"] = $msg;                        
+                }
+                else {
+                    $data["msg"] = "Email-ul sau parola sunt incorecte";                  
+                }         
+            }
+            else {                
+            }
+        }
             
             $this->load->model("Productmod");
             
@@ -26,10 +63,10 @@ class Main extends CI_Controller {
                 $featured_d2[$i]["price"] = number_format($featured_d2[$i]["price"],2,'.','');
                 }
                 $i++;
-            }
-            
+            }            
             $specials = $this->Productmod->getSpecials();                        
-            
+            var_dump($this->session->all_userdata());
+            //echo "<pre>"; var_dump($this->session->userdata("email")); echo "</pre>";
             //echo "<pre>";var_dump($featured_d); var_dump($featured_s); echo "</pre>";
             $root_categories = $this->Productmod->getRootCategories();
             //echo "<pre>"; var_dump($root_categories); echo"</pre>";

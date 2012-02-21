@@ -11,8 +11,14 @@
                             <img src="{$base_url}public/uploads/promo_141838_700b.jpg" style="width:648px;"/>
                             <p>Veți avea posibilitatea, prin logarea la contul Dvs., de a prelua datele înregistrate anterior de Dvs., pentru completarea formularului necesar transmiterii comenzii, precum și de le vizualiza, pentru rectificarea lor sau adăugarea unor informații noi.
 
-Datele furnizate de Dvs. în acest formular sunt supuse termenilor și conditiilor iarbeau.ro.</p>
-                            
+                                Datele furnizate de Dvs. în acest formular sunt supuse termenilor și conditiilor iarbeau.ro.</p>
+                            <div class="validation" {if $errors|@count eq 0} style="display:none;"{/if}>
+                            <ul>
+                            {foreach from=$errors item=error name=featured}                            
+                                <li>{$error}</li>                            
+                            {/foreach}
+                            </ul>
+                            </div>
                             <table>
                              <form action="" method="post" id="register">
                                  <tr><td><label class="register_label" for="email_address">Email</label></td>
@@ -24,11 +30,13 @@ Datele furnizate de Dvs. în acest formular sunt supuse termenilor și conditiil
                              <input type="hidden" value="success" name="register">
                              <tr><td>
                              </td>
-				<td>	<input type="submit" name="Intra in cont" class="button" id="button1"  value="Inregistreaza-te acum"> 
+				<td>	<input type="submit" name="Intra in cont" class="button" id="register_button1"  value="Inregistreaza-te acum"> 
 					<div style="clear:both;"></div></td>					
                                 
 				</form>
                             </table>
+                            
+                            
 			</section>
 						
 			

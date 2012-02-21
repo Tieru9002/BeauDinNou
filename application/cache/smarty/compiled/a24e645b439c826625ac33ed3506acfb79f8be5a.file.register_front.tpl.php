@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 20:01:31
+<?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:35
          compiled from "application/views/register_front.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:140704f43ddcdafe340-15125024%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a24e645b439c826625ac33ed3506acfb79f8be5a' => 
     array (
       0 => 'application/views/register_front.tpl',
-      1 => 1329850887,
+      1 => 1329857411,
       2 => 'file',
     ),
     '8cb8a07c663590b43542addec35e3d474779bd72' => 
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8de856b884431e75d977250c1af1c6f508120838' => 
     array (
       0 => 'application/views/login_form.tpl',
-      1 => 1329848816,
+      1 => 1329858393,
       2 => 'file',
     ),
   ),
@@ -140,7 +140,7 @@ index.php" title="Logo">iarbeau.ro</a></h1>
 <?php /*  Call merged included template "left_column.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('left_column.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '140704f43ddcdafe340-15125024');
-content_4f43ea0b7b245($_smarty_tpl);
+content_4f44075b4eaaf($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "left_column.tpl" */?>
 
 <section id="content">
@@ -152,8 +152,19 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "left_column
 public/uploads/promo_141838_700b.jpg" style="width:648px;"/>
                             <p>Veți avea posibilitatea, prin logarea la contul Dvs., de a prelua datele înregistrate anterior de Dvs., pentru completarea formularului necesar transmiterii comenzii, precum și de le vizualiza, pentru rectificarea lor sau adăugarea unor informații noi.
 
-Datele furnizate de Dvs. în acest formular sunt supuse termenilor și conditiilor iarbeau.ro.</p>
-                            
+                                Datele furnizate de Dvs. în acest formular sunt supuse termenilor și conditiilor iarbeau.ro.</p>
+                            <div class="validation" <?php if (count($_smarty_tpl->tpl_vars['errors']->value)==0){?> style="display:none;"<?php }?>>
+                            <ul>
+                            <?php  $_smarty_tpl->tpl_vars['error'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['error']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['errors']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['error']->key => $_smarty_tpl->tpl_vars['error']->value){
+$_smarty_tpl->tpl_vars['error']->_loop = true;
+?>                            
+                                <li><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+</li>                            
+                            <?php } ?>
+                            </ul>
+                            </div>
                             <table>
                              <form action="" method="post" id="register">
                                  <tr><td><label class="register_label" for="email_address">Email</label></td>
@@ -165,11 +176,13 @@ Datele furnizate de Dvs. în acest formular sunt supuse termenilor și conditiil
                              <input type="hidden" value="success" name="register">
                              <tr><td>
                              </td>
-				<td>	<input type="submit" name="Intra in cont" class="button" id="button1"  value="Inregistreaza-te acum"> 
+				<td>	<input type="submit" name="Intra in cont" class="button" id="register_button1"  value="Inregistreaza-te acum"> 
 					<div style="clear:both;"></div></td>					
                                 
 				</form>
                             </table>
+                            
+                            
 			</section>
 						
 			
@@ -189,13 +202,13 @@ Datele furnizate de Dvs. în acest formular sunt supuse termenilor și conditiil
 			<?php /*  Call merged included template "cartsummary.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('cartsummary.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '140704f43ddcdafe340-15125024');
-content_4f43ea0b864f5($_smarty_tpl);
+content_4f44075b5d4ad($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "cartsummary.tpl" */?>									
                         
                         <?php /*  Call merged included template "login_form.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("login_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '140704f43ddcdafe340-15125024');
-content_4f43ea0b8b686($_smarty_tpl);
+content_4f44075b6245d($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "login_form.tpl" */?>
 			
 			<!-- Contact Information -->
@@ -291,9 +304,9 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "login_form.
 	</footer>
 </body>
 </html>
-<?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 20:01:31
+<?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:35
          compiled from "application/views/left_column.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43ea0b7b245')) {function content_4f43ea0b7b245($_smarty_tpl) {?><section id="content">
+<?php if ($_valid && !is_callable('content_4f44075b4eaaf')) {function content_4f44075b4eaaf($_smarty_tpl) {?><section id="content">
 		<section id="lefter-column">
 			<aside style="margin-right:5px;">	
 				<section id="tags1">
@@ -344,9 +357,9 @@ index.php/products/singleproduct/<?php echo $_smarty_tpl->tpl_vars['popitem']->v
 				</ul>
 			</section>
 			</aside>
-		</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 20:01:31
+		</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:35
          compiled from "application/views/cartsummary.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43ea0b864f5')) {function content_4f43ea0b864f5($_smarty_tpl) {?><section id="cart">
+<?php if ($_valid && !is_callable('content_4f44075b5d4ad')) {function content_4f44075b5d4ad($_smarty_tpl) {?><section id="cart">
         <h2><a href="" title="View Cart"><img src="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 public/images/icon-cart.png" alt="Cart" /></a>Cartul dumneavoastra</h2>
         <p>Cartul dvs contine<b> <?php echo $_smarty_tpl->tpl_vars['cartnritems']->value;?>
@@ -373,9 +386,9 @@ $_smarty_tpl->tpl_vars['cartitem']->_loop = true;
         </ul>
         <p class="right"><a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /index.php/products/viewcart" title="View Cart"><b>View Cart</b></a></p>
-</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 20:01:31
+</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:35
          compiled from "application/views/login_form.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43ea0b8b686')) {function content_4f43ea0b8b686($_smarty_tpl) {?><section id="login">
+<?php if ($_valid && !is_callable('content_4f44075b6245d')) {function content_4f44075b6245d($_smarty_tpl) {?><section id="login">
 				<h2>Contul Tau</h2>
                 <form action="" method="post" id="log">
     				<input class="user_log" type="text" name="email" class="login" placeholder="Adresa de email" value="">
@@ -386,9 +399,11 @@ $_smarty_tpl->tpl_vars['cartitem']->_loop = true;
     				<input type="submit" value="login"> -->
 					</br>
 					<input type="submit" name="Intra in cont" class="button" id="button1"  value="Intra in cont"> 
-					<input type="button" name="Cont nou" class="button" id="button2" value="Cont nou">
+                                        <a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+index.php/user/register"><input type="button" name="Cont nou" class="button" id="button2" value="Cont nou" ></a>
 					<div style="clear:both;"></div>
 					<div id="uitat"><a href="www.google.ro">Ai uitat parola?</a></div>
+                                        <input type="hidden" value="success" name="login">
 				</form>
 				
 			</section><?php }} ?>

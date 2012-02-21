@@ -12,10 +12,11 @@
                    
     }
     
-    public function insertUser($email, $pass) {
+    public function insertUser($email, $pass, $code) {
         
         $data = array ("email" => $email,
-                       "password" => $pass);
+                       "password" => $pass,
+                       "user_code" => $code);
         
         $this->db->insert('users',$data);
         
@@ -38,6 +39,7 @@
         $this->db->select("id");
         $this->db->where("email", $email);
         $this->db->where("password", $pass);
+        $this->db->where("status", 1);
         
         $query = $this->db->get("users");
         
@@ -59,13 +61,48 @@
         
         $res = array();
        
-        foreach ($query->result_array() as $row) {
-            $res = $row;
+         foreach ($query->result() as $row) {
+           $res["email"] = $row->email;
+           $res["status"] = $row->status;
+           $res["user_code"] = $row->user_code;
+           $res["level"] = $row->level;
+           $res["nume"] = $row->nume;
+           $res["prenume"] = $row->prenume;
         }
         
         return $res;
     }
- 
+    
+    public function activateUser($id) {
+        
+             $data = array(
+               'status' => 1
+               );
 
+        $this->db->where('id', $id);
+        $this->db->update('users', $data);
+        
+    }
+    
+    public function checkUserDetails($id) {
+        $this->db->select("*");
+        $this->db->where("id", $id);
+        $this->db->where("status", 1);
+        
+        $query = $this->db->get("users");
+        
+        $res = array();
+       
+         foreach ($query->result() as $row) {
+           $res["email"] = $row->email;
+           $res["status"] = $row->status;
+           $res["user_code"] = $row->user_code;
+           $res["level"] = $row->level;
+           $res["nume"] = $row->nume;
+           $res["prenume"] = $row->prenume;
+        }
+        
+        return $res;
+    }
 }
 ?>

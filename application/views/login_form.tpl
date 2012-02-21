@@ -9,9 +9,10 @@
     				<input type="submit" value="login"> -->
 					</br>
 					<input type="submit" name="Intra in cont" class="button" id="button1"  value="Intra in cont"> 
-					<input type="button" name="Cont nou" class="button" id="button2" value="Cont nou">
+                                        <a href="{$base_url}index.php/user/register"><input type="button" name="Cont nou" class="button" id="button2" value="Cont nou" ></a>
 					<div style="clear:both;"></div>
 					<div id="uitat"><a href="www.google.ro">Ai uitat parola?</a></div>
+                                        <input type="hidden" value="success" name="login">
 				</form>
 				
 			</section>

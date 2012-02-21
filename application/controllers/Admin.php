@@ -142,8 +142,7 @@ class Admin extends CI_Controller {
             if ($specials == "on") $specials = 1; else $specials = 0;
             
             if ( !$this->upload->do_upload()) {
-                $error = array('error' => $this->upload->display_errors());                    
-                var_die($error);
+                $error = array('error' => $this->upload->display_errors());                                    
             }
                                     
             $upload_data =  $this->upload->data();

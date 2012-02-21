@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 19:27:26
+<?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:44
          compiled from "application/views/homepage.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:176264f228f1bea2e94-72744587%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75639f37d62ed03fbcaf7a96ed341e09e80c2094' => 
     array (
       0 => 'application/views/homepage.tpl',
-      1 => 1329848845,
+      1 => 1329855767,
       2 => 'file',
     ),
     '8cb8a07c663590b43542addec35e3d474779bd72' => 
@@ -55,7 +55,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8de856b884431e75d977250c1af1c6f508120838' => 
     array (
       0 => 'application/views/login_form.tpl',
-      1 => 1329848816,
+      1 => 1329858393,
       2 => 'file',
     ),
   ),
@@ -165,7 +165,7 @@ index.php" title="Logo">iarbeau.ro</a></h1>
 <?php /*  Call merged included template "left_column.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('left_column.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '176264f228f1bea2e94-72744587');
-content_4f43e20eb2cf9($_smarty_tpl);
+content_4f44076425e35($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "left_column.tpl" */?>
 
 
@@ -176,7 +176,7 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "left_column
                         <?php /*  Call merged included template "promo.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('promo.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '176264f228f1bea2e94-72744587');
-content_4f43e20ebc17b($_smarty_tpl);
+content_4f4407642f0f2($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "promo.tpl" */?>
 			
 			<!-- Featured Products -->
@@ -184,7 +184,7 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "promo.tpl" 
                         <?php /*  Call merged included template "featured.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('featured.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '176264f228f1bea2e94-72744587');
-content_4f43e20ec1014($_smarty_tpl);
+content_4f44076433c3e($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "featured.tpl" */?>
 			
 			<!-- Specials â€” Please note that a class="last" will be required for the last item in the row -->
@@ -192,7 +192,7 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "featured.tp
                         <?php /*  Call merged included template "specials.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('specials.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '176264f228f1bea2e94-72744587');
-content_4f43e20eca7ad($_smarty_tpl);
+content_4f4407643d388($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "specials.tpl" */?>
 			
 			<!-- Secondary Feature Area â€” Useful for Sales -->
@@ -200,7 +200,7 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "specials.tp
 			<?php /*  Call merged included template "featured_s.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('featured_s.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '176264f228f1bea2e94-72744587');
-content_4f43e20ed176a($_smarty_tpl);
+content_4f4407644426c($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "featured_s.tpl" */?>
                         
 		</section>
@@ -213,60 +213,15 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "featured_s.
                         <?php /*  Call merged included template "cartsummary.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('cartsummary.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '176264f228f1bea2e94-72744587');
-content_4f43e20ed5890($_smarty_tpl);
-$_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "cartsummary.tpl" */?>
+content_4f44076448322($_smarty_tpl);
+$_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "cartsummary.tpl" */?>						
 			
-			<!-- Popular Products -->
-			<section id="popular">
-            
-				<h2>Popular Things</h2>
-				<ul>
-					<li class="even">
-						<div class="product-preview"><a href="product.htm" title="E-Book"><img src="assets/product-6.jpg" alt="E-Book" /></a></div>
-						<a href="product.htm" title="E-Book"><b>E-Book</b></a>
-						<small>29.00</small>
-					</li>
-					<li class="odd">
-						<div class="product-preview"><a href="product.htm" title="Generic Cards"><img src="assets/product-5.jpg" alt="Generic Cards" /></a></div>
-						<a href="product.htm" title="Generic Business Cards"><b>Generic Cards</b></a>
-						<small>12.99</small>
-					</li>
-					<li class="even">
-						<div class="product-preview"><a href="product.htm" title="Rockstar Freelancer"><img src="assets/product-4.jpg" alt="Rockstar Freelancer" /></a></div>
-						<a href="product.htm" title="Rockstar Freelancer Paperback"><b>Rockstar Freelancer</b></a>
-						<small>29.00</small>
-					</li>
-					<li class="odd">
-						<div class="product-preview"><a href="product.htm" title="Moo Cards"><img src="assets/product-2.jpg" alt="Moo Cards" /></a></div>
-						<a href="product.htm" title="Moo Cards"><b>Moo Cards</b></a>
-						<small>33.00 <del>34.99</del></small>
-					</li>
-					<li class="even">
-						<div class="product-preview"><a href="product.htm" title="Rockable Cards"><img src="assets/product-3.jpg" alt="Rockable Cards" /></a></div>
-						<a href="product.htm" title="Rockable Cards"><b>Rockable Cards</b></a>
-						<small>7.99</small>
-					</li>
-				</ul>
-                
-			</section>
-			<!-- Tag Filter -->
-			<section id="tags">
-				<h2>Categorii</h2>
-				<ul>
-					<li class="even"><a href="collection.htm" title="Advertisement">Advertisement</a></li>
-					<li class="odd"><a href="collection.htm" title="Book">Book</a></li>
-					<li class="even"><a href="collection.htm" title="Brochure">Brochure</a></li>
-					<li class="odd"><a href="collection.htm" title="Business Cards">Business Cards</a></li>
-					<li class="even"><a href="collection.htm" title="Paperback">Paperback</a></li>
-					<li class="odd"><a href="collection.htm" title="E-Book">E-Book</a></li>
-				</ul>
-			</section>
             
             <!--Log In Window-->
             <?php /*  Call merged included template "login_form.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("login_form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '176264f228f1bea2e94-72744587');
-content_4f43e20edd08e($_smarty_tpl);
+content_4f4407644d249($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "login_form.tpl" */?>
 			
 			<!-- Contact Information -->
@@ -362,9 +317,9 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "login_form.
 	</footer>
 </body>
 </html>
-<?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 19:27:26
+<?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:44
          compiled from "application/views/left_column.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43e20eb2cf9')) {function content_4f43e20eb2cf9($_smarty_tpl) {?><section id="content">
+<?php if ($_valid && !is_callable('content_4f44076425e35')) {function content_4f44076425e35($_smarty_tpl) {?><section id="content">
 		<section id="lefter-column">
 			<aside style="margin-right:5px;">	
 				<section id="tags1">
@@ -415,9 +370,9 @@ index.php/products/singleproduct/<?php echo $_smarty_tpl->tpl_vars['popitem']->v
 				</ul>
 			</section>
 			</aside>
-		</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 19:27:26
+		</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:44
          compiled from "application/views/promo.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43e20ebc17b')) {function content_4f43e20ebc17b($_smarty_tpl) {?><section id="slideshow">
+<?php if ($_valid && !is_callable('content_4f4407642f0f2')) {function content_4f4407642f0f2($_smarty_tpl) {?><section id="slideshow">
         <ul class="slider regular">
         <?php  $_smarty_tpl->tpl_vars['item'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['item']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['promo']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -461,9 +416,9 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
         <a title="Previous" class="slider-prev">Previous</a>
         <a title="Next" class="slider-next">Next</a>
 
-</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 19:27:26
+</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:44
          compiled from "application/views/featured.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43e20ec1014')) {function content_4f43e20ec1014($_smarty_tpl) {?><section id="featured">
+<?php if ($_valid && !is_callable('content_4f44076433c3e')) {function content_4f44076433c3e($_smarty_tpl) {?><section id="featured">
         <h1><img src="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 public/images/icon-featured.png" alt="Featured" />Featured Products</h1>
         <ul class="featured regular">
@@ -535,9 +490,9 @@ index.php/products/singleproduct/<?php echo $_smarty_tpl->tpl_vars['featured']->
         <a title="Previous" class="featured-prev">Previous</a>
         <a title="Next" class="featured-next">Next</a>
 
-</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 19:27:26
+</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:44
          compiled from "application/views/specials.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43e20eca7ad')) {function content_4f43e20eca7ad($_smarty_tpl) {?><section id="specials">
+<?php if ($_valid && !is_callable('content_4f4407643d388')) {function content_4f4407643d388($_smarty_tpl) {?><section id="specials">
         <ul>
                 <?php  $_smarty_tpl->tpl_vars['special'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['special']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['specials']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -572,9 +527,9 @@ public/uploads/specials_<?php echo $_smarty_tpl->tpl_vars['special']->value['pic
                 <?php }?>                
                 <?php } ?>
         </ul>
-</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 19:27:26
+</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:44
          compiled from "application/views/featured_s.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43e20ed176a')) {function content_4f43e20ed176a($_smarty_tpl) {?><section class="sale">
+<?php if ($_valid && !is_callable('content_4f4407644426c')) {function content_4f4407644426c($_smarty_tpl) {?><section class="sale">
         <h1>Black Friday Sale <a href="collection.htm" title="See All Products">See All Products</a></h1>
         <ul>
                 <li class="slide">
@@ -607,9 +562,9 @@ $_smarty_tpl->tpl_vars['item']->_loop = true;
 
                 </li>
         </ul>				
-</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 19:27:26
+</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:44
          compiled from "application/views/cartsummary.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43e20ed5890')) {function content_4f43e20ed5890($_smarty_tpl) {?><section id="cart">
+<?php if ($_valid && !is_callable('content_4f44076448322')) {function content_4f44076448322($_smarty_tpl) {?><section id="cart">
         <h2><a href="" title="View Cart"><img src="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 public/images/icon-cart.png" alt="Cart" /></a>Cartul dumneavoastra</h2>
         <p>Cartul dvs contine<b> <?php echo $_smarty_tpl->tpl_vars['cartnritems']->value;?>
@@ -636,9 +591,9 @@ $_smarty_tpl->tpl_vars['cartitem']->_loop = true;
         </ul>
         <p class="right"><a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /index.php/products/viewcart" title="View Cart"><b>View Cart</b></a></p>
-</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 19:27:26
+</section><?php }} ?><?php /* Smarty version Smarty-3.1.1, created on 2012-02-21 22:06:44
          compiled from "application/views/login_form.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_4f43e20edd08e')) {function content_4f43e20edd08e($_smarty_tpl) {?><section id="login">
+<?php if ($_valid && !is_callable('content_4f4407644d249')) {function content_4f4407644d249($_smarty_tpl) {?><section id="login">
 				<h2>Contul Tau</h2>
                 <form action="" method="post" id="log">
     				<input class="user_log" type="text" name="email" class="login" placeholder="Adresa de email" value="">
@@ -649,9 +604,11 @@ $_smarty_tpl->tpl_vars['cartitem']->_loop = true;
     				<input type="submit" value="login"> -->
 					</br>
 					<input type="submit" name="Intra in cont" class="button" id="button1"  value="Intra in cont"> 
-					<input type="button" name="Cont nou" class="button" id="button2" value="Cont nou">
+                                        <a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+index.php/user/register"><input type="button" name="Cont nou" class="button" id="button2" value="Cont nou" ></a>
 					<div style="clear:both;"></div>
 					<div id="uitat"><a href="www.google.ro">Ai uitat parola?</a></div>
+                                        <input type="hidden" value="success" name="login">
 				</form>
 				
 			</section><?php }} ?>
