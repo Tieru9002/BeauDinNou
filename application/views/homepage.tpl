@@ -37,7 +37,7 @@
 			<!-- Popular Products -->
 			<section id="popular">
             
-				<h2>Chestii Populare</h2>
+				<h2>Chestii Populare Ramura Soare</h2>
 				<ul>
 					<li class="even">
 						<div class="product-preview"><a href="product.htm" title="E-Book"><img src="assets/product-6.jpg" alt="E-Book" /></a></div>
