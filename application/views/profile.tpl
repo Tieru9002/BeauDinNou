@@ -1,0 +1,1 @@
+{$msg}. <a href="http://localhost/iarbeau/index.php/user/logout">Click aici</a> pentru logout.
