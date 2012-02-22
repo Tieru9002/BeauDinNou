@@ -48,7 +48,8 @@
                                   {/if}
                                  {/foreach}
 				</ul>
-				{$pagination}
+				<div style="float:right;">{$pagination}</div>
+                                <div style="clear:both;"></div>
 			</section>
 
 			
