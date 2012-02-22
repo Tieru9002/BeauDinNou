@@ -88,12 +88,12 @@ class Products extends CI_Controller {
         
     }
     
-    public function singleCat ($id, $offset, $limit) {
+    public function singleCat ($id) {
         $this->load->model("Productmod");                
         
         $category_details = $this->Productmod->getCategoryById($id);               
         
-        $products = $this->Productmod->getProductsByCategoryId($id, $offset, $limit);                                                
+        $products = $this->Productmod->getProductsByCategoryId($id);                                                
         
         $data = array();
         $data['cartitems'] = $this->cart->contents();
