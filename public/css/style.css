@@ -376,7 +376,7 @@ header {
 		
 				#slideshow li h1, #featured h1, .sale h1 { 
 					background: #f4f4f4; 
-					border-top: 1px solid #fafafa;
+					/*border-top: 1px solid #fafafa;*/
 					border-bottom: 1px solid #c7c7c7;
 					font-size: 15px;
 					padding: 0 15px;
