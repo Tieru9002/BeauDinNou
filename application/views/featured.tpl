@@ -6,7 +6,7 @@
                 <li class="slide">
                         {foreach from=$featured_d1 item=featured name=featured}
                         <div class="product">
-                                <img src="{$base_url}public/uploads/{$featured.picture}" alt="Product Image" />
+                                <img src="{$base_url}public/uploads/slider_{$featured.picture}" alt="Product Image" />
                                 <div class="overlay">
                                         <div class="price">
                                                 <h2>{$featured.name}</h2>
@@ -26,7 +26,7 @@
                 <li class="slide">
                         {foreach from=$featured_d2 item=featured name=featured}
                         <div class="product">
-                                <img src="{$base_url}public/uploads/{$featured.picture}" alt="Product Image" />
+                                <img src="{$base_url}public/uploads/slider_{$featured.picture}" alt="Product Image" />
                                 <div class="overlay">
                                         <div class="price">
                                                 <h2>{$featured.name}</h2>

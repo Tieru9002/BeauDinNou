@@ -43,7 +43,7 @@ class Main extends CI_Controller {
             
             $this->load->model("Productmod");
             
-            $popular = $this->Productmod->getPopularProducts();
+            
             $featured_d = $this->Productmod->getFeatured_d();
             $featured_s = $this->Productmod->getFeatured_s();
             $promo = $this->Productmod->getAllPromo();
@@ -69,6 +69,7 @@ class Main extends CI_Controller {
             $contact_details = $this->Misc->getContactDetails();
             //echo "<pre>"; var_dump($this->session->userdata("email")); echo "</pre>";
             //echo "<pre>";var_dump($featured_d); var_dump($featured_s); echo "</pre>";
+            $popular = $this->Productmod->getPopularProducts();
             $root_categories = $this->Productmod->getRootCategories();
             //echo "<pre>"; var_dump($root_categories); echo"</pre>";
             $cartnritems = $this->cart->total_items();

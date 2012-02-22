@@ -115,14 +115,17 @@ class Products extends CI_Controller {
             
         }   
        
-        if ($this->input->post("qwerty") == "success") {
-            $new_q = $this->input->post("qty");
-             
+        if ($this->input->post("updatecart") == "success") {
+            $i=0;
+            
             foreach ($this->cart->contents() as $value) {
-                $updatedata = array(
-                                'rowid' =>$value["rowid"],
-                                'qty'   => $new_q);             
-                $this->cart->update($updatedata); 
+                $post_name = "qty".$i;    
+                $new_q = $this->input->post($post_name);                         
+                    $updatedata = array(
+                                    'rowid' =>$value["rowid"],
+                                    'qty'   => $new_q);             
+                    $this->cart->update($updatedata); 
+                $i++;
             }
         }
         
@@ -174,6 +177,16 @@ class Products extends CI_Controller {
         $this->cart->update($updatedata); 
         
         redirect ("products/viewcart", "refresh");
+    }
+    
+    public function checkout() {
+        $this->load->model("Productmod");
+        $popular = $this->Productmod->getPopularProducts();
+        $root_categories = $this->Productmod->getRootCategories();
+        $data["popular"] = $popular;
+        $data["rootcats"] = $root_categories; 
+        $data["base_url"] = base_url();
+        $this->parser->parse("checkout.tpl", $data);
     }
     
 
