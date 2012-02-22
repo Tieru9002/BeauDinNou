@@ -48,7 +48,7 @@
                                   {/if}
                                  {/foreach}
 				</ul>
-				
+				{$pagination}
 			</section>
 
 			
