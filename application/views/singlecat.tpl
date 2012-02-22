@@ -15,7 +15,8 @@
 			<!-- Current Category Products -->
 			<section id="featured" class="category">
 				<h1>Produsele din aceasta categorie</h1>
-				<ul class="featured">
+
+				<ul id="category">
 				{foreach from=$products item=product name=cat_products}                                    
                                     {if $smarty.foreach.cat_products.iteration % 2 != 0}
 					<!-- Repeatable Area Begin — Each incl. up to 6 Products -->
