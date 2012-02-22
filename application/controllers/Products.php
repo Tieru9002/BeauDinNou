@@ -88,12 +88,12 @@ class Products extends CI_Controller {
         
     }
     
-    public function singleCat ($id) {
+    public function singleCat ($id, $offset, $limit) {
         $this->load->model("Productmod");                
         
         $category_details = $this->Productmod->getCategoryById($id);               
         
-        $products = $this->Productmod->getProductsByCategoryId($id);                                                
+        $products = $this->Productmod->getProductsByCategoryId($id, $offset, $limit);                                                
         
         $data = array();
         $data['cartitems'] = $this->cart->contents();
@@ -102,6 +102,7 @@ class Products extends CI_Controller {
         $data["base_url"] = base_url();
         $data["rootcats"] = $this->Productmod->getRootCategories();
         $data['popular'] = $this->Productmod->getPopularProducts();
+        $data["currentpage"] = 
         $this->parser->parse("singlecat.tpl", $data);        
     }
     
