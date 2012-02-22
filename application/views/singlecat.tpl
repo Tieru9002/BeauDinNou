@@ -31,7 +31,112 @@
 						</div>
 					</li>
 					<li class="odd">
-						
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="even">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="odd">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="even">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="odd">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="even">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="odd">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="even">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="odd">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
 					</li>
 				</ul>
 				
