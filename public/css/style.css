@@ -517,7 +517,13 @@ header {
 						float: left;
 						height: 120px;}
 						
-						#featured .product_dreapta p, #featured .product_dreapta h2 {
+						#featured .product_dreapta p {
+							float: left;
+							padding: 8px 0px 0px 8px;
+							display: block;
+							width: 465px; } 
+						
+						#featured .product_dreapta h2 {
 									float: left;
 									padding-top: 8px;
 									padding-left: 8px;
