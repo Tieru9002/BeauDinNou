@@ -366,7 +366,8 @@ header {
 			background: #edebe8; 
 			border-bottom: 7px solid #edebe8;
 			margin-bottom: 30px;
-			position: relative; }
+			position: relative; 
+			border-top: 1px solid #fafafa;}
 						
 			#slideshow > ul, #featured > ul, .sale > ul { border-bottom: 1px solid #f4f4f4; }
 		
