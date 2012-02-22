@@ -17,13 +17,14 @@ class Products extends CI_Controller {
             $prod_q = $this->input->post("prod_q");
             $prod_price =  $prodbuy["price"];
             $prod_name = $prodbuy["name"];                        
-            //$rowid = $this->input->post("rowid");                        
+            //$rowid = $this->input->post("rowid");            
             
             $cartdata = array(
                'id'      => $prod_id,
                'qty'     => $prod_q,
                'price'   => $prod_price,
-               'name'    => $prod_name,               
+               'name'    => $prod_name,
+               'options' => array('picture' => $prodbuy["picture"])
             );            
             
             $haystack = array("\"","'","(", ")");
@@ -92,9 +93,10 @@ class Products extends CI_Controller {
         
         $category_details = $this->Productmod->getCategoryById($id);               
         
-        $products = $this->Productmod->getProductsByCategoryId($id);                                
+        $products = $this->Productmod->getProductsByCategoryId($id);                                                
         
         $data = array();
+        $data['cartitems'] = $this->cart->contents();
         $data["products"] = $products;
         $data["category"] = $category_details;
         $data["base_url"] = base_url();
@@ -106,6 +108,7 @@ class Products extends CI_Controller {
     public function viewCart() {
         $this->load->model("Productmod");
         //var_dump($this->cart->contents() );
+        
         $item_ids = "";
         foreach ($this->cart->contents() as $item) {
             $item_ids[] = $item["id"];
@@ -125,6 +128,9 @@ class Products extends CI_Controller {
         
         //echo "<pre>"; var_dump($this->cart->contents());
         $cart_products = $this->Productmod->getItemsByIds($item_ids);
+//        echo "<pre>";
+//        var_dump($this->cart->contents());
+//        echo "</pre>";
         //echo "<pre>";
         //var_dump($this->cart->contents());
         $cartnritems = $this->cart->total_items();
@@ -132,12 +138,16 @@ class Products extends CI_Controller {
         //echo "<pre>";var_dump($cart_products);
         //var_dump($item_ids);
         //echo "<pre>"; var_dump($cart_products); echo "</pre>";
+        $popular = $this->Productmod->getPopularProducts();
+        $root_categories = $this->Productmod->getRootCategories();
+        $data["rootcats"] = $root_categories;          
+        $data["popular"] = $popular;
         $data['cartnritems'] = $cartnritems;
         $data['totalprice'] = $totalprice;
-        $data["cart_products"] = $cart_products;
+        //$data["cart_products"] = $cart_products;
         $data['cartitems'] = $this->cart->contents();
         $data["base_url"] = base_url();          
-        $data["cart_products"] = $cart_products;
+        //$data["cart_products"] = $cart_products;
         $data["base_url"] = base_url();                
         $this->parser->parse("cart.tpl",$data);
     }

@@ -178,6 +178,7 @@ class Admin extends CI_Controller {
        $img_dimensions["slider"] = array ("width" => "235","height" => "120");
        $img_dimensions["menu_small"] = array("width" =>"100","height" => "100");
        $img_dimensions["specials"] = array("width"=>"205", "height" => "120");
+       $img_dimensions["list_cat"] = array("width" =>"225", "height" => "110");
        
        $this->load->library('image_lib');
         foreach ($img_dimensions as $key=>$value) {              

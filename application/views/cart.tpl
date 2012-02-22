@@ -1,5 +1,8 @@
 {extends file="header.tpl"}
 {block leftcolumn}
+
+{include file='left_column.tpl'}
+
 <section id="content">
 	
 		<section id="left-column">
@@ -12,7 +15,7 @@
 				<form method="post" action="">
 					{foreach from=$cartitems item=cartitem name=cart}
                                         <div class="product-cart">                                                
-						<img src="{$base_url}/public/uploads/{$cartitem.picture}" alt="Product Image" />
+						<img src="{$base_url}/public/uploads/list_cat_{$cartitem.options.picture}" alt="Product Image" />
 						<h2><a href="" title="Moo Cards">{$cartitem.name}</a></h2>	
 						<p>{$cartitem.descriere}</p>
 						<label for="amount-product-1">Amount <a href="{$base_url}index.php/products/removeFromCart/{$cartitem.id}" title="Remove">(Remove)</a></label>
@@ -43,87 +46,7 @@
 			</section>
 			
 			<!-- Secondary Feature Area — Useful for Sales -->
-			<section class="sale">
-				<h1>Black Friday Sale <a href="collection.htm" title="See All Products">See All Products</a></h1>
-				<ul>
-					<li class="slide">
-
-						<div class="product">
-							<img src="assets/product-2.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Colored Cards</h2>
-									<ul>
-										<li><b>12</b>.95 <del>14.95</del></li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-6.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Rockstar Freelancer Paperback</h2>
-									<ul>
-										<li><b>39</b>.00 <del>44.00</del></li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-8.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Mini Cards</h2>
-									<ul>
-										<li><b>6</b>.95 <del>9.95</del></li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-11.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Rockable Press</h2>
-									<ul>
-										<li><b>12</b>.95 <del>9.95</del></li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-4.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Rockstar Freelancer Paperback</h2>
-									<ul>
-										<li><b>29</b>.00 <del>19.00</del></li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-12.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Another Book</h2>
-									<ul>
-										<li><b>32</b>.95 <del>29.95</del></li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-										
-					</li>
-				</ul>				
-			</section>
+			
 			
 		</section>
 {/block}

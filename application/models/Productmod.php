@@ -158,6 +158,31 @@ class Productmod extends CI_Model {
         return $res;
     }
     
+//    public function getProductByCatId($id) {
+//        $this->db->select("*");
+//        $this->db->where("cat_id", $id);
+//        
+//        $query = $this->db->get("product");
+//        
+//        foreach ($query->result() as $row) {
+//            $res["id"] = $row->id;
+//            $res["cat_id"] = $row->cat_id;
+//            $res["name"] = $row->name;
+//            $res["price"] = $row->price;
+//            $res["description"] = $row->description;
+//            $res["meta_key"] = $row->meta_keywords;
+//            $res["meta_desc"] = $row->meta_desc;
+//            $res["picture"] = $row->picture;
+//            $res["subprod_id"] = $row->subprod_id;
+//            $res["featured_d"] = $row->featured_d;
+//            $res["featured_s"] = $row->featured_s;
+//            $res["promo"] = $row->promo;
+//            $res["specials"] = $row->specials;
+//        }
+//        
+//        return $res;
+//    }
+    
     public function getPopularProducts () {
         $this->db->select("*");
         $this->db->order_by("count", "desc");
@@ -235,7 +260,7 @@ class Productmod extends CI_Model {
 
         $query = $this->db->get("products");
         $i=0;
-        
+        $res = array();
         foreach ($query->result() as $row) {
             $res[$i]["id"] = $row->id;
             $res[$i]["cat_id"] = $row->cat_id;
