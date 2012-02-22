@@ -37,7 +37,7 @@
 			<div class="wrap">
 				<nav>
 					<ul>
-						<li class="active"><a href="index.htm" title="Home">Home</a></li>
+						<li class="active"><a href="{$base_url}index.php" title="Home">Home</a></li>
 						<li class="dropdown">
 							<a title="Catalog">Catalog</a>
 							<ul>

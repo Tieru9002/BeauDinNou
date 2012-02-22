@@ -3,7 +3,8 @@ class Main extends CI_Controller {
     
         public function index ()  {          
             
-            $this->load->model("Usermod");            
+            $this->load->model("Usermod"); 
+            $this->load->model("Misc");
             if (!$this->session->userdata("logged_in")) {
             if ($this->input->post("login") == "success") {
                 $email = $this->input->post("email");
@@ -42,7 +43,7 @@ class Main extends CI_Controller {
             
             $this->load->model("Productmod");
             
-            $popular = $this->Productmod->getPopularProducts();
+            
             $featured_d = $this->Productmod->getFeatured_d();
             $featured_s = $this->Productmod->getFeatured_s();
             $promo = $this->Productmod->getAllPromo();
@@ -65,13 +66,15 @@ class Main extends CI_Controller {
                 $i++;
             }            
             $specials = $this->Productmod->getSpecials();                        
-            var_dump($this->session->all_userdata());
+            $contact_details = $this->Misc->getContactDetails();
             //echo "<pre>"; var_dump($this->session->userdata("email")); echo "</pre>";
             //echo "<pre>";var_dump($featured_d); var_dump($featured_s); echo "</pre>";
+            $popular = $this->Productmod->getPopularProducts();
             $root_categories = $this->Productmod->getRootCategories();
             //echo "<pre>"; var_dump($root_categories); echo"</pre>";
             $cartnritems = $this->cart->total_items();
             $totalprice = $this->cart->total();
+            $data["contact_details"] = $contact_details;
             $data["featured_d1"] = $featured_d1;
             $data["featured_d2"] = $featured_d2;
             $data["featured_s"] = $featured_s;
