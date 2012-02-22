@@ -88,14 +88,26 @@ class Products extends CI_Controller {
         
     }
     
-    public function singleCat ($id) {
+    public function singleCat ($id, $pn=0) {
         $this->load->model("Productmod");                
         
         $category_details = $this->Productmod->getCategoryById($id);               
         
-        $products = $this->Productmod->getProductsByCategoryId($id);                                                
+        $products = $this->Productmod->getProductsByCategoryId($id, $pn);                                                
+        $count = $this->Productmod->countCategoryProducts($id);        
+        $this->load->library('pagination');
+        $base_url = base_url();
+        $config['base_url'] = $base_url."index.php/products/singlecat/".$id;
+        $config['total_rows'] = $count["nr_items"];
+        $config['per_page'] = 10;
+        $config['uri_segment'] = '4'; 
+
+        $this->pagination->initialize($config);
+
+        
         
         $data = array();
+        $data["pagination"] = $this->pagination->create_links();
         $data['cartitems'] = $this->cart->contents();
         $data["products"] = $products;
         $data["category"] = $category_details;
