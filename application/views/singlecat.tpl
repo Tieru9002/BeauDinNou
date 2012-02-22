@@ -14,163 +14,130 @@
 			
 			<!-- Current Category Products -->
 			<section id="featured" class="category">
-				<h1>Products in this Category</h1>
+				<h1>Produsele din aceasta categorie</h1>
 				<ul class="featured">
 				
 					<!-- Repeatable Area Begin — Each incl. up to 6 Products -->
-					<li class="slide">
+					<li class="even">
 						<div class="product">
-							<img src="assets/product-1.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Rockable Cards</h2>
-									<ul>
-										<li><b>7</b>.95</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
+							<a href="http://www.google.com"> <img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" /> </a>
+								
 						</div>
-						<div class="product">
-							<img src="assets/product-2.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Color Cards</h2>
-									<ul>
-										<li><b>11</b>.95</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-3.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Letterpress Cards</h2>
-									<ul>
-										<li><b>16</b>.95</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-4.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Rockstar Freelancer Paperback</h2>
-									<ul>
-										<li><b>29</b>.00</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-5.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Business Card Stack</h2>
-									<ul>
-										<li><b>22</b>.95</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-6.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Rockstar Freelancer Paperback</h2>
-									<ul>
-										<li><b>39</b>.00</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="http://www.google.com">Detalii</a>
 						</div>
 					</li>
-					<!-- Repeatable Area End -->
-
-					<!-- Repeatable Area Begin — Each incl. up to 6 Products -->
-					<li class="slide">
+					<li class="odd">
 						<div class="product">
-							<img src="assets/product-7.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Colored Cards</h2>
-									<ul>
-										<li><b>12</b>.95</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
+							<a href="http://www.google.com"> <img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" /> </a>
+								
 						</div>
-						<div class="product">
-							<img src="assets/product-8.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Mini Cards</h2>
-									<ul>
-										<li><b>6</b>.95</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="http://www.google.com">Detalii</a>
 						</div>
-						<div class="product">
-							<img src="assets/product-9.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Leaflet</h2>
-									<ul>
-										<li><b>12</b>.95</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>		
-						<div class="product">
-							<img src="assets/product-10.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Another Leaflet</h2>
-									<ul>
-										<li><b>16</b>.00</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-11.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Rockable Press</h2>
-									<ul>
-										<li><b>12</b>.95</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-						<div class="product">
-							<img src="assets/product-12.jpg" alt="Product Image" />
-							<div class="overlay">
-								<div class="price">
-									<h2>Another Book</h2>
-									<ul>
-										<li><b>32</b>.95</li>
-										<li class="details"><a href="product.htm" title="More Details">More Details</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>					
 					</li>
-					<!-- Repeatable Area End -->
-					
+					<li class="even">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="odd">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="even">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="odd">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="even">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="odd">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="even">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
+					<li class="odd">
+						<div class="product">
+							<img src="{$base_url}public/uploads/jack-daniels-whiskey-1.jpg" alt="Product Image" />
+								
+						</div>
+						<div class="product_dreapta">
+								<h2><a href="http://www.google.com">Produsul satanei</a></h2>
+								<h3><span>12.50</span> RON</h3>
+								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane ...</p>
+								<a href="www.google.com">Detalii</a>
+						</div>
+					</li>
 				</ul>
 				
 			</section>
