@@ -483,10 +483,9 @@ header {
 				
 			#featured h1 { padding-left: 0; }
 			
-				#featured li img { 
+				#featured h1 img { 
 					float: left;
-					height: 39px;
-					margin: 5px; }
+					height: 39px; }
 											
 			#featured .product, .sale .product {
 						width: 235px;
@@ -495,17 +494,17 @@ header {
 						position: relative;
 						overflow: hidden; }
 						
-						#featured .product img {
-							width: 225px;
-							height: 110px;}
+						#featured .featured .product img {
+							width: 235px;
+							height: 120px;}
 						
-			#featured li.even {
+			#category li.even {
 				display: block;
 				height: 120px;
 				border-top: 1px solid #fafafa;
 				border-bottom: 1px solid #BDBAB7;}
 				
-			#featured li.odd {
+			#category li.odd {
 				display: block;
 				height: 120px;
 				background-color: #F4F4F4;
