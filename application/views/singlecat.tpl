@@ -25,6 +25,7 @@
 						</div>
 						<div class="product_dreapta">
 								<p>Daca luam in considerare capacitatea neo-modernista de a divulga secretele controversate ale interopilor sindicalisti, atunci nu ne mai ramane decat sa disimulam candoarea mentala a schizofreniei.</p>
+								<a href="www.google.com">Pule pizde coaie</a>
 						</div>
 					</li>
 					<li class="odd">

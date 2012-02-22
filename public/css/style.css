@@ -494,6 +494,20 @@ header {
 						position: relative;
 						overflow: hidden; }
 						
+			#featured li.even {
+				display: block;
+				height: 120px;}
+				
+			#featured .product_dreapta {
+						width: 465px;
+						float: left;
+						height: 120px;}
+						
+						#featured .product_dreapta p {
+									float: left;
+									padding: 5px;}
+			
+						
 				#featured .overlay, .sale .overlay {
 					display: none;
 					position: absolute;
@@ -973,11 +987,6 @@ footer {
 				float: left;
 				height: auto;
 				cursor: pointer; }
-				
-				.product_dreapta{
-				width: 470px; 
-				float: left;
-				height: 120;}
 				
 			.price {
 				top: 2px;
