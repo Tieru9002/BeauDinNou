@@ -501,12 +501,16 @@ header {
 						
 			#featured li.even {
 				display: block;
-				height: 120px;}
+				height: 120px;
+				border-top: 1px solid #fafafa;
+				border-bottom: 1px solid #BDBAB7;}
 				
 			#featured li.odd {
 				display: block;
 				height: 120px;
-				background-color: #F4F4F4;}
+				background-color: #F4F4F4;
+				border-top: 1px solid #fafafa;
+				border-bottom: 1px solid #BDBAB7;}
 				
 			#featured .product_dreapta {
 						width: 465px;
