@@ -973,12 +973,11 @@ footer {
 				float: left;
 				height: auto;
 				cursor: pointer; }
-				#productright{
-					display: block;
+				
+				.product_dreapta{
 				width: 470px; 
-				float: right;
-				height: 120;
-				        }
+				float: left;
+				height: 120;}
 				
 			.price {
 				top: 2px;
