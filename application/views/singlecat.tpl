@@ -15,7 +15,7 @@
 			<!-- Current Category Products -->
 			<section id="featured" class="category">
 				<h1>Produsele din aceasta categorie</h1>
-				<ul class="featured">
+				<ul id="category">
 				
 					<!-- Repeatable Area Begin — Each incl. up to 6 Products -->
 					<li class="even">
