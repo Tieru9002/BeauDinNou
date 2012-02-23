@@ -10,50 +10,31 @@
 			<!-- Main Content Area -->
 			<section id="main">
 			
-				<h2>Date personale</h2>
-				<p>Cosul dumneavoastra contine urmataorele iteme</p>
-				<form method="post" action="">
-					{foreach from=$cartitems item=cartitem name=cart}
-                                        <div class="product-cart">                                                
-						<img src="{$base_url}/public/uploads/list_cat_{$cartitem.options.picture}" alt="Product Image" />
-						<h2><a href="" title="Moo Cards">{$cartitem.name}</a></h2>	
-						<p>{$cartitem.descriere}</p>
-						<label for="amount-product-1">Amount <a href="{$base_url}index.php/products/removeFromCart/{$cartitem.id}" title="Remove">(Remove)</a></label>
-						<input type="text" name="qty{$smarty.foreach.cart.index}" id="amount-product-1" value="{$cartitem.qty}" size="2" />
-						<h2 class="item">{$cartitem.price} RON</h2>
-					</div>
-                                        {/foreach}
-					
-					<div class="total">
-						<h3>Total: <b>{$totalprice}</b></h3>
-					</div>
-                                        <input type="hidden" name="updatecart" value="success" />
-					<div class="right">
-						<input type="submit" name="update" class="button" value="Update" />
-						<input type="submit" name="checkout" class="button" value="Checkout" />
-					</div>	
-				</form>
-					<p> lalalallalal </p>
+				<div id="Datepersonale_titlu"><h2>Date personale</h2></div>
+				
 					
 					<section id="login">
 					
-				<h2>Contul Tau</h2>
-                <form action="" method="post" id="log">
-    				<input class="user_log" type="text" name="email" class="login" placeholder="Adresa de email" value="">
-    				<input class="user_log" type="password" name="pass" class="login" placeholder="Parola" value="" onclick="this.value='';">    
-					<!--
-					onclick="this.value='';"
-    				<input type="hidden" name="login" value="success">
-    				<input type="submit" value="login"> -->
-					</br>
-					<input type="submit" name="Intra in cont" class="button" id="button1"  value="Intra in cont"> 
-                                        <a href="{$base_url}index.php/user/register"><input type="button" name="Cont nou" class="button" id="button2" value="Cont nou" ></a>
+				
+                <form action="" method="post" id="Datepersonale_form">
+    				<input class="user_log" type="text" name="email"  placeholder="Adresa de email" value=""></br>
+					<input class="user_log" type="text" name="prenumele"  placeholder="Prenumele" value=""></br>
+					<input class="user_log" type="text" name="numele"  placeholder="Numele" value=""></br>
+					<input class="user_log" type="text" name="nr_de_tel"  placeholder="Numarul de telefon" value=""></br>
+					<input class="user_log" type="text" name="data_nasterii"  placeholder="Data nasterii" value=""></br>
+    				
+					<input type="submit" name="Salveaza" class="button" id="button1"  value="Salveaza"> 
+                                        
 					<div style="clear:both;"></div>
-					<div id="uitat"><a href="www.google.ro">Ai uitat parola?</a></div>
-                                        <input type="hidden" value="success" name="login">
+					
 				</form>
 				
 			</section>
+					
+					
+					
+					
+					
 					
 					
 								
@@ -67,16 +48,7 @@
 			
 			
 			
-			<!-- Specials — Please note that a class="last" will be required for the last item in the row -->
-			<section id="specials">
-				<ul>
-					<li class="first"><a href="index.htm" title="Black Friday Sale"><img src="assets/special-left.jpg" alt="Product Image" /></a></li>
-					<li class="second"><a href="index.htm" title="Gift Ideas"><img src="assets/special-center.jpg" alt="Product Image" /></a></li>
-					<li class="third"><a href="index.htm" title="Social Media"><img src="assets/special-right.jpg" alt="Product Image" /></a></li>
-				</ul>
-			</section>
 			
-			<!-- Secondary Feature Area — Useful for Sales -->
 			
 			
 		</section>
