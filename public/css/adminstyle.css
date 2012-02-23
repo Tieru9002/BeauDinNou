@@ -1,0 +1,12 @@
+.navadmin li{
+    display:inline; 
+    list-style-type:none;
+}
+
+.formitem {    
+    padding:4px;
+}
+
+.label {
+    width:200px;
+}
