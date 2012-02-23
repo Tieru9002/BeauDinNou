@@ -366,7 +366,8 @@ header {
 			background: #edebe8; 
 			border-bottom: 7px solid #edebe8;
 			margin-bottom: 30px;
-			position: relative; }
+			position: relative; 
+			border-top: 1px solid #fafafa;}
 						
 			#slideshow > ul, #featured > ul, .sale > ul { border-bottom: 1px solid #f4f4f4; }
 		
@@ -502,6 +503,7 @@ header {
 			#category li.even {
 				display: block;
 				height: 120px;
+				background-color: #F0EDE9;
 				border-top: 1px solid #fafafa;
 				border-bottom: 1px solid #BDBAB7;}
 				
@@ -709,7 +711,7 @@ header {
 			#cart h2 { 
 				background: #1b1a1a url(../images/cart.jpg) repeat-x top;
 				border-top: 1px solid #212121;
-				border-bottom: 1px solid #343434;
+				/*border-bottom: 1px solid #343434;*/
 				color: #ccc;
 				text-shadow: 1px 1px 1px #000;
 				padding: 0; }
@@ -722,7 +724,8 @@ header {
 				
 			#cart p {  
 				padding: 10px 15px;
-				color: #ccc; }
+				color: #ccc; 
+				border-top: 1px solid #343434;}
 				
 				#cart a, #cart b { color: #fff; }
 				
