@@ -13,7 +13,7 @@ class Products extends CI_Controller {
         //$this->cart->destroy();
          if ($this->input->post("addtocart") == "success") {
             $prod_id = $this->input->post("prodid");
-            $prodbuy = $this->Productmod->getProductById($prod_id);
+            $prodbuy = $this->Productmod->getProductById($prod_id);            
             $prod_q = $this->input->post("prod_q");
             $prod_price =  $prodbuy["price"];
             $prod_name = $prodbuy["name"];                        
@@ -70,7 +70,7 @@ class Products extends CI_Controller {
         $cartnritems = $this->cart->total_items();
         $totalprice = $this->cart->total();
         //var_dump()
-        $product_details = $this->Productmod->getProductById($id);
+        $product_details = $this->Productmod->getProductById($id);        
         
         $subprods = $this->Productmod->getProductsBySubprodId($product_details["subprod_id"]);                 
         //echo "<pre>";var_dump($subprods);

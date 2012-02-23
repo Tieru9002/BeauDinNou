@@ -35,8 +35,10 @@ class Admin extends CI_Controller {
             $featured_d = $this->input->post("featured_d");
             $featured_s = $this->input->post("featured_s");
             $promo = $this->input->post("promo");
+            $description = $this->input->post("description");            
             $specials = $this->input->post("specials");
-            $price = $this->input->post("price");            
+            $price = $this->input->post("price");
+            $subgroup_id = $this->input->post("subgroup");
             $price = number_format($price,2,'.','');
               
             if ($specials == "on") $specials = 1; else $specials = 0;
@@ -49,14 +51,14 @@ class Admin extends CI_Controller {
             }
             
             $upload_data =  $this->upload->data();
-            $picture = $upload_data["file_name"];                                             
-            
-            $prodid = $this->Productmod->addProduct($name, $cat_id, $price, $meta_key, $meta_desc, $picture, $featured_d, $featured_s, $promo, $specials);
-        }
-        
-        $categories = $this->Productmod->getCategories();        
-        
+            $picture = $upload_data["file_name"];  
+            if ($picture != "")  $this->ImageProcessor($picture);            
+            $prodid = $this->Productmod->addProduct($name, $cat_id, $price, $meta_key, $meta_desc, $picture, $description, $subgroup_id, $featured_d, $featured_s, $promo, $specials);
+        }           
+        $categories = $this->Productmod->getCategories();    
+        $subgroups = $this->Productmod->getSubgroups();        
         $data["categories"] = $categories;
+        $data["subgroups"] = $subgroups;
         $data["base_url"] = base_url();    
         $this->parser->parse("addprod.tpl",$data);
     }
@@ -80,6 +82,25 @@ class Admin extends CI_Controller {
         $data["parents"] = $parents;
         $data["base_url"] = base_url();
         $this->parser->parse("addcat.tpl",$data);
+    }
+    
+    public function listsubgroups () {
+        $this->load->model("Productmod");
+        
+        if ($this->input->post("add") == "success")
+        {
+            $name = $this->input->post("name");                        
+            
+            $catid = $this->Productmod->addSubgroup($name);
+        }
+        
+        $groups = $this->Productmod->getSubgroups();
+        
+        //echo "<pre>"; var_dump($parents);
+                
+        $data["groups"] = $groups;
+        $data["base_url"] = base_url();
+        $this->parser->parse("addgroup.tpl",$data);
     }
     
     public function editcategory ($id) {
@@ -135,6 +156,7 @@ class Admin extends CI_Controller {
             $promo  = $this->input->post("promo");
             $specials = $this->input->post("specials");
             $price = number_format($price,2,'.','');
+            $subgroup_id = $this->input->post("subgroup");
             
             if ($featured_d == "on") $featured_d = 1; else $featured_d = 0;
             if ($featured_s == "on") $featured_s = 1; else $featured_s = 0;
@@ -149,14 +171,15 @@ class Admin extends CI_Controller {
             $picture = $upload_data["file_name"];                                             
             if ($picture != "")  $this->ImageProcessor($picture);
             
-            $this->Productmod->updateProductById($id, $name, $cat_id, $price, $description, $meta_key, $meta_desc, $picture, $featured_d, $featured_s, $promo, $specials);
+            $this->Productmod->updateProductById($id, $name, $cat_id, $price, $description, $meta_key, $meta_desc, $picture, $subgroup_id, $featured_d, $featured_s, $promo, $specials);
         }        
         
         $product = $this->Productmod->getProductById($id);
         
-        $categories = $this->Productmod->getCategories();                 
+        $subgroups = $this->Productmod->getSubgroups();        
         //echo "<pre>"; var_dump($product);
         $categories = $this->Productmod->getCategories();       
+        $data["subgroups"] = $subgroups;        
         $data["product"] = $product;
         $data["categories"] = $categories;
         $data["base_url"] = base_url();        

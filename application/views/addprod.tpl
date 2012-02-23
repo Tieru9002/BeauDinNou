@@ -12,9 +12,17 @@
                 <option value="{$cat.id}">{$cat.name}</option>
             {/foreach}
         </select>
-
+         </td></tr> 
+         <tr class="formitem"><td><label for="cat">Subgrup</label></td><td>
+        <select name="subgroup">
+            {foreach $subgroups item=subgroup}
+                <option value="{$subgroup.id}">{$subgroup.subprod_name}</option>
+            {/foreach}
+        </select>
+        
         </td></tr>        
 
+        <tr class="formitem"><td>Descriere produs</td><td><textarea name="description"></textarea></td>
         <tr class="formitem"><td><label for="price">Pret</span></label></td><td><input type="text" name="price" id="price"></td></tr>        
         <tr class="formitem"><td><label for="meta_key">Meta keywords</label></td><td><input type="textarea" name="meta_key" id="meta_key"></td></tr>        
         <tr class="formitem"><td><label for="meta_desc">Meta description</label></td><td><input type="textarea" name="meta_desc" id="meta_desc"></td></tr>

@@ -37,14 +37,16 @@ class Productmod extends CI_Model {
         return $res;
     }
     
-    public function addProduct ($name, $cat_id, $price, $meta_key, $meta_desc, $picture, $featured_d, $featured_s, $promo, $special) {
+    public function addProduct ($name, $cat_id, $price, $meta_key, $meta_desc, $picture, $description, $subgroup_id, $featured_d, $featured_s, $promo, $special) {
         //var_dump($picture);
         $data = array ("name" => $name,
                        "cat_id" => $cat_id,
                        "price" => $price,
                        "meta_keywords" => $meta_key,
                        "meta_desc" => $meta_desc,
+                       "description" => $description,
                        "picture" => $picture,
+                       "subprod_id" =>$subgroup_id,
                        "featured_d" => $featured_d,
                        "featured_s" => $featured_s,
                        "promo" => $promo,
@@ -66,6 +68,22 @@ class Productmod extends CI_Model {
             $res[$i]["id"] = $row->id;
             $res[$i]["name"] = $row->name;
             $res[$i]["parent"] = $row->parent;
+            $i++;
+        }
+        
+        return $res;
+    }
+    
+    public function getSubgroups () {
+        
+        $this->db->select("*");
+        $query = $this->db->get("subproducts");
+        
+        $i=0;
+        
+        foreach ($query->result() as $row) {
+            $res[$i]["id"] = $row->id;
+            $res[$i]["subprod_name"] = $row->subprod_name;           
             $i++;
         }
         
@@ -95,6 +113,12 @@ class Productmod extends CI_Model {
                        "description" => $description);
                        
         $this->db->insert("category",$data);
+    }
+    
+    public function addSubGroup ($name) {
+        $data = array ("subprod_name" => $name);
+                       
+        $this->db->insert("subproducts",$data);
     }
     
     public function getCategoryById ($id) {
@@ -204,13 +228,14 @@ class Productmod extends CI_Model {
         return $res;
     }
     
-    public function updateProductById($id, $name, $cat_id, $price, $description, $meta_key, $meta_desc, $picture, $featured_d, $featured_s, $promo, $specials) {        
+    public function updateProductById($id, $name, $cat_id, $price, $description, $meta_key, $meta_desc, $picture, $subgroup_id, $featured_d, $featured_s, $promo, $specials) {        
         $data = array(
                'name' => $name,
                'cat_id' => $cat_id,
                'price' => $price,
                'description' => $description,
                'meta_keywords' => $meta_key,
+               "subprod_id" =>$subgroup_id,
                'meta_desc' => $meta_desc,
                'featured_d' => $featured_d,
                'featured_s' => $featured_s,

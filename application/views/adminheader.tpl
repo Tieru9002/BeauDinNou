@@ -11,6 +11,7 @@
 <li> <a style="text-decoration:none;" href="{$base_url}index.php/admin/listcategories">Categories ||</a> </li>
 <li> <a style="text-decoration:none;" href="{$base_url}index.php/admin"> Products ||</a> </li>
 <li> <a style="text-decoration:none;" href="{$base_url}index.php/admin/listpromo"> Promo ||</a> </li>
+<li> <a style="text-decoration:none;" href="{$base_url}index.php/admin/listsubgroups"> Subgroups ||</a> </li>
 </ul>
 
 {block name=submenu}

@@ -13,7 +13,14 @@
             {/foreach}
         </select>
 
-        </td></tr>                
+        </td></tr>  
+        <tr class="formitem"><td><label for="subgrup">Subgrup</label></td><td>
+         <select name="subgroup">
+            {foreach $subgroups item=subgroup}
+                <option value="{$subgroup.id}" {if $subgroup.id == $product.subprod_id} SELECTED {/if}}>{$subgroup.subprod_name}</option>
+            {/foreach}
+        </select>
+        </td></tr>  
         <tr class="formitem"><td><label for="price">Pret</span></label></td><td><input type="text" name="price" value="{$product.price}" id="price"></td></tr>        
         <tr class="formitem"><td>Descriere produs</td><td><textarea name="description">{$product.description}</textarea></td>
         <tr class="formitem"><td><label for="meta_key">Meta keywords</label></td><td><input type="textarea" name="meta_key" value="{$product.meta_key}" id="meta_key"></td></tr>        

@@ -16,7 +16,7 @@
                                         {foreach from=$subprods item=subproditem name=carusel}
 					<li>
 						<h1>{$subproditem.name}</h1>
-						<img src="{$base_url}/public/uploads/{$subproditem.picture}" alt="Product Image" />
+						<img src="{$base_url}/public/uploads/slider_{$product.picture}" alt="Product Image" />
 					</li>
 					<!-- Repeatable Item End -->
                                         {/foreach}
