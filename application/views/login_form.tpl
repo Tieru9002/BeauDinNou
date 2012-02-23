@@ -16,3 +16,17 @@
 				</form>
 				
 			</section>
+      
+<section id="login2">
+				<h2>Nume om</h2>
+                <form action="" method="post" id="log">
+                	<div id="datepers"><p><a href="www.google.ro"><u>Date personale</u></a></p>
+    				<a href="www.google.ro"><p><u>Date de facturare</u></a></p>
+                    <a href="www.google.ro"><p><u>Adrese de livrare</u></a></p>
+					<a href="www.google.ro"><p><u>Schimba parola</u></a></p>
+            	<input type="button" name="Delogheaza-ma" class="button" id="button3" value="Delogheaza-ma" ></div>
+                	
+                    <div style="clear:both"></div>
+                </form>
+				
+			</section>
