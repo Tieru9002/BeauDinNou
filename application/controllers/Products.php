@@ -9,16 +9,17 @@ class Products extends CI_Controller {
     }
     
     public function singleProduct ($id) {
-        $this->load->model("Productmod");
+        $this->load->model("Productmod");        
         //$this->cart->destroy();
          if ($this->input->post("addtocart") == "success") {
             $prod_id = $this->input->post("prodid");
             $prodbuy = $this->Productmod->getProductById($prod_id);            
             $prod_q = $this->input->post("prod_q");
             $prod_price =  $prodbuy["price"];
-            $prod_name = $prodbuy["name"];                        
-            //$rowid = $this->input->post("rowid");            
-            
+            $prod_name = $prodbuy["name"];               
+            //$rowid = $this->input->post("rowid");                        
+            $prod_name = quotes_to_entities($prod_name);
+            var_dump($prod_name);
             $cartdata = array(
                'id'      => $prod_id,
                'qty'     => $prod_q,
@@ -147,6 +148,7 @@ class Products extends CI_Controller {
         
         //echo "<pre>"; var_dump($this->cart->contents());
         $cart_products = $this->Productmod->getItemsByIds($item_ids);
+               
 //        echo "<pre>";
 //        var_dump($this->cart->contents());
 //        echo "</pre>";
@@ -164,7 +166,7 @@ class Products extends CI_Controller {
         $data['cartnritems'] = $cartnritems;
         $data['totalprice'] = $totalprice;
         //$data["cart_products"] = $cart_products;
-        $data['cartitems'] = $this->cart->contents();
+        $data['cartitems'] = $this->cart->contents();        
         $data["base_url"] = base_url();          
         //$data["cart_products"] = $cart_products;
         $data["base_url"] = base_url();                
