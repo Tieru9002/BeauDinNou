@@ -388,9 +388,11 @@ class Productmod extends CI_Model {
         
     }
     
-    public function getProductsByCategoryId ($id) {
+    public function getProductsByCategoryId ($id, $offset=0) {
+        
         $this->db->select("*");        
         $this->db->where("cat_id", $id);
+        $this->db->limit(10, $offset);
         $query = $this->db->get("products");
         $i=0;
                 
@@ -401,6 +403,18 @@ class Productmod extends CI_Model {
             $res[$i]["picture"] = $row->picture;   
             $res[$i]["description"] = $row->description;
             $i++;
+        }
+        
+        return $res;
+    }
+    
+    public function countCategoryProducts ($id) {
+        $this->db->select("COUNT(id) as nr_items");        
+        $this->db->where("cat_id", $id);        
+        $query = $this->db->get("products");        
+                
+        foreach ($query->result() as $row) {
+            $res["nr_items"] = $row->nr_items;                        
         }
         
         return $res;

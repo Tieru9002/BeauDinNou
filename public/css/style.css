@@ -501,6 +501,7 @@ header {
 							margin: 5px;}
 						
 			#category li.even {
+
 				display: block;
 				height: 120px;
 				background-color: #F0EDE9;
@@ -526,6 +527,7 @@ header {
 							width: 465px; } 
 						
 						#featured .product_dreapta h2 {
+
 									float: left;
 									padding-top: 8px;
 									padding-left: 8px;
@@ -640,6 +642,18 @@ header {
 				/*margin-bottom:106px;*/
 			
 			}
+
+			#datepers {
+				width:100px;
+				float:left;
+				display:block;}
+				
+				#datepers p{line-height:15px;}
+			
+			#button3{margin-bottom:15px;}
+						
+			
+		
                         .user_log {width:195px;}
                         .register_input {width:310px;}
                         .register_label {font-family: 'Abel', Helvetica, Arial, Verdana, sans-serif; font-size:20px; color: #7A3F5C; margin-right: 15px;}
