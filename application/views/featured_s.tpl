@@ -4,7 +4,7 @@
                 <li class="slide">
                         {foreach from=$featured_s item=item}
                         <div class="product">
-                                <img src="{$base_url}/public/uploads/{$item.picture}" alt="Product Image" />
+                                <img src="{$base_url}/public/uploads/slider_{$item.picture}" alt="Product Image" />
                                 <div class="overlay">
                                         <div class="price">
                                                 <h2>{$item.name}</h2>

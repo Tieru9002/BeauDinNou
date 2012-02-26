@@ -158,60 +158,9 @@
 			{include file='cartsummary.tpl'}
 			
 			<!-- Popular Products -->
-			<section id="popular">
-				<h2>Popular Products</h2>
-				<ul>
-					<li class="even">
-						<div class="product-preview"><a href="product.htm" title="E-Book"><img src="assets/product-6.jpg" alt="E-Book" /></a></div>
-						<a href="product.htm" title="E-Book"><b>E-Book</b></a>
-						<small>29.00</small>
-					</li>
-					<li class="odd">
-						<div class="product-preview"><a href="product.htm" title="Generic Cards"><img src="assets/product-5.jpg" alt="Generic Cards" /></a></div>
-						<a href="product.htm" title="Generic Business Cards"><b>Generic Cards</b></a>
-						<small>12.99</small>
-					</li>
-					<li class="even">
-						<div class="product-preview"><a href="product.htm" title="Rockstar Freelancer"><img src="assets/product-4.jpg" alt="Rockstar Freelancer" /></a></div>
-						<a href="product.htm" title="Rockstar Freelancer Paperback"><b>Rockstar Freelancer</b></a>
-						<small>29.00</small>
-					</li>
-					<li class="odd">
-						<div class="product-preview"><a href="product.htm" title="Moo Cards"><img src="assets/product-2.jpg" alt="Moo Cards" /></a></div>
-						<a href="product.htm" title="Moo Cards"><b>Moo Cards</b></a>
-						<small>33.00 <del>34.99</del></small>
-					</li>
-					<li class="even">
-						<div class="product-preview"><a href="product.htm" title="Rockable Cards"><img src="assets/product-3.jpg" alt="Rockable Cards" /></a></div>
-						<a href="product.htm" title="Rockable Cards"><b>Rockable Cards</b></a>
-						<small>7.99</small>
-					</li>
-				</ul>
-			</section>
-			
-			<!-- Tag Filter -->
-			<section id="tags">
-				<h2>Browse by Tag</h2>
-				<ul>
-					<li class="even"><a href="collection.htm" title="Advertisement">Advertisement</a></li>
-					<li class="odd"><a href="collection.htm" title="Book">Book</a></li>
-					<li class="even"><a href="collection.htm" title="Brochure">Brochure</a></li>
-					<li class="odd"><a href="collection.htm" title="Business Cards">Business Cards</a></li>
-					<li class="even"><a href="collection.htm" title="Paperback">Paperback</a></li>
-					<li class="odd"><a href="collection.htm" title="E-Book">E-Book</a></li>
-				</ul>
-			</section>
-			
-			<!-- Contact Information -->
-			<section id="contact">
-				<h2>Get in Touch</h2>
-				<ul>
-					<li class="even address">Street Name, ZIP Code, City</li>
-					<li class="odd phone"><a href="tel:+4951819313356" title="Phone">+49 5181 9313356</a></li>
-					<li class="even email"><a href="mailto:hello@indiqo.eu" title="E-Mail">hello@indiqo.eu</a></li>
-					<li class="odd web"><a href="http://indiqo.eu" title="Website">www.indiqo.eu</a></li>
-				</ul>
-			</section>
+			{include file='login_form.tpl'}
+                        
+                        {include file='contact_info.tpl'}
 		
 		</aside>
 		

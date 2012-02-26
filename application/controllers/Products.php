@@ -9,7 +9,8 @@ class Products extends CI_Controller {
     }
     
     public function singleProduct ($id) {
-        $this->load->model("Productmod");        
+        $this->load->model("Productmod");     
+        $this->load->model("Misc");
         //$this->cart->destroy();
          if ($this->input->post("addtocart") == "success") {
             $prod_id = $this->input->post("prodid");
@@ -81,6 +82,9 @@ class Products extends CI_Controller {
             }
         }
         //var_die($subprods);
+        
+        $contact_details = $this->Misc->getContactDetails();        
+        $data["contact_details"] = $contact_details;        
         $data["rootcats"] = $this->Productmod->getRootCategories();
         $data['subprods'] = $subprods;
         $data["product"] = $product_details;
@@ -96,7 +100,8 @@ class Products extends CI_Controller {
     }
     
     public function singleCat ($id, $pn=0) {
-        $this->load->model("Productmod");                
+        $this->load->model("Productmod"); 
+        $this->load->model("Misc");
         
         $category_details = $this->Productmod->getCategoryById($id);               
         
@@ -105,8 +110,8 @@ class Products extends CI_Controller {
         foreach ($products as $key=>$value) {
             $products[$key]["price"] = number_format($value["price"],2);
         }
-        $this->load->library('pagination');
-        $base_url = base_url();
+        $this->load->library('pagination');        
+        $base_url = base_url();       
         $config['base_url'] = $base_url."index.php/products/singlecat/".$id;
         $config['total_rows'] = $count["nr_items"];
         $config['per_page'] = 10;
@@ -114,9 +119,10 @@ class Products extends CI_Controller {
 
         $this->pagination->initialize($config);
 
-        
+        $contact_details = $this->Misc->getContactDetails();
         
         $data = array();
+        $data["contact_details"] = $contact_details;
         $data["pagination"] = $this->pagination->create_links();
         $data['cartitems'] = $this->cart->contents();
         $data["products"] = $products;
