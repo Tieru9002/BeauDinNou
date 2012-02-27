@@ -1,4 +1,6 @@
-<section id="login">
+<link rel="stylesheet" type="text/css" href="{$base_url}public/css/style.css" media="screen" />
+
+<section id="login" style="width:200px; height:200px;">
 				<h2>Contul Tau</h2>                                   
                 <form action="" class="log" method="post">
 					<div id="logged_out" {if $islogged != 1}  style="display:block" {else} style="display:none;"{/if}>
@@ -26,3 +28,5 @@
                 </form>
 				
 			</section>
+
+blablablalbal

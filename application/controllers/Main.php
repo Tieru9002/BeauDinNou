@@ -2,8 +2,8 @@
 class Main extends CI_Controller {
     
         public function index ()  {          
-            
-            $this->session->sess_destroy();
+            var_dump($this->session->userdata("logged_in"));
+            //$this->session->sess_destroy();
             //echo "<pre>";var_dump($this->session->all_userdata()); echo "</pre>";
             $this->load->model("Usermod"); 
             $this->load->model("Misc");
@@ -84,6 +84,7 @@ class Main extends CI_Controller {
             //echo "<pre>"; var_dump($root_categories); echo"</pre>";
             $cartnritems = $this->cart->total_items();
             $totalprice = $this->cart->total();
+            $data["islogged"] = $this->session->userdata("logged_in");
             $data["contact_details"] = $contact_details;
             $data["featured_d1"] = $featured_d1;
             $data["featured_d2"] = $featured_d2;

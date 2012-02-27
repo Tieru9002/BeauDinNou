@@ -647,11 +647,12 @@ header {
                                     }
 			
 				#logged_in {display:none;}
-			
+                                
 			#Datepersonale_titlu {border-bottom:solid 1px #bdbab7;}
 			
 			#Datepersonale_form {padding-top:7px;}
-			
+			.display {display:block;}
+                        .hide {display:none;}
 			
                         .user_log {width:195px;}
                         .register_input {width:310px;}
