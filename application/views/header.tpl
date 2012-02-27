@@ -15,7 +15,7 @@
             <script type="text/javascript">
             $(document).ready(function(){
     
-        $("#button1").click(function(){
+        $("#login_btn").click(function(){
 
         username=$("#email").val();
         password=$("#password").val();
@@ -55,6 +55,10 @@
         <!-- Script Controls -->
         <script src="{$base_url}public/js/scripts.js"></script>        
         
+		<!-- Add fancyBox -->
+		<link rel="stylesheet" href="{$base_url}fancybox/source/jquery.fancybox.css?v=2.0.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="{$base_url}fancybox/source/jquery.fancybox.pack.js?v=2.0.5"></script>
+		
 </head>
 <body>
 
