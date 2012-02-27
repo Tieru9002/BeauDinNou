@@ -66,8 +66,6 @@ class User extends CI_Controller {
                     } else {
                     echo('DONE');        
                     }   
-                    
-
                 }
                 else{
                     $data["errors"] = $errors;
@@ -86,9 +84,7 @@ class User extends CI_Controller {
     }
     
     public function login() {
-        $this->load->model("Usermod");
-        $msg = "";
-        $data = array();        
+        $this->load->model("Usermod");                
         if (!$this->islogged()) {
             if ($this->input->post("login") == "success") {
                 $email = $this->input->post("email");
@@ -102,7 +98,7 @@ class User extends CI_Controller {
                 if ($id) {
                     $userdata = $this->Usermod->getUserDetails($id);
 
-                    echo "<pre>"; var_dump($userdata); echo "</pre>";
+                    
 
                     $usersess = array(
                        'nume'      => $userdata["nume"],
@@ -110,30 +106,25 @@ class User extends CI_Controller {
                        'email'     => $userdata["email"],
                        'level'     => $userdata["level"],
                        'logged_in' => TRUE
-                   );
+                   );                    
 
                    $this->session->set_userdata($usersess);
-                }      
+                   //var_dum($this->session->set_userdata($usersess));
+                   echo "true";
+                }     
+                    else echo "false";
                 
                 if ($this->session->userdata("logged_in") == TRUE) {
                 $msg = "Bine ai venit ".$this->session->userdata("prenume");
                 $data["msg"] = $msg;        
-                $this->parser->parse("profile.tpl", $data);            
+                //$this->parser->parse("profile.tpl", $data);            
                 }
                 else {
                     $data["msg"] = "Email-ul sau parola sunt incorecte";
-                    $this->parser->parse("login.tpl", $data);
-                }         
-            }
-            else {
-                $this->parser->parse("login.tpl");
-            }
-        }
-        else {
-            $msg = "Salut". $this->session->userdata("prenume");
-            $datalogout["msg"] = $msg;
-            $this->parser->parse("profile.tpl",$datalogout);
-        }
+                  //  $this->parser->parse("login.tpl", $data);
+                }                                                   
+            }            
+        }        
     }
     
     public function logout() {
