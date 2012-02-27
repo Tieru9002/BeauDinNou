@@ -1,5 +1,18 @@
 $(document).ready(function() {
 
+	$(".various").fancybox({
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: false,
+		width		: '70%',
+		height		: '70%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		type		: 'iframe'
+	});
+
 	/* Drop Down Menu */
 	$("header li.dropdown").click(function () {
       	$(this).toggleClass("expanded");
@@ -33,6 +46,23 @@ $(document).ready(function() {
 		$(this).attr("value","").css("width","201px");
 	}).focusout(function () {
 		$(this).css("width","85px");
+	});
+	
+	/*Log in animation */
+	
+	$("#login_btn").click(function() {
+		$("#logged_out").slideUp(function() {
+			$("#logged_in").slideDown();
+			});
+		
+	});
+	
+	/*Log out animation */
+	$("#logout_btn").click(function() {
+		$("#logged_in").slideUp(function() {
+			$("#logged_out").slideDown();
+			});
+		
 	});
 	
 	/* Remove Contents fron Newsletter Input Field */
