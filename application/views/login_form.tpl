@@ -17,7 +17,7 @@
 						<a href="www.google.ro"><p><u>Date personale</u></p></a>
     					<a href="www.google.ro"><p><u>Date de facturare</u></p></a>
                     	<a href="www.google.ro"><p><u>Adrese de livrare</u></p></a>
-						<a href="www.google.ro"><p><u>Schimba parola</u></p></a>
+						<a class="various" href="http://www.youtube.com/embed/4mmCMUPCNgE?autoplay=1"><p><u>Schimba parola</u></p></a>
             			<input type="button" name="Delogheaza-ma" class="button" id="logout_btn" value="Delogheaza-ma" >
 					</div>
                 	
