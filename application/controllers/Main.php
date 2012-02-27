@@ -2,7 +2,7 @@
 class Main extends CI_Controller {
     
         public function index ()  {          
-            //$this->session->sess_destroy();
+            $this->session->sess_destroy();
             //echo "<pre>";var_dump($this->session->all_userdata()); echo "</pre>";
             $this->load->model("Usermod"); 
             $this->load->model("Misc");

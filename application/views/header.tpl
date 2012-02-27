@@ -23,7 +23,8 @@
             type: "POST",
             url: "http://localhost/iarbeau/index.php/user/login",
             data: "email="+username+"&pass="+password+"&login=success",
-            success: function(html){                
+            success: function(html){
+                alert(html);
                 if (html=="true") {
                     alert ("e corecte");
                 }
