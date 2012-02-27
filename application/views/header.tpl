@@ -11,7 +11,33 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        {literal}
+            <script type="text/javascript">
+            $(document).ready(function(){
+    
+        $("#login_btn").click(function(){
 
+        username=$("#email").val();
+        password=$("#password").val();
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/iarbeau/index.php/user/login",
+            data: "email="+username+"&pass="+password+"&login=success",
+            success: function(html){                
+                if (html=="true") {
+                    alert ("e corecte");
+                }
+                else {
+                alert("nu e corect");
+                }
+            }    
+        });        
+    });
+});    
+                
+            
+            </script>
+        {/literal}
         <!-- 	
 	Simple Carousel
 	Copyright (c) 2010 Tobias Zeising, http://www.aditu.de

@@ -94,6 +94,7 @@
         $res = array();
        
          foreach ($query->result() as $row) {
+           $res["id"] = $row->id;
            $res["email"] = $row->email;
            $res["status"] = $row->status;
            $res["user_code"] = $row->user_code;
@@ -103,6 +104,24 @@
         }
         
         return $res;
+    }
+    
+    public function generateUser($phone) {
+         $data = array ("status" => 2,
+                        "phone"=> $phone);                        
+        
+        $this->db->insert('users',$data);
+        
+        return $this->db->insert_id();
+    }
+    
+    public function generateAddress($user_id, $address) {
+        $data = array ("user_id" => $user_id,
+                       "address"=> $address);                        
+        
+        $this->db->insert('addresses',$data);
+        
+        return $this->db->insert_id();
     }
 }
 ?>

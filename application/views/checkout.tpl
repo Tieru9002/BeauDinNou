@@ -27,10 +27,9 @@
 					<div class="total">
 						<h3>Total: <b>{$totalprice}</b></h3>
 					</div>
-                                        <input type="hidden" name="updatecart" value="success" />
-					<div class="right">
-						<input type="submit" name="update" class="button" value="Update" />
-						<input type="submit" name="checkout" class="button" value="Checkout" />
+                                        <input type="hidden" name="sendorder" value="success" />
+					<div class="right">						
+						<input type="submit" name="send" class="button" value="Trimite comanda" />
 					</div>	
 				</form>
 								

@@ -2,11 +2,13 @@
 class Main extends CI_Controller {
     
         public function index ()  {          
-            
+            //$this->session->sess_destroy();
+            //echo "<pre>";var_dump($this->session->all_userdata()); echo "</pre>";
             $this->load->model("Usermod"); 
             $this->load->model("Misc");
-            if (!$this->session->userdata("logged_in")) {
+            //var_dump($this->session->userdata('user_id'));
             if ($this->input->post("login") == "success") {
+                echo "2";
                 $email = $this->input->post("email");
                 $pass = $this->input->post("pass");
                 
@@ -14,7 +16,7 @@ class Main extends CI_Controller {
 
                 $id = "";                
                 $id = $this->Usermod->login($email, $pass);
-
+                
                 if ($id) {                    
                     $userdata = $this->Usermod->checkUserDetails($id);                    
 
@@ -23,10 +25,15 @@ class Main extends CI_Controller {
                        'prenume'   => $userdata["prenume"],
                        'email'     => $userdata["email"],
                        'level'     => $userdata["level"],
-                       'logged_in' => TRUE
-                   );
-
+                       'logged_in' => TRUE,
+                       'user_id'   => $userdata["id"]
+                   );                   
+                   echo "nu am setat user  data"; 
                    $this->session->set_userdata($usersess);
+                   echo "am setat user data";
+                   echo "<pre>";
+                    
+                    echo "</pre>";
                 }      
                 
                 if ($this->session->userdata("logged_in") == TRUE) {
@@ -39,7 +46,9 @@ class Main extends CI_Controller {
             }
             else {                
             }
-        }
+            echo "<pre>";
+            //var_dump($this->session->all_userdata());
+            echo "</pre>";
             
             $this->load->model("Productmod");
             
