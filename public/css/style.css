@@ -63,6 +63,8 @@ textarea, input {
 textarea:focus, input:focus {
 	background: #fff;
 	outline: none; }
+input.button:focus {background: #7a3f5c;    }                
+   input.button:focus:hover { background: #88b2ae;    }                 
  
 select, option {
 	background: #ffffff;
@@ -640,6 +642,9 @@ header {
 				/*margin-bottom:106px;*/
 			
 			}
+                        
+                        #login_btn {width:100px; 
+                                    }
 			
 				#logged_in {display:none;}
 			
@@ -654,6 +659,7 @@ header {
 			#uitat{height:30px; display:block;}
 			#register_button1 {float:right;}
 			.category h1 { padding: 0 15px !important; }
+                     
 			
                         .validation {
                         color: #D63301;                        

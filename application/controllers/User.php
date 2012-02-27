@@ -85,7 +85,7 @@ class User extends CI_Controller {
     
     public function login() {
         $this->load->model("Usermod");                   
-        if (!$this->islogged()) {            
+        if (!$this->islogged()) {             
             if ($this->input->post("login") == "success") {                
                 $email = $this->input->post("email");
                 $pass = $this->input->post("pass");                

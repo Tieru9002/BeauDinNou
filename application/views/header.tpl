@@ -23,13 +23,13 @@
             type: "POST",
             url: "http://localhost/iarbeau/index.php/user/login",
             data: "email="+username+"&pass="+password+"&login=success",
-            success: function(html){
-                alert(html);
+            success: function(html){                
                 if (html=="true") {
-                    alert ("e corecte");
+                   	$("#logged_out").slideUp(function() {
+			$("#logged_in").slideDown();
+			});
                 }
                 else {
-                    alert("nu e corect");
                 }
             }    
         });        

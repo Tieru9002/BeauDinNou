@@ -2,13 +2,14 @@
 class Main extends CI_Controller {
     
         public function index ()  {          
+            
             $this->session->sess_destroy();
             //echo "<pre>";var_dump($this->session->all_userdata()); echo "</pre>";
             $this->load->model("Usermod"); 
             $this->load->model("Misc");
+            
             //var_dump($this->session->userdata('user_id'));
-            if ($this->input->post("login") == "success") {
-                echo "2";
+            if ($this->input->post("login") == "success") {                
                 $email = $this->input->post("email");
                 $pass = $this->input->post("pass");
                 
@@ -29,13 +30,13 @@ class Main extends CI_Controller {
                        'user_id'   => $userdata["id"]
                    );                   
                    echo "nu am setat user  data"; 
-                   $this->session->set_userdata($usersess);
+                   
                    echo "am setat user data";
                    echo "<pre>";
                     
                     echo "</pre>";
                 }      
-                
+                var_dump($this->session->userdata("logged_in"));
                 if ($this->session->userdata("logged_in") == TRUE) {
                 $msg = "Bine ai venit ".$this->session->userdata("prenume");
                 $data["msg"] = $msg;                        

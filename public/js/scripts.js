@@ -50,12 +50,7 @@ $(document).ready(function() {
 	
 	/*Log in animation */
 	
-	$("#login_btn").click(function() {
-		$("#logged_out").slideUp(function() {
-			$("#logged_in").slideDown();
-			});
-		
-	});
+	
 	
 	/*Log out animation */
 	$("#logout_btn").click(function() {

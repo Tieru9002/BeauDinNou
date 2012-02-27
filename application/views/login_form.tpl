@@ -5,8 +5,8 @@
 					<div id="logged_out">
     				<input id="email" class="user_log" type="text" name="email" class="login" placeholder="Adresa de email" value="">
     				<input id="password" class="user_log" type="password" name="pass" class="login" placeholder="Parola" value="" onclick="this.value='';">    
-					</br>
-					<input type="" name="Intra in cont" class="button" id="login_btn"  value="Intra in cont"> 
+					
+                                <input type="button" name="Intra in cont" class="button" id="login_btn"  value="Intra in cont"> 
                     <a href="{$base_url}index.php/user/register"><input type="button" name="Cont nou" class="button" id="button2" value="Cont nou" ></a>
 
 					<div style="clear:both;"></div>
