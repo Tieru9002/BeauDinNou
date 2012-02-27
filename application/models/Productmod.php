@@ -489,7 +489,7 @@ class Productmod extends CI_Model {
         
         $this->db->insert('orders',$data);
         
-        return $this->db->insert_id();        
+        return $this->db->insert_id();
     }
     
    

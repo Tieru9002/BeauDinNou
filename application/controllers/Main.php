@@ -2,11 +2,11 @@
 class Main extends CI_Controller {
     
         public function index ()  {          
-            
+            //$this->session->sess_destroy();
+            //echo "<pre>";var_dump($this->session->all_userdata()); echo "</pre>";
             $this->load->model("Usermod"); 
             $this->load->model("Misc");
-            echo "3";            
-            echo "1";
+            //var_dump($this->session->userdata('user_id'));
             if ($this->input->post("login") == "success") {
                 echo "2";
                 $email = $this->input->post("email");
@@ -32,7 +32,7 @@ class Main extends CI_Controller {
                    $this->session->set_userdata($usersess);
                    echo "am setat user data";
                    echo "<pre>";
-                    var_dump($this->session->all_userdata());
+                    
                     echo "</pre>";
                 }      
                 
