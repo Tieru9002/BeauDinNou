@@ -634,14 +634,17 @@ header {
 			
 			}
 			
-			#log{padding-left:8px;
+			.log{padding-left:8px;
 				padding-right:8px;
 				padding-top:6px;
 				/*margin-bottom:106px;*/
 			
 			}
 			
+				#logged_in {display:none;}
+			
 			#Datepersonale_titlu {border-bottom:solid 1px #bdbab7;}
+			
 			#Datepersonale_form {padding-top:7px;}
 			
 			

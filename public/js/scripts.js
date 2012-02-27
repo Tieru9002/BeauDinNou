@@ -35,6 +35,18 @@ $(document).ready(function() {
 		$(this).css("width","85px");
 	});
 	
+	/*Log in animation */
+	
+	$("#login_btn").click(function() {
+		$("#logged_out").slideUp(function() {
+			$("#logged_in").slideDown();
+			});
+		
+	});
+	
+	/*Log out animation */
+	
+	
 	/* Remove Contents fron Newsletter Input Field */
 	
 	$(".newsletter-input").focus(function() {
