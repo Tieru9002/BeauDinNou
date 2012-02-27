@@ -29,7 +29,7 @@
                     alert ("e corecte");
                 }
                 else {
-                alert("nu e corect");
+                    alert("nu e corect");
                 }
             }    
         });        
