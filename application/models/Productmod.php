@@ -463,6 +463,35 @@ class Productmod extends CI_Model {
         return $res;
     }
     
+    public function generateCart () {
+        
+        $data = array ("status" => 1);        
+        $this->db->insert('generated_carts',$data);
+        
+        return $this->db->insert_id();        
+    }
+    
+    public function generatePurchase ($cart_id, $prod_id, $qty) {
+        $data = array ("cart_id" => $cart_id,
+                       "prod_id" => $prod_id,
+                       "qty"     => $qty);        
+        $this->db->insert('purchases',$data);
+        
+        return $this->db->insert_id();        
+    }
+    
+    public function generateOrder($cart_id, $userid, $order_value) {
+        
+        $data = array ("cart_id" => $cart_id,
+                       "user_id" => $userid,
+                       "total_value" => $order_value
+                      );        
+        
+        $this->db->insert('orders',$data);
+        
+        return $this->db->insert_id();        
+    }
+    
    
 }
 ?>

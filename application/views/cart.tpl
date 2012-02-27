@@ -30,7 +30,7 @@
                                         <input type="hidden" name="updatecart" value="success" />
 					<div class="right">
 						<input type="submit" name="update" class="button" value="Update" />
-						<input type="submit" name="checkout" class="button" value="Checkout" />
+						<a href="{$base_url}index.php/products/checkout"><input name="Checkout" class="button" id="button3" value="Checkout" ></a>
 					</div>	
 				</form>
 								

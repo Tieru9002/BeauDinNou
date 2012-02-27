@@ -11,7 +11,7 @@ class Products extends CI_Controller {
     public function singleProduct ($id) {
         $this->load->model("Productmod");     
         $this->load->model("Misc");
-        //$this->cart->destroy();
+        
          if ($this->input->post("addtocart") == "success") {
             $prod_id = $this->input->post("prodid");
             $prodbuy = $this->Productmod->getProductById($prod_id);            
@@ -82,7 +82,7 @@ class Products extends CI_Controller {
             }
         }
         //var_die($subprods);
-        
+//      $this->session->sess_destroy();
         $contact_details = $this->Misc->getContactDetails();        
         $data["contact_details"] = $contact_details;        
         $data["rootcats"] = $this->Productmod->getRootCategories();
@@ -91,7 +91,7 @@ class Products extends CI_Controller {
         $data['cartnritems'] = $cartnritems;
         $data['totalprice'] = $totalprice;
         $data['popular'] = $this->Productmod->getPopularProducts();
-//        $data['rowid'] = $rowid;
+//      $data['rowid'] = $rowid;
         $data['cartitems'] = $this->cart->contents();
        //echo "<pre>"; var_dump($this->cart->contents()); echo "</pre>";
         $data["base_url"] = base_url();                
@@ -211,8 +211,35 @@ class Products extends CI_Controller {
     
     public function checkout() {
         $this->load->model("Productmod");
+        $this->load->model("Usermod");
+                
         $popular = $this->Productmod->getPopularProducts();
         $root_categories = $this->Productmod->getRootCategories();
+        echo "<pre>";
+        //var_dump($this->cart->total());
+        echo "</pre>";
+        if ($this->input->post("sendorder") == "success") {
+            $cart_id = $this->Productmod->generateCart();
+            echo "am generat cartul";
+            if (!$this->session->userdata('user_id')) {                                
+                $new_user_id = $this->Usermod->generateUser("0726989460");               
+                $address_id = $this->Usermod->generateAddress($new_user_id, "Adresa dummy");                
+                $order_value = $this->cart->total();
+                $order_id = $this->Productmod->generateOrder($cart_id, $new_user_id, $order_value);                
+            }
+            else {
+                $order_value = $this->cart->total();
+                $order_id = $this->Productmod->generateOrder($cart_id, $this->session->userdata('user_id'), $order_value);
+            }
+            
+            foreach ($this->cart->contents() as $key => $value) {                                        
+                $this->Productmod->generatePurchase($cart_id, $value["id"], $value["qty"]);                                
+            }
+            echo "1";
+            $this->cart->destroy();
+        }
+
+        $data['cartitems'] = $this->cart->contents();                    
         $data["popular"] = $popular;
         $data["rootcats"] = $root_categories; 
         $data["base_url"] = base_url();
