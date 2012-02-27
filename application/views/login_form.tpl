@@ -18,7 +18,7 @@
     					<a href="www.google.ro"><p><u>Date de facturare</u></p></a>
                     	<a href="www.google.ro"><p><u>Adrese de livrare</u></p></a>
 						<a href="www.google.ro"><p><u>Schimba parola</u></p></a>
-            			<input type="button" name="Delogheaza-ma" class="button" id="button3" value="Delogheaza-ma" >
+            			<input type="button" name="Delogheaza-ma" class="button" id="logout_btn" value="Delogheaza-ma" >
 					</div>
                 	
                     <div style="clear:both"></div>

@@ -45,7 +45,12 @@ $(document).ready(function() {
 	});
 	
 	/*Log out animation */
-	
+	$("#logout_btn").click(function() {
+		$("#logged_in").slideUp(function() {
+			$("#logged_out").slideDown();
+			});
+		
+	});
 	
 	/* Remove Contents fron Newsletter Input Field */
 	
