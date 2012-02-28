@@ -129,8 +129,7 @@ class Products extends CI_Controller {
         $data["category"] = $category_details;
         $data["base_url"] = base_url();
         $data["rootcats"] = $this->Productmod->getRootCategories();
-        $data['popular'] = $this->Productmod->getPopularProducts();
-        $data["currentpage"] = 
+        $data['popular'] = $this->Productmod->getPopularProducts();        
         $this->parser->parse("singlecat.tpl", $data);        
     }
     
@@ -219,8 +218,7 @@ class Products extends CI_Controller {
         //var_dump($this->cart->total());
         echo "</pre>";
         if ($this->input->post("sendorder") == "success") {
-            $cart_id = $this->Productmod->generateCart();
-            echo "am generat cartul";
+            $cart_id = $this->Productmod->generateCart();            
             if (!$this->session->userdata('user_id')) {                                
                 $new_user_id = $this->Usermod->generateUser("0726989460");               
                 $address_id = $this->Usermod->generateAddress($new_user_id, "Adresa dummy");                
@@ -244,6 +242,10 @@ class Products extends CI_Controller {
         $data["rootcats"] = $root_categories; 
         $data["base_url"] = base_url();
         $this->parser->parse("checkout.tpl", $data);
+    }
+    
+    public function search ( $query ) {
+        
     }
     
 

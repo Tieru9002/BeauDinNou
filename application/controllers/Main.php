@@ -6,9 +6,38 @@ class Main extends CI_Controller {
             //$this->session->sess_destroy();
             //echo "<pre>";var_dump($this->session->all_userdata()); echo "</pre>";
             $this->load->model("Usermod"); 
-            $this->load->model("Misc");
+            $this->load->model("Misc");            
+            if ($this->input->get("searchstatus") == "success") {
+                $this->load->model("Productmod");
+                $query = $this->input->get("searchquery");
+                $search = "/\bde\b|\bla\b|\bsi\b|\bin\b|\bcu\b|\din\b|\in\b|\bpe\b|\bpentru\b|\balte\b|\bce\b|\bcine\b|\bdecat\b/i";                
+                $replace = "";
+                $query = preg_replace($search, "", $query);
+                $query = trim($query);                
+                $marks = array(",","\'","\"",".",";");
+                $query = str_replace($marks, "", $query);
+                $query = trim($query);                
+                $query = str_replace("  ", " ", $query);                
+                $results = $this->Productmod->searchFull($query);
+                                
+                //var_die($results);
+                
+                //$exploded_querys = explode(" ", $query);
+                
+                //$extraresults = $this->Productmod->extraResults($exploded_querys);
+                
+                
+                $contact_details = $this->Misc->getContactDetails();
+                $data["products"] = $results;
+                $data["contact_details"] = $contact_details;
+                $data["rootcats"] = $this->Productmod->getRootCategories();
+                $data['popular'] = $this->Productmod->getPopularProducts();     
+                $data["query"] = $query;
+                $this->parser->parse("listProducts.tpl", $data);
+                
+            }
+            else {
             
-            //var_dump($this->session->userdata('user_id'));
             if ($this->input->post("login") == "success") {                
                 $email = $this->input->post("email");
                 $pass = $this->input->post("pass");
@@ -97,7 +126,14 @@ class Main extends CI_Controller {
             $data['specials'] = $specials;
             $data['cartitems'] = $this->cart->contents();
             $data["base_url"] = base_url();
-            $this->parser->parse("homepage.tpl",$data);            
+            $this->parser->parse("homepage.tpl",$data); 
+            }
+        }
+        
+        public function listResults ( $query ) {
+            $this->load->model("Productmod");
+            $this->load->model("Misc");
+           
         }
     
 }    

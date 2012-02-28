@@ -34,6 +34,24 @@
             }    
         });        
     });
+        $("#logout_btn").click(function(){
+        
+        $.ajax({
+            type: "GET",
+            url: "http://localhost/iarbeau/index.php/user/logout",
+            data: "",
+            success: function(html){                
+                if (html=="true") {
+                   	$("#logged_in").slideUp(function() {
+			$("#logged_out").slideDown();
+			});
+                }
+                else {
+                }
+            }    
+        });        
+    });
+        
 });    
                 
             
@@ -90,10 +108,11 @@
 						<li><a href="page.htm" title="About">About</a></li>
 					</ul>
 				</nav>
-				<form method="get" action="search.htm">
+				<form method="get" action="">
 					<div>
-						<input type="text" name="" class="search-input" value="Cauta.." />
+						<input type="text" name="searchquery" class="search-input" value="Cauta.." />
 						<input type="image" src="{$base_url}public/images/icon-search.png" class="search-submit" alt="Search" />
+                                                <input type="hidden" name="searchstatus" value="success" />
 					</div>
 				</form>
 			</div>

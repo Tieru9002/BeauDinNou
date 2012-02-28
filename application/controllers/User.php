@@ -127,9 +127,18 @@ class User extends CI_Controller {
     }
     
     public function logout() {
-        if ($this->islogged())
-            $this->session->sess_destroy();
-        redirect("user/register", "refresh");
+        if ($this->islogged()) {
+            $usersess = array(
+                       'nume'      => '',
+                       'prenume'   => '',
+                       'email'     => '',
+                       'level'     => '',
+                       'logged_in' => ''
+                   );              
+            $this->session->unset_userdata($usersess);
+            echo "true";
+        }
+        //redirect("", "refresh");
         
     }
     
@@ -198,6 +207,34 @@ class User extends CI_Controller {
     }
     
     public function pentruEmi () {
+        $this->load->model("Misc");        
+        $this->load->model("Productmod");
+        
+        $popular = $this->Productmod->getPopularProducts();
+        $root_categories = $this->Productmod->getRootCategories();
+        $contact_details = $this->Misc->getContactDetails();
+        $data["contact_details"] = $contact_details;
+        $data["popular"] = $popular;
+        $data["rootcats"] = $root_categories;
+        $data["base_url"] = base_url();
+        $this->parser->parse("edit_address.tpl", $data);
+    }
+    
+    public function invoiceData() {
+        $this->load->model("Misc");        
+        $this->load->model("Productmod");
+        
+        $popular = $this->Productmod->getPopularProducts();
+        $root_categories = $this->Productmod->getRootCategories();
+        $contact_details = $this->Misc->getContactDetails();
+        $data["contact_details"] = $contact_details;
+        $data["popular"] = $popular;
+        $data["rootcats"] = $root_categories;
+        $data["base_url"] = base_url();
+        $this->parser->parse("invoicedata.tpl", $data);
+    }
+    
+    public function editAdresses() {
         $this->load->model("Misc");        
         $this->load->model("Productmod");
         

@@ -9,7 +9,7 @@
                     <a href="{$base_url}index.php/user/register"><input type="button" name="Cont nou" class="button" id="button2" value="Cont nou" ></a>
 
 					<div style="clear:both;"></div>
-					<div id="uitat"><a href="www.google.ro">Ai uitat parola?</a></div>
+					<div id="uitat"><a href="http://www.google.ro">Ai uitat parola?</a></div>
                     <input type="hidden" value="success" name="login">
 					</div>
 				</form>
