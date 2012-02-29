@@ -6,7 +6,7 @@
                 <form action="" method="post">
     				<input id="email" type="text" name="email" placeholder="Adresa de email" value="">			
                     <input type="button" name="Confirm" class="button" id="confirm_btn"  value="Confirm"> 
-                    <input type="button" name="Inchide" class="button" id="close_btn" value="Inchide" >
+                    <input type="button" name="Inchide" class="button" id="close_btn" value="Inchide" onclick="parent.$.fancybox.close();">
 					<div style="clear:both;"></div>
 				</form>
-			</section>
+</section>

@@ -5,11 +5,12 @@
     				<input id="email" class="user_log" type="text" name="email" class="login" placeholder="Adresa de email" value="">
     				<input id="password" class="user_log" type="password" name="pass" class="login" placeholder="Parola" value="" onclick="this.value='';">    
 					
-                                <input type="button" name="Intra in cont" class="button" id="login_btn"  value="Intra in cont"> 
-                    <a href="{$base_url}index.php/user/register"><input type="button" name="Cont nou" class="button" id="button2" value="Cont nou" ></a>
+                    <input type="button" name="Intra in cont" class="button" id="login_btn"  value="Intra in cont"> 
+                    <a href="{$base_url}index.php/user/register">
+						<input type="button" name="Cont nou" class="button" id="button2" value="Cont nou" ></a>
 
 					<div style="clear:both;"></div>
-					<div id="uitat"><a href="http://www.google.ro">Ai uitat parola?</a></div>
+					<div id="uitat"><a id="forgot_link" href="{$base_url}index.php/user/forgotPassword">Ai uitat parola?</a></div>
                     <input type="hidden" value="success" name="login">
 					</div>
 				</form>

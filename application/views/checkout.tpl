@@ -18,7 +18,8 @@
 						<img src="{$base_url}/public/uploads/list_cat_{$cartitem.options.picture}" alt="Product Image" />
 						<h2><a href="" title="Moo Cards">{$cartitem.name}</a></h2>	
 						<p>{$cartitem.descriere}</p>
-						<label for="amount-product-1">Amount <a href="{$base_url}index.php/products/removeFromCart/{$cartitem.id}" title="Remove">(Remove)</a></label>
+						<label for="amount-product-1">Amount 
+						<a href="{$base_url}index.php/products/removeFromCart/{$cartitem.id}" title="Remove">(Remove)</a></label>
 						<input type="text" name="qty{$smarty.foreach.cart.index}" id="amount-product-1" value="{$cartitem.qty}" size="2" />
 						<h2 class="item">{$cartitem.price} RON</h2>
 					</div>
@@ -32,19 +33,27 @@
 						<input type="submit" name="send" class="button" value="Trimite comanda" />
 					</div>	
 				</form>
+				<hr />
+				<p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda. </p>
+				<!-- Formular de login corect creat -->
+				<div id="formLoginCheckout" class="form">                                                
+					<form method="post" action="">
+						<div class="fieldWrapper">
+							<label for="fieldUsername" class="styled">Adresa Email</label>
+							<div class="thefield">
+								<input type="text" name="fieldUsername" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldPassword" class="styled">Parola</label>
+							<div class="thefield">
+								<input type="text" name="fieldPassword" />
+							</div>
+						</div>
+					</form>
+				</div>
 								
 			</section>	
-			
-			<!-- Specials — Please note that a class="last" will be required for the last item in the row -->
-			<section id="specials">
-				<ul>
-					<li class="first"><a href="index.htm" title="Black Friday Sale"><img src="assets/special-left.jpg" alt="Product Image" /></a></li>
-					<li class="second"><a href="index.htm" title="Gift Ideas"><img src="assets/special-center.jpg" alt="Product Image" /></a></li>
-					<li class="third"><a href="index.htm" title="Social Media"><img src="assets/special-right.jpg" alt="Product Image" /></a></li>
-				</ul>
-			</section>
-			
-			<!-- Secondary Feature Area — Useful for Sales -->
 			
 			
 		</section>
