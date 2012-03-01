@@ -202,73 +202,69 @@ del { color: #b71012; }
 	border-bottom: solid 1px #e2e0e0;
 	border-top: solid 1px #ccc;
 }
-.productcart td {
-	padding: 2px;
-	margin: 0;
-	border-bottom: solid 1px #e2e0e0;
-}
-.productcart .firstrow {
-	color: #999;
-	text-transform: uppercase;
-	font-size: 90%;
-}
-.productcart .firstcol {
-	width: 500px;
-}
-.productcart .total_price {
-	color: #333;
-	background: #ededed;
-	font-size: 110%;
-}
-.productcart .product-name {
-	color: #333;
-	margin-left: 5px;
-}
-.productcart .product_image {
-	vertical-align: middle;
-	border: solid 1px #ededed;
-}
-.productcart input {
-	border: solid 1px #ccc;
-	background: #fff;
-	padding: 2px 4px;
-	color: #444;
-}
-.productcart .apply-btn {
-	border: solid 1px #ccc;
-	background: #ededed;
-	font-size: 90%;
-	padding: 2px 4px;
-	color: #444;
-}
-.productcart .discount_row {
-	color: #659b29;
-}
-.productcart .enter-coupon-row td {
-	padding: 10px 0;
-}
-
-.wpsc_checkout_table {
-	background: #e6e7e8;
-	padding: 10px 30px;
-	border: solid 1px #ccc;
-	margin-top: 10px;
-}
-.wpsc_checkout_table td {
-	padding: 2px 15px 2px 2px;
-}
-.wpsc_checkout_table input {
-	border: solid 1px #ccc;
-	background: #fff;
-	padding: 4px 4px;
-	color: #444;
-}
-.wpsc_checkout_table input.purchase-submit {
-	border: solid 1px #bdda93;
-	background: #d7f0b2;
-	padding: 4px 10px;
-	color: #444;
-}
+	.productcart td {
+		padding: 2px;
+		margin: 0;
+		border-bottom: solid 1px #e2e0e0;
+	}
+	.productcart .firstrow {
+		color: #999;
+		font-size: 90%;
+	}
+	.productcart .firstcol {
+		width: 360px;
+	}
+	.productcart .secondcol {
+		text-align: center;
+	}
+	.productcart .thirdcol {
+		width: 100px;
+		text-align: center;
+	}
+	.productcart .pricecol {
+		padding: 0px 5px 0px;
+		text-align: right;
+	}
+	.productcart .total_price {
+		color: #333;
+		background: #ededed;
+		font-size: 110%;
+	}
+	.productcart .product-name {
+		color: #333;
+		margin-left: 5px;
+	}
+	.productcart .product_image {
+		vertical-align: middle;
+		border: solid 1px #ededed;
+	}
+	.productcart input {
+		border: solid 1px #ccc;
+		background: #fff;
+		padding: 2px 4px;
+		color: #444;
+	}
+	.productcart .apply-btn {
+		border: solid 1px #ccc;
+		background: #ededed;
+		font-size: 90%;
+		padding: 2px 4px;
+		color: #444;
+	}
+	.productcart .apply-btn:hover {
+		border: solid 1px #ccc;
+		background: #FFF;
+		font-size: 90%;
+		padding: 2px 4px;
+		color: #444;
+		cursor: pointer;
+	}
+	.productcart .discount_row {
+		color: #659b29;
+	}
+	.productcart .enter-coupon-row td {
+		padding: 10px 0;
+	}
 
 /* Header, Navigation & Search */
 header {

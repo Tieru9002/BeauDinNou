@@ -16,8 +16,8 @@
 				<table class='productcart'>
   					<tr class='firstrow'>
 						<td class='firstcol'>Produs:</td>
-						<td>Cantitate:</td>
-						<td>Pret:</td>
+						<td class="secondcol">Cantitate:</td>
+						<td class="thirdcol">Pret:</td>
 						<td></td>
 					</tr>
 					{foreach from=$cartitems item=cartitem name=cart}
@@ -33,7 +33,7 @@
 								<input type='hidden' value='0' name='key' />&nbsp; 
 								<input class='apply-btn' type='submit' name='submit' value='Modifica' /></form>  
 						</td>
-						<td><span class='pricedisplay'>{$cartitem.price} Ron</span></td>
+						<td class="pricecol"><span class='pricedisplay'>{$cartitem.price} Ron</span></td>
   						<td><a href='http://icondock.com/icons/checkout?remove=0' class='remove'>Sterge</a></td>
 					</tr>
 					{/foreach}
