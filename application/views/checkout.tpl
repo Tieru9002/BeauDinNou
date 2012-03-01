@@ -13,16 +13,55 @@
 				<h2>Cosul de cumparaturi</h2>
 				<p>Cosul dumneavoastra contine urmataorele iteme</p>
 				
-				<form method="post" action="">
+				<table class='productcart'>
+  					<tr class='firstrow'>
+						<td class='firstcol'>Produs:</td>
+						<td>Cantitate:</td>
+						<td>Pret:</td>
+						<td></td>
+					</tr>
+					{foreach from=$cartitems item=cartitem name=cart}
+					<tr class='product_row'>
+						<td class='firstcol'>
+							<a href='http://icondock.com/icons/webpro/home'>
+								<!--<img src='http://icondock.com/wp-content/plugins/wp-shopping-cart/product_images/thumbnails/webpro-home.jpg' width='30' height='24' title='Home' alt='Home' id='product_image_131' class='item product_image'/></a>--> 
+							<a href='' class='product-name' >{$cartitem.name}</a>  
+						</td>
+						<td>
+							<form class='adjustform' method='POST' action=''>
+								<input type='text' value="{$cartitem.qty}" size='2' name="qty{$smarty.foreach.cart.index}" />
+								<input type='hidden' value='0' name='key' />&nbsp; 
+								<input class='apply-btn' type='submit' name='submit' value='Modifica' /></form>  
+						</td>
+						<td><span class='pricedisplay'>{$cartitem.price} Ron</span></td>
+  						<td><a href='http://icondock.com/icons/checkout?remove=0' class='remove'>Sterge</a></td>
+					</tr>
+					{/foreach}
+					<!--<tr class='enter-coupon-row'>
+					<form  method='POST' action='http://icondock.com/icons/checkout'>		
+						<td>Coupon Code:</td>		
+						<td colspan='2' align='left'><input type='text' name='coupon_num' id='coupon_num' value=''></td>
+						<td><input type='submit' class='apply-btn' value='Apply'></td>
+					</form>
+					</tr>-->
+					<tr class='total_price'>
+						<td colspan='2'><strong>Pret Total:</strong></td>
+						<td colspan='2' id='checkout_total' style='vertical-align: middle;'>
+							<strong><span class='pricedisplay'>{$totalprice} Ron</span></strong>
+						</td>
+					</tr>
+				</table>
+				
+				<!--<form method="post" action="">
 					{foreach from=$cartitems item=cartitem name=cart}
                         <div class="product-cart">                                                
-						<!--<img src="{$base_url}/public/uploads/list_cat_{$cartitem.options.picture}" alt="Product Image" />-->
+						<img src="{$base_url}/public/uploads/list_cat_{$cartitem.options.picture}" alt="Product Image" />
 						<h2><a href="" title="Moo Cards">{$cartitem.name}</a></h2>
 						<label for="amount-product-1">Cantitate</label>
 						<input type="text" name="qty{$smarty.foreach.cart.index}" id="amount-product-1" value="{$cartitem.qty}" size="2" />
 						<h2 class="item">{$cartitem.price} RON</h2>
 					</div>
-                                        {/foreach}
+                    {/foreach}
 					
 					<div class="total">
 						<h3>Total: <b>{$totalprice}</b></h3>
@@ -31,7 +70,8 @@
 					<div class="right">						
 						<input type="submit" name="send" class="button" value="Inapoi la cumparaturi" />
 					</div>	
-				</form>
+				</form>-->
+				
 				<hr />
 				<p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda. </p>
 				<!-- Formular de login -->
