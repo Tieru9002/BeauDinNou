@@ -64,10 +64,6 @@ $(document).ready(function() {
 		$(this).css("width","85px");
 	});
 	
-	/*Log in animation */
-	
-	
-	
 	/*Log out animation */
 	$("#logout_btn").click(function() {
 		$("#logged_in").slideUp(function() {
@@ -145,5 +141,10 @@ $(document).ready(function() {
 			loading_text: "Loading Tweets.."
 		});
 	});	
-           
+    
+	/* Checkout Details Expansion Animation */
+	$("#trimite_btn").click(function (){
+		if ($("#formDeliveryInfo").is(':hidden')) {
+			$("#formDeliveryInfo").slideDown(); }
+	});
 });

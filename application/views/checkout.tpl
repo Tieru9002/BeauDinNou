@@ -12,14 +12,13 @@
 			
 				<h2>Cosul de cumparaturi</h2>
 				<p>Cosul dumneavoastra contine urmataorele iteme</p>
+				
 				<form method="post" action="">
 					{foreach from=$cartitems item=cartitem name=cart}
-                                        <div class="product-cart">                                                
-						<img src="{$base_url}/public/uploads/list_cat_{$cartitem.options.picture}" alt="Product Image" />
-						<h2><a href="" title="Moo Cards">{$cartitem.name}</a></h2>	
-						<p>{$cartitem.descriere}</p>
-						<label for="amount-product-1">Amount 
-						<a href="{$base_url}index.php/products/removeFromCart/{$cartitem.id}" title="Remove">(Remove)</a></label>
+                        <div class="product-cart">                                                
+						<!--<img src="{$base_url}/public/uploads/list_cat_{$cartitem.options.picture}" alt="Product Image" />-->
+						<h2><a href="" title="Moo Cards">{$cartitem.name}</a></h2>
+						<label for="amount-product-1">Cantitate</label>
 						<input type="text" name="qty{$smarty.foreach.cart.index}" id="amount-product-1" value="{$cartitem.qty}" size="2" />
 						<h2 class="item">{$cartitem.price} RON</h2>
 					</div>
@@ -30,27 +29,77 @@
 					</div>
                                         <input type="hidden" name="sendorder" value="success" />
 					<div class="right">						
-						<input type="submit" name="send" class="button" value="Trimite comanda" />
+						<input type="submit" name="send" class="button" value="Inapoi la cumparaturi" />
 					</div>	
 				</form>
 				<hr />
 				<p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda. </p>
-				<!-- Formular de login corect creat -->
+				<!-- Formular de login -->
 				<div id="formLoginCheckout" class="form">                                                
 					<form method="post" action="">
 						<div class="fieldWrapper">
-							<label for="fieldUsername" class="styled">Adresa Email</label>
+							<label for="fieldUsername" class="styled">Adresa de email</label>
 							<div class="thefield">
-								<input type="text" name="fieldUsername" />
+								<input type="text" name="fieldUsername" size="40" />
 							</div>
 						</div>
 						<div class="fieldWrapper">
 							<label for="fieldPassword" class="styled">Parola</label>
 							<div class="thefield">
-								<input type="text" name="fieldPassword" />
+								<input type="password" name="fieldPassword" size="40" />
+							</div>
+						</div>
+						<div class="buttonsDiv">
+							<input type="button" name="Intra in cont" class="button" id="login_btn"  value="Intra in cont">
+						</div>
+					</form>
+				</div>
+				
+				<!-- Formular de introducere a datelor de comanda -->
+				<div id="formDeliveryInfo" class="form">                                                
+					<form method="post" action="">
+						<div class="fieldWrapper">
+							<label for="fieldEmail2" class="styled">Adresa de email</label>
+							<div class="thefield">
+								<input type="text" name="fieldEmail2" size="40" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldName" class="styled">Prenume</label>
+							<div class="thefield">
+								<input type="text" name="fieldName" size="40" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldSurname" class="styled">Nume</label>
+							<div class="thefield">
+								<input type="text" name="fieldSurname" size="40" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldPhone" class="styled">Numar de telefon</label>
+							<div class="thefield">
+								<input type="text" name="fieldPhone" size="40" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldAddress" class="styled">Adresa de livrare</label>
+							<div class="thefield">
+								<textarea cols="34" rows="4" name="fieldAddress"></textarea>
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldComms" class="styled">Alte comentarii</label>
+							<div class="thefield">
+								<textarea cols="34" rows="4" name="fieldComms"></textarea>
 							</div>
 						</div>
 					</form>
+				</div>
+				<div class="buttonsDiv">
+							<input type="button" name="Intra in cont" class="button"  id="trimite_btn" value="Trimite Comanda">
+							<input type="button" name="Intra in cont" class="button"  value="Modifica Comanda">
+							<input type="button" name="Intra in cont" class="button"  value="Renunta la Comanda">
 				</div>
 								
 			</section>	
