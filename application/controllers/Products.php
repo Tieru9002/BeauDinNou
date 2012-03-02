@@ -205,7 +205,7 @@ class Products extends CI_Controller {
 
         $this->cart->update($updatedata); 
         
-        redirect ("products/viewcart", "refresh");
+        redirect ("products/remove", "refresh");
     }
     
     public function checkout() {
@@ -236,8 +236,8 @@ class Products extends CI_Controller {
             echo "1";
             $this->cart->destroy();
         }
-
-        $data['cartitems'] = $this->cart->contents();                    
+        $data["totalprice"] = $this->cart->total();
+        $data['cartitems'] = $this->cart->contents();        
         $data["popular"] = $popular;
         $data["rootcats"] = $root_categories; 
         $data["base_url"] = base_url();

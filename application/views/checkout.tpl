@@ -33,8 +33,8 @@
 								<input type='hidden' value='0' name='key' />&nbsp; 
 								<input class='apply-btn' type='submit' name='submit' value='Modifica' /></form>  
 						</td>
-						<td class="pricecol"><span class='pricedisplay'>{$cartitem.price} Ron</span></td>
-  						<td><a href='http://icondock.com/icons/checkout?remove=0' class='remove'>Sterge</a></td>
+						<td class="pricecol"><span class='pricedisplay'>{$cartitem.subtotal|number_format:2} Ron</span></td>
+  						<td><a href='{$base_url}index.php/products/removeFromCart/{$cartitem.id}' class='remove'>Sterge</a></td>
 					</tr>
 					{/foreach}
 					<!--<tr class='enter-coupon-row'>
@@ -47,7 +47,7 @@
 					<tr class='total_price'>
 						<td colspan='2'><strong>Pret Total:</strong></td>
 						<td colspan='2' id='checkout_total' style='vertical-align: middle;'>
-							<strong><span class='pricedisplay'>{$totalprice} Ron</span></strong>
+							<strong><span class='pricedisplay'>{$totalprice|number_format:2} Ron</span></strong>
 						</td>
 					</tr>
 				</table>
