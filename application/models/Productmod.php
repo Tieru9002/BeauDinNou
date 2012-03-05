@@ -492,6 +492,62 @@ class Productmod extends CI_Model {
         return $this->db->insert_id();
     }
     
+    public function searchFull($query) {        
+        $this->db->select("DISTINCT(p.id), p.name, p.price, p.description, p.picture, cat.name as catname");        
+        $this->db->from("products p");
+        $this->db->join("category cat", "cat.id = p.cat_id");                         
+        $this->db->like("p.name",$query);
+        $this->db->or_like("cat.name",$query);        
+        $query = $this->db->get("products");
+        
+        $i=0;        
+        foreach ($query->result() as $row) {
+            $res[$i]["id"] = $row->id;            
+            $res[$i]["name"] = $row->name;
+            $res[$i]["price"] = $row->price;
+            $res[$i]["picture"] = $row->picture;   
+            $res[$i]["description"] = $row->description;
+            $res[$i]["catname"] = $row->catname;
+            $i++;
+        }
+        
+        return $res;
+    }
+    
+        public function extraResults($query) {
+        
+        $this->db->select("DISTINCT(p.id), p.name, p.price, p.description, p.picture, cat.name as catname");        
+        $this->db->from("products p");
+        $this->db->join("category cat", "cat.id = p.cat_id");
+        $i=0;
+        echo "<pre>";
+        //var_dump($query);
+        echo "</pre>";
+        foreach ($query as $value)                        
+        {
+            if ($i==0) {
+            $this->db->like("p.name",$value);
+            $this->db->or_like("cat.name",$value);
+            }
+            else {               
+            }
+            $i++;
+        }
+        
+        $query = $this->db->get("products");
+        $i= 0;             
+        foreach ($query->result() as $row) {
+            $res[$i]["id"] = $row->id;            
+            $res[$i]["name"] = $row->name;
+            $res[$i]["price"] = $row->price;
+            $res[$i]["picture"] = $row->picture;   
+            $res[$i]["description"] = $row->description;
+            $res[$i]["catname"] = $row->catname;
+            $i++;
+        }
+        
+        return $res;
+    }   
    
 }
 ?>

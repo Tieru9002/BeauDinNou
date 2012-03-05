@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+	/* Test lightbox */
 	$(".various").fancybox({
 		maxWidth	: 800,
 		maxHeight	: 600,
@@ -10,6 +11,21 @@ $(document).ready(function() {
 		closeClick	: false,
 		openEffect	: 'none',
 		closeEffect	: 'none',
+		type		: 'iframe'
+	});
+
+	/*Forgot Password lightbox */
+	$("#forgot_link").fancybox({
+		padding		: 0,
+		maxWidth	: 360,
+		maxHeight	: 180,
+		fitToView	: false,
+		width		: '100%',
+		height		: '100%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'elastic',
+		closeEffect	: 'elastic',
 		type		: 'iframe'
 	});
 
@@ -46,15 +62,6 @@ $(document).ready(function() {
 		$(this).attr("value","").css("width","201px");
 	}).focusout(function () {
 		$(this).css("width","85px");
-	});
-	
-	/*Log in animation */
-	
-	$("#login_btn").click(function() {
-		$("#logged_out").slideUp(function() {
-			$("#logged_in").slideDown();
-			});
-		
 	});
 	
 	/*Log out animation */
@@ -134,5 +141,10 @@ $(document).ready(function() {
 			loading_text: "Loading Tweets.."
 		});
 	});	
-           
+    
+	/* Checkout Details Expansion Animation */
+	$("#trimite_btn").click(function (){
+		if ($("#formDeliveryInfo").is(':hidden')) {
+			$("#formDeliveryInfo").slideDown(); }
+	});
 });

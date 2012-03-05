@@ -27,7 +27,7 @@
 						</div>
 						<div class="product_dreapta">
 								<h2><a href="{$base_url}index.php/products/singleProduct/{$product.id}">{$product.name}</a></h2>
-								<h3><span>{$product.price}</span> RON</h3>
+								<h3><span>{$product.price|substr:0:-3}</span><span>{$product.price|substr:-3:3}</span> RON</h3>
 								<p>{$product.description|substr:0:140} ...</p>
 								<a href="{$base_url}index.php/products/singleProduct/{$product.id}">Detalii</a>
 						</div>
@@ -40,7 +40,7 @@
 						</div>
 						<div class="product_dreapta">
 								<h2><a href="{$base_url}index.php/products/singleProduct/{$product.id}">{$product.name}</a></h2>
-								<h3><span>{$product.price}</span> RON</h3>
+								<h3><span>{$product.price|substr:0:-3}</span><span>{$product.price|substr:-3:3}</span> RON</h3>
 								<p>{$product.description|substr:0:140} ...</p>
 								<a href="{$base_url}index.php/products/singleProduct/{$product.id}">Detalii</a>
 						</div>
