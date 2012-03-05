@@ -232,6 +232,7 @@ class Products extends CI_Controller {
     public function search($query) {
         
     }
+        
 
 }
 
