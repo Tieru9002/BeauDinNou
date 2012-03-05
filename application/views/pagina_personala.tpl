@@ -13,6 +13,7 @@
             <div id="Datepersonale_titlu"><h2>Date personale</h2></div>
 
             <div id="formPersonalData" class="form">
+                <p>Folositi urmatorul formular pentru a va modifica datele de cont.</p>
 
                 <form action="" method="post" id="Datepersonale_form">
                     <div class="fieldWrapper">
@@ -36,7 +37,7 @@
                     <div class="fieldWrapper">
                         <label for="phone" class="styled">Nr. de telefon</label>
                         <div class="thefield">
-                            <input type="text" name="nume" size="40" value="{$phone}">
+                            <input type="text" name="phone" size="40" value="{$phone}">
                         </div>
                     </div>					
                     <input type="hidden" value="success" name="add_details">
