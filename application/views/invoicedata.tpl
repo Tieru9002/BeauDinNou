@@ -25,7 +25,7 @@
                 </tr>
                 <tr>
                     <td class="firstcol">
-                            <input type="button" name="Intra in cont" class="button" id=""  value="Adauga Persoana Juridica">
+                            <input type="button" name="Intra in cont" class="button" id="newInvoiceData_btn"  value="Adauga Persoana Juridica">
                     </td>
                 </tr>
             </table>
@@ -34,7 +34,7 @@
                     <div class="fieldWrapper">
                         <label for="fieldDenumireFirma" class="styled">Denumirea firmei</label>
                         <div class="thefield">
-                            <input type="text" name="fieldDenumireFirma" size="40" />
+                            <input type="text" name="fieldDenumireFirma" size="40" id="firstField" />
                         </div>
                     </div>
                     <div class="fieldWrapper">
@@ -68,11 +68,12 @@
                         </div>
                     </div>
                 </form>
+                <div class="buttonsDiv">
+                    <input type="button" name="Intra in cont" class="button" value="Salveaza">
+                    <input type="button" name="Intra in cont" class="button" id="inchideInvoiceData_btn" value="Inchide">
+                </div>
             </div>
-            <div class="buttonsDiv">
-                <input type="button" name="Intra in cont" class="button" value="Salveaza">
-                <input type="button" name="Intra in cont" class="button" value="Inchide">
-            </div>
+            
         </section>
 
    </section>

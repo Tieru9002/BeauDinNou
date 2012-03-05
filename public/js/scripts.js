@@ -145,6 +145,19 @@ $(document).ready(function() {
 	/* Checkout Details Expansion Animation */
 	$("#trimite_btn").click(function (){
 		if ($("#formDeliveryInfo").is(':hidden')) {
-			$("#formDeliveryInfo").slideDown(); }
+			$("#formDeliveryInfo").slideDown();}
 	});
+        
+        /*Add invoice data animation on button click*/
+        $("#newInvoiceData_btn").click(function (){
+            if ($("#formInvoiceData").is(':hidden')) {
+                $("#formInvoiceData").slideDown(function (){
+                    $("#firstField").focus();
+                });
+            }
+        });
+        /*Close invoice data form if the "close" button is clicked*/
+        $("#inchideInvoiceData_btn").click(function (){
+            $("#formInvoiceData").slideUp();
+        });
 });

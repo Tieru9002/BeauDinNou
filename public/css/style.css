@@ -195,7 +195,15 @@ del { color: #b71012; }
 			float: left; }
 	div.buttonsDiv {
 		margin-left: 100px; }
-		
+        
+/*Date de facturare page*/
+#formInvoiceData {
+    display: none;
+}
+        #formInvoiceData div.buttonsDiv {
+            margin-left: 250px;
+        }
+      
 /* checkout page --------------------------------------------*/
 .productcart {
 	margin: 0 0 20px;
