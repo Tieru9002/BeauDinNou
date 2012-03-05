@@ -10,7 +10,7 @@
         <!-- Main Content Area -->
         <section id="main">
 
-            <h2>Date de facturare - Persoana Juridica</h2>
+            <h2>Adrese de livrare</h2>
             <table class='productcart' id="addressTable">
                 <tr class='firstrow'>
                     <td class='firstcol'>Adresa</td>
@@ -18,7 +18,7 @@
                 </tr>
                 <tr class='product_row'>
                     <td class='firstcol'> 
-                        <a href='#' class='product-name' >Str. Mihail Cioranu, nr. 6, bl. 70, sc. 1, parter, ap. 1, interfon 722, sector 5 </a>  
+                        <p>Str. Mihail Cioranu, nr. 6, bl. 70, sc. 1, parter, ap. 1, interfon 722, sector 5 </p>  
                     </td>
                     <td>
                         <input class='apply-btn' type='submit' name='submit' value='Modifica' />
@@ -34,7 +34,7 @@
                     <div class="fieldWrapper">
                         <label for="fieldAddress" class="styled">Adresa de livrare</label>
                         <div class="thefield">
-                            <textarea cols="34" rows="4" name="fieldAddress" class="firstField"></textarea>
+                            <textarea cols="34" rows="6" name="fieldAddress" class="firstField"></textarea>
                         </div>
                     </div>
                 </form>
