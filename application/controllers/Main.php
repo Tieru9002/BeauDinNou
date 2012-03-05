@@ -2,7 +2,7 @@
 class Main extends CI_Controller {
     
         public function index ()  {          
-            var_dump($this->session->userdata("logged_in"));
+
             //$this->session->sess_destroy();
             //echo "<pre>";var_dump($this->session->all_userdata()); echo "</pre>";
             $this->load->model("Usermod"); 
@@ -61,11 +61,9 @@ class Main extends CI_Controller {
                    echo "nu am setat user  data"; 
                    
                    echo "am setat user data";
-                   echo "<pre>";
-                    
-                    echo "</pre>";
+                  
                 }      
-                var_dump($this->session->userdata("logged_in"));
+//                var_dump($this->session->userdata("logged_in"));
                 if ($this->session->userdata("logged_in") == TRUE) {
                 $msg = "Bine ai venit ".$this->session->userdata("prenume");
                 $data["msg"] = $msg;                        
@@ -76,9 +74,7 @@ class Main extends CI_Controller {
             }
             else {                
             }
-            echo "<pre>";
-            //var_dump($this->session->all_userdata());
-            echo "</pre>";
+            
             
             $this->load->model("Productmod");
             

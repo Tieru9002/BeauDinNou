@@ -12,39 +12,137 @@
 			
 				<h2>Cosul de cumparaturi</h2>
 				<p>Cosul dumneavoastra contine urmataorele iteme</p>
-				<form method="post" action="">
+				
+				<table class='productcart'>
+  					<tr class='firstrow'>
+						<td class='firstcol'>Produs:</td>
+						<td class="secondcol">Cantitate:</td>
+						<td class="thirdcol">Pret:</td>
+						<td></td>
+					</tr>
 					{foreach from=$cartitems item=cartitem name=cart}
-                                        <div class="product-cart">                                                
+					<tr class='product_row'>
+						<td class='firstcol'>
+							<a href='http://icondock.com/icons/webpro/home'>
+								<!--<img src='http://icondock.com/wp-content/plugins/wp-shopping-cart/product_images/thumbnails/webpro-home.jpg' width='30' height='24' title='Home' alt='Home' id='product_image_131' class='item product_image'/></a>--> 
+							<a href='' class='product-name' >{$cartitem.name}</a>  
+						</td>
+						<td>
+							<form class='adjustform' method='POST' action=''>
+								<input type='text' value="{$cartitem.qty}" size='2' name="qty{$smarty.foreach.cart.index}" />
+								<input type='hidden' value='0' name='key' />&nbsp; 
+								<input class='apply-btn' type='submit' name='submit' value='Modifica' /></form>  
+						</td>
+						<td class="pricecol"><span class='pricedisplay'>{$cartitem.subtotal|number_format:2} Ron</span></td>
+  						<td><a href='{$base_url}index.php/products/removeFromCart/{$cartitem.id}' class='remove'>Sterge</a></td>
+					</tr>
+					{/foreach}
+					<!--<tr class='enter-coupon-row'>
+					<form  method='POST' action='http://icondock.com/icons/checkout'>		
+						<td>Coupon Code:</td>		
+						<td colspan='2' align='left'><input type='text' name='coupon_num' id='coupon_num' value=''></td>
+						<td><input type='submit' class='apply-btn' value='Apply'></td>
+					</form>
+					</tr>-->
+					<tr class='total_price'>
+						<td colspan='2'><strong>Pret Total:</strong></td>
+						<td colspan='2' id='checkout_total' style='vertical-align: middle;'>
+							<strong><span class='pricedisplay'>{$totalprice|number_format:2} Ron</span></strong>
+						</td>
+					</tr>
+				</table>
+				
+				<!--<form method="post" action="">
+					{foreach from=$cartitems item=cartitem name=cart}
+                        <div class="product-cart">                                                
 						<img src="{$base_url}/public/uploads/list_cat_{$cartitem.options.picture}" alt="Product Image" />
-						<h2><a href="" title="Moo Cards">{$cartitem.name}</a></h2>	
-						<p>{$cartitem.descriere}</p>
-						<label for="amount-product-1">Amount <a href="{$base_url}index.php/products/removeFromCart/{$cartitem.id}" title="Remove">(Remove)</a></label>
+						<h2><a href="" title="Moo Cards">{$cartitem.name}</a></h2>
+						<label for="amount-product-1">Cantitate</label>
 						<input type="text" name="qty{$smarty.foreach.cart.index}" id="amount-product-1" value="{$cartitem.qty}" size="2" />
 						<h2 class="item">{$cartitem.price} RON</h2>
 					</div>
-                                        {/foreach}
+                    {/foreach}
 					
 					<div class="total">
 						<h3>Total: <b>{$totalprice}</b></h3>
 					</div>
                                         <input type="hidden" name="sendorder" value="success" />
 					<div class="right">						
-						<input type="submit" name="send" class="button" value="Trimite comanda" />
+						<input type="submit" name="send" class="button" value="Inapoi la cumparaturi" />
 					</div>	
-				</form>
+				</form>-->
+				
+				<hr />
+				<p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda. </p>
+				<!-- Formular de login -->
+				<div id="formLoginCheckout" class="form">                                                
+					<form method="post" action="">
+						<div class="fieldWrapper">
+							<label for="fieldUsername" class="styled">Adresa de email</label>
+							<div class="thefield">
+								<input type="text" name="fieldUsername" size="40" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldPassword" class="styled">Parola</label>
+							<div class="thefield">
+								<input type="password" name="fieldPassword" size="40" />
+							</div>
+						</div>
+						<div class="buttonsDiv">
+							<input type="button" name="Intra in cont" class="button" id="login_btn"  value="Intra in cont">
+						</div>
+					</form>
+				</div>
+				
+				<!-- Formular de introducere a datelor de comanda -->
+				<div id="formDeliveryInfo" class="form">                                                
+					<form method="post" action="">
+						<div class="fieldWrapper">
+							<label for="fieldEmail2" class="styled">Adresa de email</label>
+							<div class="thefield">
+								<input type="text" name="fieldEmail2" size="40" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldName" class="styled">Prenume</label>
+							<div class="thefield">
+								<input type="text" name="fieldName" size="40" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldSurname" class="styled">Nume</label>
+							<div class="thefield">
+								<input type="text" name="fieldSurname" size="40" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldPhone" class="styled">Numar de telefon</label>
+							<div class="thefield">
+								<input type="text" name="fieldPhone" size="40" />
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldAddress" class="styled">Adresa de livrare</label>
+							<div class="thefield">
+								<textarea cols="34" rows="4" name="fieldAddress"></textarea>
+							</div>
+						</div>
+						<div class="fieldWrapper">
+							<label for="fieldComms" class="styled">Alte comentarii</label>
+							<div class="thefield">
+								<textarea cols="34" rows="4" name="fieldComms"></textarea>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="buttonsDiv">
+							<input type="button" name="Intra in cont" class="button"  id="trimite_btn" value="Trimite Comanda">
+							<input type="button" name="Intra in cont" class="button"  value="Modifica Comanda">
+							<input type="button" name="Intra in cont" class="button"  value="Renunta la Comanda">
+				</div>
 								
 			</section>	
-			
-			<!-- Specials — Please note that a class="last" will be required for the last item in the row -->
-			<section id="specials">
-				<ul>
-					<li class="first"><a href="index.htm" title="Black Friday Sale"><img src="assets/special-left.jpg" alt="Product Image" /></a></li>
-					<li class="second"><a href="index.htm" title="Gift Ideas"><img src="assets/special-center.jpg" alt="Product Image" /></a></li>
-					<li class="third"><a href="index.htm" title="Social Media"><img src="assets/special-right.jpg" alt="Product Image" /></a></li>
-				</ul>
-			</section>
-			
-			<!-- Secondary Feature Area — Useful for Sales -->
 			
 			
 		</section>
