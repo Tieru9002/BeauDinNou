@@ -4,53 +4,54 @@
 {include file='left_column.tpl'}
 
 <section id="content">
-	
-		<section id="left-column">
-					
-			<!-- Main Content Area -->
-			<section id="main">
-			
-				<div id="Datepersonale_titlu"><h2>Date personale</h2></div>
-				
-					
-					<section id="login">
-					
-				
+
+    <section id="left-column">
+
+        <!-- Main Content Area -->
+        <section id="main">
+
+            <div id="Datepersonale_titlu"><h2>Date personale</h2></div>
+
+            <div id="formPersonalData" class="form">
+
                 <form action="" method="post" id="Datepersonale_form">
-    				<input class="user_log" type="text" name="email"   value="{$email}"></br>
-					<input class="user_log" type="text" name="prenume"   value="{$prenume}"></br>
-					<input class="user_log" type="text" name="nume"  value="{$nume}"></br>
-					<input class="user_log" type="text" name="phone"  value="{$phone}"></br>					
-                                        <input type="hidden" value="success" name="add_details">
-					<input type="submit" name="Salveaza" class="button" id="button1"  value="Salveaza"> 
-                                        
-					<div style="clear:both;"></div>
-					
-				</form>
-				
-			</section>
-					
-					
-					
-					
-					
-					
-					
-								
-			</section>	
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		</section>
+                    <div class="fieldWrapper">
+                        <label for="email" class="styled">Adresa de email</label>
+                        <div class="thefield">
+                            <input type="text" name="email" size="40"  value="{$email}">
+                        </div>
+                    </div>
+                    <div class="fieldWrapper">
+                        <label for="prenume" class="styled">Prenume</label>
+                        <div class="thefield">
+                            <input type="text" name="prenume" size="40" value="{$prenume}">
+                        </div>
+                    </div>
+                    <div class="fieldWrapper">
+                        <label for="nume" class="styled">Nume</label>
+                        <div class="thefield">
+                            <input type="text" name="nume" size="40" value="{$nume}">
+                        </div>
+                    </div>
+                    <div class="fieldWrapper">
+                        <label for="phone" class="styled">Nr. de telefon</label>
+                        <div class="thefield">
+                            <input type="text" name="nume" size="40" value="{$phone}">
+                        </div>
+                    </div>					
+                    <input type="hidden" value="success" name="add_details">
+                    <input type="submit" name="Salveaza" class="button" id="button1"  value="Salveaza"> 
+
+                    <div style="clear:both;"></div>
+
+                </form>
+
+            </div>
+
+        </section>	
+
+
+    </section>
 {/block}
 {block rightcolumn}
 	<aside>
