@@ -55,8 +55,7 @@
     
     public function getUserDetails($id) {
         $this->db->select("*");
-        $this->db->where("id", $id);
-        
+        $this->db->where("id", $id);        
         $query = $this->db->get("users");
         
         $res = array();
@@ -68,6 +67,7 @@
            $res["level"] = $row->level;
            $res["nume"] = $row->nume;
            $res["prenume"] = $row->prenume;
+           $res["phone"] = $row->phone;
         }
         
         return $res;
@@ -122,6 +122,54 @@
         $this->db->insert('addresses',$data);
         
         return $this->db->insert_id();
+    }
+    
+    public function getUserByEmail($email) {
+        $this->db->select("id");
+        $this->db->where("email", $email);
+        $this->db->where("status", 1);
+        
+        $query = $this->db->get("users");
+        
+         foreach ($query->result() as $row) {
+             $res["id"] = $row->id;
+             $res["email"] = $row->email;
+         }
+         
+         return $res;
+    }
+    
+    public function addUserCode ($id, $code, $type) {
+        $data = array ("user_id" => $id,
+                       "code" => $code,
+                       "code_type" => $type);                        
+        
+        $this->db->insert('user_codes',$data);
+        
+        return $this->db->insert_id();
+        
+    }
+    
+    public function checkUserCode ($id, $code) {
+        $this->db->select("id, user_id, code_type, code");
+        $this->db->where("user_id", $id);
+        $this->db->where("code", $code);
+        
+        $query = $this->db->get("user_codes");
+        
+         foreach ($query->result() as $row) {
+             $res["id"] = $row->id;
+             $res["user_id"] = $row->user_id;
+             $res["code_type"] = $row->code_type;
+             $res["code"] = $row->code;
+         }
+         
+         return $res;
+    }
+    
+    public function changeUserDetails($id, $data) {             
+        $this->db->where('id', $id);
+        $this->db->update('users', $data);
     }
 }
 ?>

@@ -17,12 +17,11 @@
 					
 				
                 <form action="" method="post" id="Datepersonale_form">
-    				<input class="user_log" type="text" name="email"  placeholder="Adresa de email" value=""></br>
-					<input class="user_log" type="text" name="prenumele"  placeholder="Prenumele" value=""></br>
-					<input class="user_log" type="text" name="numele"  placeholder="Numele" value=""></br>
-					<input class="user_log" type="text" name="nr_de_tel"  placeholder="Numarul de telefon" value=""></br>
-					<input class="user_log" type="text" name="data_nasterii"  placeholder="Data nasterii" value=""></br>
-    				
+    				<input class="user_log" type="text" name="email"   value="{$email}"></br>
+					<input class="user_log" type="text" name="prenume"   value="{$prenume}"></br>
+					<input class="user_log" type="text" name="nume"  value="{$nume}"></br>
+					<input class="user_log" type="text" name="phone"  value="{$phone}"></br>					
+                                        <input type="hidden" value="success" name="add_details">
 					<input type="submit" name="Salveaza" class="button" id="button1"  value="Salveaza"> 
                                         
 					<div style="clear:both;"></div>
