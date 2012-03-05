@@ -52,26 +52,6 @@
                 </tr>
             </table>
 
-            <!--<form method="post" action="">
-            {foreach from=$cartitems item=cartitem name=cart}
-<div class="product-cart">                                                
-                    <img src="{$base_url}/public/uploads/list_cat_{$cartitem.options.picture}" alt="Product Image" />
-                    <h2><a href="" title="Moo Cards">{$cartitem.name}</a></h2>
-                    <label for="amount-product-1">Cantitate</label>
-                    <input type="text" name="qty{$smarty.foreach.cart.index}" id="amount-product-1" value="{$cartitem.qty}" size="2" />
-                    <h2 class="item">{$cartitem.price} RON</h2>
-            </div>
-            {/foreach}
-                                
-                                <div class="total">
-                                        <h3>Total: <b>{$totalprice}</b></h3>
-                                </div>
-                                <input type="hidden" name="sendorder" value="success" />
-                                <div class="right">						
-                                        <input type="submit" name="send" class="button" value="Inapoi la cumparaturi" />
-                                </div>	
-                        </form>-->
-
             <hr />
             <p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda. </p>
             <!-- Formular de login -->

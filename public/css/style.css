@@ -214,6 +214,11 @@ del { color: #b71012; }
 	.productcart .firstcol {
 		width: 360px;
 	}
+        
+        #invoiceTable .firstcol {
+            width: 530px;
+        }
+        
 	.productcart .secondcol {
 		text-align: center;
 	}
