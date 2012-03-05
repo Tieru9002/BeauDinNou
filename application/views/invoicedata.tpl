@@ -23,12 +23,8 @@
                         <a href='{$base_url}index.php/products/removeFromCart/{$cartitem.id}' class='remove'>Sterge</a>
                     </td>
                 </tr>
-                <tr>
-                    <td class="firstcol">
-                            <input type="button" name="Intra in cont" class="button" id="newInvoiceData_btn"  value="Adauga Persoana Juridica">
-                    </td>
-                </tr>
             </table>
+            <input type="button" name="Intra in cont" class="button" id="newInvoiceData_btn"  value="Adauga Persoana Juridica">
             <div id="formInvoiceData" class="form">                                                
                 <form method="post" action="">
                     <div class="fieldWrapper">
