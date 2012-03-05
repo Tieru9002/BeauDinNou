@@ -30,7 +30,7 @@
                     <div class="fieldWrapper">
                         <label for="fieldDenumireFirma" class="styled">Denumirea firmei</label>
                         <div class="thefield">
-                            <input type="text" name="fieldDenumireFirma" size="40" id="firstField" />
+                            <input type="text" name="fieldDenumireFirma" size="40" class="firstField" />
                         </div>
                     </div>
                     <div class="fieldWrapper">
@@ -69,10 +69,10 @@
                     <input type="button" name="Intra in cont" class="button" id="inchideInvoiceData_btn" value="Inchide">
                 </div>
             </div>
-            
+
         </section>
 
-   </section>
+    </section>
 
 
 

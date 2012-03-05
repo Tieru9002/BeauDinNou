@@ -152,12 +152,24 @@ $(document).ready(function() {
         $("#newInvoiceData_btn").click(function (){
             if ($("#formInvoiceData").is(':hidden')) {
                 $("#formInvoiceData").slideDown(function (){
-                    $("#firstField").focus();
+                    $(".firstField").focus();
                 });
             }
         });
         /*Close invoice data form if the "close" button is clicked*/
         $("#inchideInvoiceData_btn").click(function (){
             $("#formInvoiceData").slideUp();
+        });
+        /*Add address animation on button click*/
+        $("#newAddress_btn").click(function (){
+            if ($("#formAddresses").is(':hidden')) {
+                $("#formAddresses").slideDown(function (){
+                    $(".firstField").focus();
+                });
+            }
+        });
+        /*Close invoice data form if the "close" button is clicked*/
+        $("#inchideAddresses_btn").click(function (){
+            $("#formAddresses").slideUp();
         });
 });

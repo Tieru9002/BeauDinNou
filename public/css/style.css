@@ -197,7 +197,7 @@ del { color: #b71012; }
 		margin-left: 100px; }
         
 /*Date de facturare page*/
-#formInvoiceData {
+#formInvoiceData, #formAddresses {
     display: none;
 }
         #formInvoiceData div.buttonsDiv {
@@ -223,7 +223,7 @@ del { color: #b71012; }
 		width: 360px;
 	}
         
-        #invoiceTable .firstcol {
+        #invoiceTable .firstcol, #addressTable .firstcol {
             width: 500px;
         }
         
