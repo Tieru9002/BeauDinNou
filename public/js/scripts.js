@@ -158,9 +158,25 @@ $(document).ready(function() {
                 });
             }
         });
+        
+        /*Add invoice data animation on edit button click*/
+        $("#modifyInvoiceData_btn").click(function (){
+            if ($("#formInvoiceData").is(':hidden')) {
+                $("#formInvoiceData").slideDown(function (){
+                    $(".firstField").focus();
+                });
+            }
+        });
         /*Close invoice data form if the "close" button is clicked*/
-        $("#inchideInvoiceData_btn").click(function (){
-            $("#formInvoiceData").slideUp();
+        $("#inchideInvoiceData_btn").click(function (){            
+            $("#fieldDenumireFirma").val("");
+            $("#fieldCui").val("");
+            $("#fieldOrdineRegistru").val("");
+            $("#fieldBankAcc").val("");
+            $("#fieldBankName").val("");                
+            $("#fieldAddress").val("");                
+            $("#send").val("success");
+            $("#formInvoiceData").slideUp();            
         });
         /*Add address animation on button click*/
         $("#newAddress_btn").click(function (){

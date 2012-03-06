@@ -21,8 +21,7 @@
 					</tr>
 					{foreach from=$cartitems item=cartitem name=cart}
 					<tr class='product_row'>
-						<td class='firstcol'>
-							<a href='http://icondock.com/icons/webpro/home'>
+						<td class='firstcol'>							
 								<!--<img src='http://icondock.com/wp-content/plugins/wp-shopping-cart/product_images/thumbnails/webpro-home.jpg' width='30' height='24' title='Home' alt='Home' id='product_image_131' class='item product_image'/></a>--> 
 							<a href='' class='product-name' >{$cartitem.name}</a>  
 						</td>

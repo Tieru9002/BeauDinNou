@@ -188,7 +188,7 @@ class User extends CI_Controller {
                 $phone = $this->input->post("phone");
                 $user_data["phone"] = $phone;
             }
-                        
+
 
             $this->Usermod->changeUserDetails($user_id, $user_data);
         }
@@ -294,10 +294,63 @@ class User extends CI_Controller {
     public function invoiceData() {
         $this->load->model("Misc");
         $this->load->model("Productmod");
+        $this->load->model("Usermod");
+        
+        if ($this->input->post("send") == "success") {
+            
+            $name = $this->input->post("fieldDenumireFirma");
+            $cui = $this->input->post("fieldCui");
+            $reg_order = $this->input->post("fieldOrdineRegistru");
+            $bank_acc = $this->input->post("fieldBankAcc");
+            $bank_name = $this->input->post("fieldBankName");
+            $address = $this->input->post("fieldAddress");            
+            $user_id = $this->session->userdata("id");
 
+            $invoice_data = array (
+                "user_id" => $user_id,
+                "bussiness_name" => $name,
+                "cui" => $cui,
+                "register_order_nr" => $reg_order,
+                "bank_acc" => $bank_acc,
+                "bank_name" => $bank_name,
+                "invoice_address" => $address,
+                "status" => 1
+            );                        
+            
+            $invoice_id = $this->Usermod->addInvoice($invoice_data);
+        }
+        
+        if ($this->input->post("send") == "edit") {            
+            $name = $this->input->post("fieldDenumireFirma");
+            $cui = $this->input->post("fieldCui");
+            $reg_order = $this->input->post("fieldOrdineRegistru");
+            $bank_acc = $this->input->post("fieldBankAcc");
+            $bank_name = $this->input->post("fieldBankName");
+            $address = $this->input->post("fieldAddress");            
+            $user_id = $this->session->userdata("id");
+            $invoice_id = $this->input->post("invid");
+            
+            $invoice_data = array (
+                "user_id" => $user_id,
+                "bussiness_name" => $name,
+                "cui" => $cui,
+                "register_order_nr" => $reg_order,
+                "bank_acc" => $bank_acc,
+                "bank_name" => $bank_name,
+                "invoice_address" => $address,
+                "status" => 1
+            ); 
+            
+            
+            $invoice_id = $this->Usermod->editInvoice($invoice_id, $user_id, $invoice_data);
+        }
+        
+        $invoices = $this->Usermod->getInvoicesByUserId($this->session->userdata("id"));
+        
         $popular = $this->Productmod->getPopularProducts();
         $root_categories = $this->Productmod->getRootCategories();
         $contact_details = $this->Misc->getContactDetails();
+        $data["invoices"] = $invoices;
         $data["contact_details"] = $contact_details;
         $data["popular"] = $popular;
         $data["rootcats"] = $root_categories;
@@ -339,6 +392,27 @@ class User extends CI_Controller {
 
         redirect("", "refresh");
     }
+    
+    public function getInvoiceData ($id = '') {
+        $this->load->model("Usermod");
+        
+         if ($this->input->post("getdata") == "true") {
+             $invoice_id = $this->input->post("invoiceid");             
+             $user_id = $this->session->userdata("id");
+             
+             $invoice_data = $this->Usermod->getInvoiceData($user_id, $invoice_id);
+             $invoice_data = json_encode($invoice_data);
+             echo $invoice_data;
+        }
+    }
+    
+    public function removeInvoice ($invoice_id) {
+        $this->load->model("Usermod");
+         $user_id = $this->session->userdata("id");
+         $this->Usermod->removeInvoice($user_id, $invoice_id);
+         redirect("User/invoicedata", "refresh");
+    }
+    
 
 }
 
