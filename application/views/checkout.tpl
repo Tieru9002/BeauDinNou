@@ -64,35 +64,71 @@
                                 <legend>Contul Meu</legend>
                                 <p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda.</p>
                                 <p>
-                                    <label for="email">Email</label>
-                                    <input id="email" name="email" type="email" />
+                                    <label for="fieldEmail">Email</label>
+                                    <input id="email_field" name="fieldEmail" type="email" />
                                 </p>
                                 <p>
-                                    <label for="password">Password</label>
-                                    <input id="password" name="password" type="password" />
+                                    <label for="fieldPwd">Password</label>
+                                    <input id="pwd_field" name="fieldPwd" type="password" />
                                 </p>
                                 <p>
-                                    <a href="#" class="a_demo_one" id="next_btn">
-                                    Continua
-                                </a>
-                                <a href="#" class="a_demo_one">
-                                    Inapoi
-                                </a>
+                                    <input class='nav_btn' type='submit' name='submit' value='Intra in cont' />
+                                    <input class='nav_btn' id="next_btn" type='submit' name='submit' value='Continua fara cont' />
                                 </p>
                             </fieldset>
                             <fieldset class="step">
                                 <legend>Date Personale</legend>                                
                                 <p>
-                                    <label for="email">Nume</label>
-                                    <input id="email" name="email" type="email" />
+                                    <label for="fieldNume">Nume</label>
+                                    <input id="nume_field" name="fieldEmail" type="email" />
                                 </p>
                                 <p>
-                                    <label for="password">Prenume</label>
-                                    <input id="password" name="password" type="password" />
+                                    <label for="fieldPrenume">Prenume</label>
+                                    <input id="prenume_field" name="fieldPrenume" type="password" />
                                 </p>
                                 <p>
-                                    <label for="password">Email</label>
-                                    <input id="password" name="password" type="password" />
+                                    <label for="fieldEmailAnon">Email</label>
+                                    <input id="emailAnon_field" name="fieldEmailAnon" type="password" />
+                                </p>
+                                <p>
+                                    <input class='nav_btn' type='submit' name='submit' value='Inapoi' />
+                                    <input class='nav_btn' id="next_btn" type='submit' name='submit' value='Continua' />
+                                </p>
+                            </fieldset>
+                            <fieldset class="step">
+                                <legend>Date de Livrare</legend>                                
+                                <p>
+                                    <label for="fieldTelefon">Telefon de contact</label>
+                                    <input id="telefon_field" name="fieldTelefon" type="email" />
+                                </p>
+                                <p>
+                                    <label for="optionAdreseInregistrate">Adrese Inregistrate</label>
+                                    <select id="adreseInregistrate_option" name="optionAdreseInregistrate">
+                                        <option>N/A</option>
+                                        <option>Adresa salvata in baza de date numarul 1</option>
+                                        <option>Adresa salvata in baza de date numarul 2</option>
+                                        <option>Adresa salvata in baza de date numarul 3</option>
+                                        
+                                    </select>
+                                </p>
+                                <p>
+                                    <label for="fieldAdresa">Adresa de livrare</label>
+                                    <textarea rows="4" cols="20" id="adresa_field" name="fieldAdresa"></textarea>
+                                </p>
+                                <p>
+                                    <input class='nav_btn' type='submit' name='submit' value='Inapoi' />
+                                    <input class='nav_btn' id="next_btn" type='submit' name='submit' value='Continua' />
+                                </p>
+                            </fieldset>
+                            <fieldset class="step">
+                                <legend>Expediaza comanda</legend>
+                                <p>
+                                    Daca ati completat corect toate campurile, apasati pe "Trimite Comanda" pentru a expedia comanda dumneavoastra. 
+                                    Daca nu, va rugam sa revizuiti informatiile furnizate si sa incercati din nou.                                 
+                                </p>
+                                <p>
+                                    <input class='nav_btn' type='submit' name='submit' value='Inapoi' />
+                                    <a href="" class="a_demo_one" id="exp_btn">Expediaza Comanda</a>
                                 </p>
                             </fieldset>
                         </form>

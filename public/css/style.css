@@ -487,10 +487,10 @@ span.error{
 #formElem .step .a_demo_one {
 	background-color:#3bb3e0;
         display: block;
-        width: 100px;
+        width: 150px;
         text-align: center;
         float: left;
-	padding:10px;
+	padding: 10px;
 	position:relative;
 	font-family: 'Open Sans', sans-serif;
 	font-size:12px;
@@ -517,7 +517,7 @@ span.error{
 	-o-border-radius: 5px;
 	border-radius: 5px;
 }
-#formElem .step #next_btn {
+#formElem .step #exp_btn {
     float: right;
 }
 #formElem .step .a_demo_one::before {
@@ -559,6 +559,28 @@ span.error{
 	color-stop(1, rgb(44,160,202))
 	);
 }
+
+#formElem .step .nav_btn {
+                height: 35px;
+                width: 150px;
+		border: solid 1px #ccc;
+		background: #ededed;
+		font-size: 90%;
+		padding: 2px 4px;
+		color: #444;
+	}
+#formElem .step .nav_btn:hover {
+		border: solid 1px #ccc;
+		background: #FFF;
+		font-size: 90%;
+		padding: 2px 4px;
+		color: #444;
+		cursor: pointer;
+	}
+        #formElem .step #next_btn {
+            float: right;
+        }
+
 /* Header, Navigation & Search */
 header {
 	background: #141414 url(../images/stripe.jpg) repeat-x top center;
