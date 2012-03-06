@@ -64,7 +64,7 @@
                                 <p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda.</p>
                                 <p>
                                     <label for="fieldEmail">Email</label>
-                                    <input id="email_field" name="fieldEmail" type="email" />
+                                    <input id="email_field" name="fieldEmail" type="text" />
                                 </p>
                                 <p>
                                     <label for="fieldPwd">Password</label>
@@ -79,15 +79,15 @@
                                 <legend>Date Personale</legend>                                
                                 <p>
                                     <label for="fieldNume">Nume</label>
-                                    <input id="nume_field" name="fieldEmail" type="email" />
+                                    <input id="nume_field" name="fieldEmail" type="text" />
                                 </p>
                                 <p>
                                     <label for="fieldPrenume">Prenume</label>
-                                    <input id="prenume_field" name="fieldPrenume" type="password" />
+                                    <input id="prenume_field" name="fieldPrenume" type="text" />
                                 </p>
                                 <p>
                                     <label for="fieldEmailAnon">Email</label>
-                                    <input id="emailAnon_field" name="fieldEmailAnon" type="password" />
+                                    <input id="emailAnon_field" name="fieldEmailAnon" type="text" />
                                 </p>
                                 <p>
                                     <input type='button' class='nav_btnPrev'  name='submit' value='Inapoi' />
@@ -98,7 +98,7 @@
                                 <legend>Date de Livrare</legend>                                
                                 <p>
                                     <label for="fieldTelefon">Telefon de contact</label>
-                                    <input id="telefon_field" name="fieldTelefon" type="email" />
+                                    <input id="telefon_field" name="fieldTelefon" type="text" />
                                 </p>
                                 <p>
                                     <label for="optionAdreseInregistrate">Adrese Inregistrate</label>
