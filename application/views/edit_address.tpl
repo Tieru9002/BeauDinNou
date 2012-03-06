@@ -3,6 +3,34 @@
 
 {include file='left_column.tpl'}
 
+<script type="text/javascript">
+            $(document).ready(function(){
+    
+        $(".apply-btn").click(function(){        
+        var addressid = $(this).attr("name");  
+        
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/iarbeau/index.php/user/getAddressData",
+            data: "addressid="+addressid+"&getdata=true",
+            success: function(json){                   
+                var obj = jQuery.parseJSON(json);                                
+                $("#fieldAddress").val(obj.address);                  
+                $("#send").val("edit");
+                $("#addressid").val(addressid);                                       
+                if ($("#formAddresses").is(':hidden')) {
+                $("#formAddresses").slideDown(function (){
+                    $(".firstField").focus();
+                });
+            }              
+            }    
+        });        
+    });               
+});    
+                
+            
+            </script>
+
 <section id="content">
 
     <section id="left-column">
@@ -16,32 +44,37 @@
                     <td class='firstcol'>Adresa</td>
                     <td class="secondcol">Actiuni</td>
                 </tr>
-                <tr class='product_row'>
+                {foreach from=$addresses item=address name=addresses}
+                <tr class='product_row'>                    
                     <td class='firstcol'> 
-                        <p>Str. Mihail Cioranu, nr. 6, bl. 70, sc. 1, parter, ap. 1, interfon 722, sector 5 </p>  
+                        <p>{$address.address}</p>  
                     </td>
                     <td>
-                        <input class='apply-btn' type='submit' name='submit' value='Modifica' />
-                        <a href='#' class='remove'>Sterge</a>
+                        <input class='apply-btn' name="{$address.id}" type='submit' name='submit' value='Modifica' />
+                        <a href='{$base_url}index.php/User/removeAddress/{$address.id}' class='remove'>Sterge</a>
                     </td>
                 </tr>
+                {/foreach}
             </table>
-            
+
             <input type="button" name="Intra in cont" class="button" id="newAddress_btn"  value="Adauga Adresa">
-            
+
             <div id="formAddresses" class="form">                                                
                 <form method="post" action="">
                     <div class="fieldWrapper">
                         <label for="fieldAddress" class="styled">Adresa de livrare</label>
                         <div class="thefield">
-                            <textarea cols="34" rows="6" name="fieldAddress" class="firstField"></textarea>
+                            <textarea cols="34" rows="6" id="fieldAddress" name="fieldAddress" class="firstField"></textarea>
                         </div>
                     </div>
+
+                    <div class="buttonsDiv">
+                        <input type="hidden" id="addressid" value="" name="addressid">
+                        <input type="hidden" id="send" name="send" value="success">
+                        <input type="submit" name="Intra in cont" class="button" value="Salveaza">
+                        <input type="button" name="Intra in cont" class="button" id="inchideAddresses_btn" value="Inchide">
+                    </div>
                 </form>
-                <div class="buttonsDiv">
-                    <input type="button" name="Intra in cont" class="button" value="Salveaza">
-                    <input type="button" name="Intra in cont" class="button" id="inchideAddresses_btn" value="Inchide">
-                </div>
             </div>
 
 
