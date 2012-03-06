@@ -9,38 +9,38 @@
 		<section id="left-column">
                         
 			<!-- Product Slideshow -->
-			<section id="slideshow">
+<!--			<section id="slideshow">
 				<ul class="slider regular">
 				
-					<!-- Repeatable Item Begin -->
+					 Repeatable Item Begin 
                                         {foreach from=$subprods item=subproditem name=carusel}
 					<li>
 						<h1>{$subproditem.name}</h1>
 						<img src="{$base_url}/public/uploads/slider_{$product.picture}" alt="Product Image" />
 					</li>
-					<!-- Repeatable Item End -->
+					 Repeatable Item End 
                                         {/foreach}
 					
 				</ul>
 				
 				<ul class="slider responsive">
 				
-					<!-- Repeatable Item Begin -->
+					 Repeatable Item Begin 
                                         {foreach from=$subprods item=subproditem name=carusel}
 					<li>
 						<h1>{$subproditem.name}</h1>
 						<img src="{$base_url}/public/uploads/{$subproditem.picture}" alt="Product Image" />
 					</li>
-					<!-- Repeatable Item End -->
+					 Repeatable Item End 
                                         {/foreach}
 					
 				</ul>
 				
-				<!-- Slideshow Controls -->
+				 Slideshow Controls 
 				<a title="Previous" class="slider-prev">Previous</a>
 				<a title="Next" class="slider-next">Next</a>
 				
-			</section>
+			</section>-->
                                 
 			<!-- Main Content Area -->
 			<section id="main">
@@ -63,7 +63,7 @@
 					</div>
                                         <input type="hidden" name="rowid" value="{$rowid}" />                                        
 					<div class="right">
-						<input class="button" type="submit" value="Add to Cart" />
+						<input class="button" type="submit" value="Cumpara" />
                                                 <input type="hidden" name="addtocart" value="success">                                                
 					</div>	
 				</form>
