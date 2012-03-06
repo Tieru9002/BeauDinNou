@@ -130,7 +130,8 @@ class User extends CI_Controller {
                 'prenume' => '',
                 'email' => '',
                 'level' => '',
-                'logged_in' => ''
+                'logged_in' => '',
+                'id' => ''
             );
             $this->session->unset_userdata($usersess);
             echo "true";
@@ -156,7 +157,8 @@ class User extends CI_Controller {
                 'prenume' => $userdata["prenume"],
                 'email' => $userdata["email"],
                 'level' => $userdata["level"],
-                'logged_in' => $userdata["status"]
+                'logged_in' => $userdata["status"],
+                'id' => $userdata["id"]
             );
             $this->session->set_userdata($usersess);
         }
@@ -344,7 +346,7 @@ class User extends CI_Controller {
             
             $invoice_id = $this->Usermod->editInvoice($invoice_id, $user_id, $invoice_data);
         }
-        
+        var_dump($this->session->userdata("id"));
         $invoices = $this->Usermod->getInvoicesByUserId($this->session->userdata("id"));
         
         $popular = $this->Productmod->getPopularProducts();
