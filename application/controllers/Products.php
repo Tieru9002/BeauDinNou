@@ -200,9 +200,7 @@ class Products extends CI_Controller {
 
         $popular = $this->Productmod->getPopularProducts();
         $root_categories = $this->Productmod->getRootCategories();
-        echo "<pre>";
-        //var_dump($this->cart->total());
-        echo "</pre>";
+       
         if ($this->input->post("sendorder") == "success") {
             $cart_id = $this->Productmod->generateCart();
             if (!$this->session->userdata('user_id')) {

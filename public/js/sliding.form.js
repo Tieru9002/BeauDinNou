@@ -14,10 +14,10 @@ $(function() {
 	set the final sum as the total width of the steps element
 	*/
 	var stepsWidth	= 0;
-    var widths 		= new Array();
+        var widths 		= new Array();
 	$('#steps .step').each(function(i){
         var $step 		= $(this);
-		widths[i]  		= stepsWidth;
+	widths[i]  		= stepsWidth;
         stepsWidth	 	+= $step.width();
     });
 	$('#steps').width(stepsWidth);
@@ -36,11 +36,11 @@ $(function() {
 	when clicking on a navigation link 
 	the form slides to the corresponding fieldset
 	*/
-    $('#navigation a').bind('click',function(e){
+        $('#navigation a').bind('click',function(e){
 		var $this	= $(this);
 		var prev	= current;
 		$this.closest('ul').find('li').removeClass('selected');
-        $this.parent().addClass('selected');
+                $this.parent().addClass('selected');
 		/*
 		we store the position of the link
 		in the current variable	
@@ -58,7 +58,7 @@ $(function() {
 		*/
         $('#steps').stop().animate({
             marginLeft: '-' + widths[current-1] + 'px'
-        },500,function(){
+            },500,function(){
 			if(current == fieldsetCount)
 				validateSteps();
 			else
@@ -84,6 +84,20 @@ $(function() {
 		});
 	});
 	
+        /*Clicking the "Continua" button will focus on the next form*/
+        $('.nav_btnNext').click(function(){
+            $('#navigation li:nth-child(' + (parseInt(current)+1) + ') a').click();
+            /* force the blur for validation */
+            $(this).blur();
+            e.preventDefault();
+        });
+        /*Clicking the "Previous" butt on will focus on the previous form*/
+        $('.nav_btnPrev').click(function(){
+            $('#navigation li:nth-child(' + (parseInt(current)-1) + ') a').click();
+            /* force the blur for validation */
+            $(this).blur();
+            e.preventDefault();
+        });
 	/*
 	validates errors on all the fieldsets
 	records if the Form has errors in $('#formElem').data()
@@ -104,11 +118,12 @@ $(function() {
 	*/
 	function validateStep(step){
 		if(step == fieldsetCount) return;
+                if(step == 1) return;
 		
 		var error = 1;
 		var hasError = false;
-		$('#formElem').children(':nth-child('+ parseInt(step) +')').find(':input:not(button)').each(function(){
-			var $this 		= $(this);
+		$('#formElem').children(':nth-child('+ parseInt(step) +')').find(':input:not(input[type=button])').each(function(){
+                        var $this 		= $(this);
 			var valueLength = jQuery.trim($this.val()).length;
 			
 			if(valueLength == ''){
@@ -134,7 +149,7 @@ $(function() {
 	/*
 	if there are errors don't allow the user to submit
 	*/
-	$('#registerButton').bind('click',function(){
+	$('#exp_btn').bind('click',function(){
 		if($('#formElem').data('errors')){
 			alert('Please correct the errors in the Form');
 			return false;
