@@ -171,5 +171,77 @@
         $this->db->where('id', $id);
         $this->db->update('users', $data);
     }
+    
+    public function addInvoice($data) {                
+        
+        $this->db->insert('invoice',$data);
+        
+        return $this->db->insert_id();
+        
+    }
+    
+    public function getInvoiceData ($user_id, $invoice_id) {
+       $this->db->select("*");
+        $this->db->where("id", $invoice_id);
+        $this->db->where("user_id", $user_id);
+        $this->db->where("status", 1);
+        
+        $query = $this->db->get("invoice");
+        
+         foreach ($query->result() as $row) {
+             $res["id"] = $row->id;
+             $res["user_id"] = $row->user_id;
+             $res["bussiness_name"] = $row->bussiness_name;
+             $res["cui"] = $row->cui;
+             $res["register_order_nr"] = $row->register_order_nr;
+             $res["bank_acc"] = $row->bank_acc;
+             $res["bank_name"] = $row->bank_name;
+             $res["invoice_address"] = $row->invoice_address;
+             $res["status"] = $row->status;
+             
+             
+         }         
+         return $res;
+    }
+    
+    public function editInvoice($invoiceid, $user_id, $data) {
+        $this->db->where('id', $invoiceid);
+        $this->db->where('user_id', $user_id);
+        $this->db->update('invoice', $data);        
+    }
+    
+    public function getInvoicesByUserId($user_id) {
+        $this->db->select("*");        
+        $this->db->where("user_id", $user_id);
+        $this->db->where("status", 1);
+        
+        $query = $this->db->get("invoice");
+        $i=0;
+         foreach ($query->result() as $row) {
+             $res[$i]["id"] = $row->id;
+             $res[$i]["user_id"] = $row->user_id;
+             $res[$i]["bussiness_name"] = $row->bussiness_name;
+             $res[$i]["cui"] = $row->cui;
+             $res[$i]["register_order_nr"] = $row->register_order_nr;
+             $res[$i]["bank_acc"] = $row->bank_acc;
+             $res[$i]["bank_name"] = $row->bank_name;
+             $res[$i]["invoice_address"] = $row->invoice_address;
+             $res[$i]["status"] = $row->status;
+             $i++;
+             
+         }         
+         return $res;
+        
+    }
+    
+    public function removeInvoice ($user_id, $invoice_id) {
+         $this->db->where('id', $invoice_id);
+         $this->db->where('user_id', $user_id);
+        
+        if ($this->db->delete('invoice'))
+            return 1;
+        else
+            return 0;
+    }            
 }
 ?>
