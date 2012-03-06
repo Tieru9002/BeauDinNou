@@ -3,7 +3,7 @@
 
 {include file='left_column.tpl'}
 
-<!--<script type="text/javascript" src="{$base_url}public/js/sliding.form.js"></script>-->
+<script type="text/javascript" src="{$base_url}public/js/sliding.form.js"></script>
 <section id="content">
 
     <section id="left-column">
@@ -54,9 +54,8 @@
             </table>
 
             <hr />
-            <p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda. </p>
             <div class="slidingForms">
-                <h1>Fancy Sliding Form with jQuery</h1>
+                <h1>Formular de expediere a comenzii</h1>
                 <div id="wrapper">
                     <div id="steps">
                         <form id="formElem" name="formElem" action="" method="post">
@@ -72,8 +71,8 @@
                                     <input id="pwd_field" name="fieldPwd" type="password" />
                                 </p>
                                 <p>
-                                    <input class='nav_btn' type='submit' name='submit' value='Intra in cont' />
-                                    <input class='nav_btn' id="next_btn" type='submit' name='submit' value='Continua fara cont' />
+                                    <input class='nav_btnPrev' type='button' name='submit' value='Intra in cont' />
+                                    <input class='nav_btnNext' type='button' name='' value='Continua fara cont' />
                                 </p>
                             </fieldset>
                             <fieldset class="step">
@@ -91,8 +90,8 @@
                                     <input id="emailAnon_field" name="fieldEmailAnon" type="password" />
                                 </p>
                                 <p>
-                                    <input class='nav_btn' type='submit' name='submit' value='Inapoi' />
-                                    <input class='nav_btn' id="next_btn" type='submit' name='submit' value='Continua' />
+                                    <input type='button' class='nav_btnPrev'  name='submit' value='Inapoi' />
+                                    <input class='nav_btnNext' type='button' name='submit' value='Continua' />
                                 </p>
                             </fieldset>
                             <fieldset class="step">
@@ -116,8 +115,8 @@
                                     <textarea rows="4" cols="20" id="adresa_field" name="fieldAdresa"></textarea>
                                 </p>
                                 <p>
-                                    <input class='nav_btn' type='submit' name='submit' value='Inapoi' />
-                                    <input class='nav_btn' id="next_btn" type='submit' name='submit' value='Continua' />
+                                    <input class='nav_btnPrev' type='button' name='submit' value='Inapoi' />
+                                    <input class='nav_btnNext' type='button' name='submit' value='Continua' />
                                 </p>
                             </fieldset>
                             <fieldset class="step">
@@ -127,7 +126,7 @@
                                     Daca nu, va rugam sa revizuiti informatiile furnizate si sa incercati din nou.                                 
                                 </p>
                                 <p>
-                                    <input class='nav_btn' type='submit' name='submit' value='Inapoi' />
+                                    <input class='nav_btnPrev' type='button' name='submit' value='Inapoi' />
                                     <a href="" class="a_demo_one" id="exp_btn">Expediaza Comanda</a>
                                 </p>
                             </fieldset>
@@ -139,10 +138,13 @@
                                 <a href="#">Contul Meu</a>
                             </li>
                             <li>
-                                <a href="#">Personal Details</a>
+                                <a href="#">Date Personale</a>
                             </li>                             
                             <li>
-                                <a href="#">Confirm</a>
+                                <a href="#">Date de Livrare</a>
+                            </li>
+                            <li>
+                                <a href="#">Expediaza Comanda</a>
                             </li>
                         </ul>                        
                     </div>

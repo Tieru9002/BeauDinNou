@@ -255,7 +255,7 @@ del { color: #b71012; }
     font-weight:bold;
     text-decoration:none;
     line-height:45px;
-    padding:0px 20px;
+    padding:0px 15px;
     border-right:1px solid #fff;
     border-left:1px solid #fff;
     background:#f0f0f0;
@@ -560,7 +560,7 @@ span.error{
 	);
 }
 
-#formElem .step .nav_btn {
+#formElem .step .nav_btnNext, #formElem .step .nav_btnPrev {
                 height: 35px;
                 width: 150px;
 		border: solid 1px #ccc;
@@ -569,7 +569,7 @@ span.error{
 		padding: 2px 4px;
 		color: #444;
 	}
-#formElem .step .nav_btn:hover {
+#formElem .step .nav_btnNext:hover, #formElem .step .nav_btnPrev:hover {
 		border: solid 1px #ccc;
 		background: #FFF;
 		font-size: 90%;
@@ -577,7 +577,7 @@ span.error{
 		color: #444;
 		cursor: pointer;
 	}
-        #formElem .step #next_btn {
+        #formElem .step .nav_btnNext {
             float: right;
         }
 
@@ -1566,7 +1566,7 @@ footer {
         font-weight:bold;
         text-decoration:none;
         line-height:45px;
-        padding:0px 20px;
+        padding:0px 10px;
         border-right:1px solid #fff;
         border-left:1px solid #fff;
         background:#f0f0f0;
