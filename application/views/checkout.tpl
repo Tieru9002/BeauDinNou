@@ -3,6 +3,7 @@
 
 {include file='left_column.tpl'}
 
+<script type="text/javascript" src="{$base_url}public/js/sliding.form.js"></script>
 <section id="content">
 
     <section id="left-column">
@@ -54,72 +55,51 @@
 
             <hr />
             <p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda. </p>
-            <!-- Formular de login -->
-            <div id="formLoginCheckout" class="form">                                                
-                <form method="post" action="">
-                    <div class="fieldWrapper">
-                        <label for="fieldUsername" class="styled">Adresa de email</label>
-                        <div class="thefield">
-                            <input type="text" name="fieldUsername" size="40" />
-                        </div>
+            <div class="slidingForms">
+                <h1>Fancy Sliding Form with jQuery</h1>
+                <div id="wrapper">
+                    <div id="steps">
+                        <form id="formElem" name="formElem" action="" method="post">
+                            <fieldset class="step">
+                                <legend>Contul Meu</legend>
+                                <p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda.</p>
+                                <p>
+                                    <label for="email">Email</label>
+                                    <input id="email" name="email" type="email" />
+                                </p>
+                                <p>
+                                    <label for="password">Password</label>
+                                    <input id="password" name="password" type="password" />
+                                </p>
+                            </fieldset>
+                            <fieldset class="step">
+                                <legend>Contul Meu</legend>
+                                <p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda.</p>
+                                <p>
+                                    <label for="email">Email</label>
+                                    <input id="email" name="email" type="email" />
+                                </p>
+                                <p>
+                                    <label for="password">Password</label>
+                                    <input id="password" name="password" type="password" />
+                                </p>
+                            </fieldset>
+                        </form>
                     </div>
-                    <div class="fieldWrapper">
-                        <label for="fieldPassword" class="styled">Parola</label>
-                        <div class="thefield">
-                            <input type="password" name="fieldPassword" size="40" />
-                        </div>
+                    <div id="navigation" style="display:none;">
+                        <ul>
+                            <li class="selected">
+                                <a href="#">Contul Meu</a>
+                            </li>
+                            <li>
+                                <a href="#">Personal Details</a>
+                            </li>                             
+                            <li>
+                                <a href="#">Confirm</a>
+                            </li>
+                        </ul>                        
                     </div>
-                    <div class="buttonsDiv">
-                        <input type="button" name="Intra in cont" class="button" id="login_btn"  value="Intra in cont">
-                    </div>
-                </form>
-            </div>
-
-            <!-- Formular de introducere a datelor de comanda -->
-            <div id="formDeliveryInfo" class="form">                                                
-                <form method="post" action="">
-                    <div class="fieldWrapper">
-                        <label for="fieldEmail2" class="styled">Adresa de email</label>
-                        <div class="thefield">
-                            <input type="text" name="fieldEmail2" size="40" />
-                        </div>
-                    </div>
-                    <div class="fieldWrapper">
-                        <label for="fieldName" class="styled">Prenume</label>
-                        <div class="thefield">
-                            <input type="text" name="fieldName" size="40" />
-                        </div>
-                    </div>
-                    <div class="fieldWrapper">
-                        <label for="fieldSurname" class="styled">Nume</label>
-                        <div class="thefield">
-                            <input type="text" name="fieldSurname" size="40" />
-                        </div>
-                    </div>
-                    <div class="fieldWrapper">
-                        <label for="fieldPhone" class="styled">Numar de telefon</label>
-                        <div class="thefield">
-                            <input type="text" name="fieldPhone" size="40" />
-                        </div>
-                    </div>
-                    <div class="fieldWrapper">
-                        <label for="fieldAddress" class="styled">Adresa de livrare</label>
-                        <div class="thefield">
-                            <textarea cols="34" rows="4" name="fieldAddress"></textarea>
-                        </div>
-                    </div>
-                    <div class="fieldWrapper">
-                        <label for="fieldComms" class="styled">Alte comentarii</label>
-                        <div class="thefield">
-                            <textarea cols="34" rows="4" name="fieldComms"></textarea>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="buttonsDiv">
-                <input type="button" name="Intra in cont" class="button"  id="trimite_btn" value="Trimite Comanda">
-                <input type="button" name="Intra in cont" class="button"  value="Modifica Comanda">
-                <input type="button" name="Intra in cont" class="button"  value="Renunta la Comanda">
+                </div>
             </div>
 
         </section>	
