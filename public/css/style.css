@@ -694,8 +694,12 @@ header {
 									color: #000;}
 									
 									#featured .product_dreapta h3 span {
-												font-weight: bold;
+/*												font-weight: bold;*/
 												font-size: 24px;}
+                                                                        
+                                                                        #featured .product_dreapta h3 span.decimals {
+                                                                                                vertical-align: top;
+												font-size: 16px;}
 												
 			
 						

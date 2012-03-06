@@ -30,7 +30,7 @@
                                     <h2><a href="{$base_url}index.php/products/singleProduct/{$product.id}">{$product.name}</a></h2>
                                     <input type='text' value="1" size='2' name="" />
                                     <h3>x</h3>
-                                    <h3><span>{$product.price|substr:0:-3}</span><span>{$product.price|substr:-3:3}</span> RON</h3>
+                                    <h3><span>{$product.price|substr:0:-3}</span><span class="decimals">{$product.price|substr:-3:3}</span> RON</h3>
                                 </div>
                                 <div class="description_dreapta">
                                     <p>{$product.description|substr:0:140} ...</p>
@@ -49,7 +49,7 @@
                                     <h2><a href="{$base_url}index.php/products/singleProduct/{$product.id}">{$product.name}</a></h2>
                                     <input type='text' value="1" size='2' name="" />
                                     <h3>x</h3>
-                                    <h3><span>{$product.price|substr:0:-3}</span><span>{$product.price|substr:-3:3}</span> RON</h3>
+                                    <h3><span>{$product.price|substr:0:-3}</span><span class="decimals">{$product.price|substr:-3:3}</span> RON</h3>
                                 </div>
                                 <div class="description_dreapta">
                                     <p>{$product.description|substr:0:140} ...</p>
