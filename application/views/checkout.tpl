@@ -3,7 +3,7 @@
 
 {include file='left_column.tpl'}
 
-<script type="text/javascript" src="{$base_url}public/js/sliding.form.js"></script>
+<!--<script type="text/javascript" src="{$base_url}public/js/sliding.form.js"></script>-->
 <section id="content">
 
     <section id="left-column">
@@ -71,16 +71,27 @@
                                     <label for="password">Password</label>
                                     <input id="password" name="password" type="password" />
                                 </p>
+                                <p>
+                                    <a href="#" class="a_demo_one" id="next_btn">
+                                    Continua
+                                </a>
+                                <a href="#" class="a_demo_one">
+                                    Inapoi
+                                </a>
+                                </p>
                             </fieldset>
                             <fieldset class="step">
-                                <legend>Contul Meu</legend>
-                                <p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda.</p>
+                                <legend>Date Personale</legend>                                
                                 <p>
-                                    <label for="email">Email</label>
+                                    <label for="email">Nume</label>
                                     <input id="email" name="email" type="email" />
                                 </p>
                                 <p>
-                                    <label for="password">Password</label>
+                                    <label for="password">Prenume</label>
+                                    <input id="password" name="password" type="password" />
+                                </p>
+                                <p>
+                                    <label for="password">Email</label>
                                     <input id="password" name="password" type="password" />
                                 </p>
                             </fieldset>
