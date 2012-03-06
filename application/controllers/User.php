@@ -101,7 +101,7 @@ class User extends CI_Controller {
                         'prenume' => $userdata["prenume"],
                         'email' => $userdata["email"],
                         'level' => $userdata["level"],
-                        'logged_in' => TRUE
+                        'logged_in' => TRUE,
                     );
 
                     $this->session->set_userdata($usersess);
@@ -212,19 +212,7 @@ class User extends CI_Controller {
         $this->parser->parse("pagina_personala.tpl", $data);
     }
 
-    public function editAddress() {
-        $this->load->model("Misc");
-        $this->load->model("Productmod");
 
-        $popular = $this->Productmod->getPopularProducts();
-        $root_categories = $this->Productmod->getRootCategories();
-        $contact_details = $this->Misc->getContactDetails();
-        $data["contact_details"] = $contact_details;
-        $data["popular"] = $popular;
-        $data["rootcats"] = $root_categories;
-        $data["base_url"] = base_url();
-        $this->parser->parse("edit_address.tpl", $data);
-    }
 
     public function forgotPassword() {
         error_reporting(0);
@@ -282,7 +270,33 @@ class User extends CI_Controller {
     public function changePassword() {
         $this->load->model("Misc");
         $this->load->model("Productmod");
-
+        $this->load->model("Usermod");        
+        error_reporting(0);
+        $user_id = $this->session->userdata("id");
+        
+        if ($this->input->post("send") == "success") {
+            $old_pwd = $this->input->post("fieldOldPwd");
+            $new_pwd= $this->input->post("fieldNewPwd");
+            $conf_pwd= $this->input->post("fieldConfPwd");
+            $errors = array();            
+            if ($new_pwd == $conf_pwd) {            
+                $res = $this->Usermod->verifyPassword($user_id, $old_pwd);
+                if (count($res) < 1) {
+                    $errors = "Parola nu a fost introdusa corect.";
+                }
+            }
+            else {
+                $errors[] = "Cele 2 parole nu corespund.";
+            }   
+            
+               
+            if (count($errors) < 1) {
+            $this->Usermod->changePassword($user_id, $conf_pwd);
+            $errors[] = "Parola a fost schimbata cu success.";
+            }
+        }
+        var_dump($errors);
+        
         $popular = $this->Productmod->getPopularProducts();
         $root_categories = $this->Productmod->getRootCategories();
         $contact_details = $this->Misc->getContactDetails();
@@ -297,18 +311,18 @@ class User extends CI_Controller {
         $this->load->model("Misc");
         $this->load->model("Productmod");
         $this->load->model("Usermod");
-        
+
         if ($this->input->post("send") == "success") {
-            
+
             $name = $this->input->post("fieldDenumireFirma");
             $cui = $this->input->post("fieldCui");
             $reg_order = $this->input->post("fieldOrdineRegistru");
             $bank_acc = $this->input->post("fieldBankAcc");
             $bank_name = $this->input->post("fieldBankName");
-            $address = $this->input->post("fieldAddress");            
+            $address = $this->input->post("fieldAddress");
             $user_id = $this->session->userdata("id");
 
-            $invoice_data = array (
+            $invoice_data = array(
                 "user_id" => $user_id,
                 "bussiness_name" => $name,
                 "cui" => $cui,
@@ -317,22 +331,22 @@ class User extends CI_Controller {
                 "bank_name" => $bank_name,
                 "invoice_address" => $address,
                 "status" => 1
-            );                        
-            
+            );
+
             $invoice_id = $this->Usermod->addInvoice($invoice_data);
         }
-        
-        if ($this->input->post("send") == "edit") {            
+
+        if ($this->input->post("send") == "edit") {
             $name = $this->input->post("fieldDenumireFirma");
             $cui = $this->input->post("fieldCui");
             $reg_order = $this->input->post("fieldOrdineRegistru");
             $bank_acc = $this->input->post("fieldBankAcc");
             $bank_name = $this->input->post("fieldBankName");
-            $address = $this->input->post("fieldAddress");            
+            $address = $this->input->post("fieldAddress");
             $user_id = $this->session->userdata("id");
             $invoice_id = $this->input->post("invid");
-            
-            $invoice_data = array (
+
+            $invoice_data = array(
                 "user_id" => $user_id,
                 "bussiness_name" => $name,
                 "cui" => $cui,
@@ -341,14 +355,14 @@ class User extends CI_Controller {
                 "bank_name" => $bank_name,
                 "invoice_address" => $address,
                 "status" => 1
-            ); 
-            
-            
+            );
+
+
             $invoice_id = $this->Usermod->editInvoice($invoice_id, $user_id, $invoice_data);
         }
         var_dump($this->session->userdata("id"));
         $invoices = $this->Usermod->getInvoicesByUserId($this->session->userdata("id"));
-        
+
         $popular = $this->Productmod->getPopularProducts();
         $root_categories = $this->Productmod->getRootCategories();
         $contact_details = $this->Misc->getContactDetails();
@@ -363,10 +377,40 @@ class User extends CI_Controller {
     public function editAdresses() {
         $this->load->model("Misc");
         $this->load->model("Productmod");
+        $this->load->model("Usermod");
 
+        $user_id = $this->session->userdata("id");
+
+        if ($this->input->post("send") == "success") {
+            echo "mata";
+            $address = $this->input->post("fieldAddress");
+
+            $address_data = array(
+                "user_id" => $user_id,
+                "address" => $address
+            );
+
+            $address_id = $this->Usermod->addAddress($address_data);
+        }
+
+        if ($this->input->post("send") == "edit") {
+            $address = $this->input->post("fieldAddress");
+            $address_id = $this->input->post("addressid");
+            $address_data = array(
+                "user_id" => $user_id,
+                "address" => $address
+            );
+
+
+            $address_id = $this->Usermod->editAddress($address_id, $user_id, $address_data);
+        }
+
+        $addresses = $this->Usermod->getAddressesByUserId($this->session->userdata("id"));        
+        
         $popular = $this->Productmod->getPopularProducts();
         $root_categories = $this->Productmod->getRootCategories();
         $contact_details = $this->Misc->getContactDetails();
+        $data["addresses"] = $addresses;
         $data["contact_details"] = $contact_details;
         $data["popular"] = $popular;
         $data["rootcats"] = $root_categories;
@@ -394,27 +438,45 @@ class User extends CI_Controller {
 
         redirect("", "refresh");
     }
-    
-    public function getInvoiceData ($id = '') {
+
+    public function getInvoiceData($id = '') {
         $this->load->model("Usermod");
-        
-         if ($this->input->post("getdata") == "true") {
-             $invoice_id = $this->input->post("invoiceid");             
-             $user_id = $this->session->userdata("id");
-             
-             $invoice_data = $this->Usermod->getInvoiceData($user_id, $invoice_id);
-             $invoice_data = json_encode($invoice_data);
-             echo $invoice_data;
+
+        if ($this->input->post("getdata") == "true") {
+            $invoice_id = $this->input->post("invoiceid");
+            $user_id = $this->session->userdata("id");
+
+            $invoice_data = $this->Usermod->getInvoiceData($user_id, $invoice_id);
+            $invoice_data = json_encode($invoice_data);
+            echo $invoice_data;
         }
     }
-    
-    public function removeInvoice ($invoice_id) {
+
+    public function removeInvoice($invoice_id) {
         $this->load->model("Usermod");
-         $user_id = $this->session->userdata("id");
-         $this->Usermod->removeInvoice($user_id, $invoice_id);
-         redirect("User/invoicedata", "refresh");
+        $user_id = $this->session->userdata("id");
+        $this->Usermod->removeInvoice($user_id, $invoice_id);
+        redirect("User/invoicedata", "refresh");
     }
-    
+
+    public function getAddressData($id = '') {
+        $this->load->model("Usermod");
+
+        if ($this->input->post("getdata") == "true") {
+            $address_id = $this->input->post("addressid");                        
+            $user_id = $this->session->userdata("id");                       
+            $address_data = $this->Usermod->getAddressData($user_id, $address_id);
+            $address_data = json_encode($address_data); 
+            echo $address_data;
+        }
+    }
+
+    public function removeAddress($address_id) {
+        $this->load->model("Usermod");
+        $user_id = $this->session->userdata("id");
+        $this->Usermod->removeAddress($user_id, $address_id);        
+        redirect("User/editAdresses", "refresh");
+    }
 
 }
 

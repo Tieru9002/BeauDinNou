@@ -189,5 +189,8 @@ $(document).ready(function() {
         /*Close invoice data form if the "close" button is clicked*/
         $("#inchideAddresses_btn").click(function (){
             $("#formAddresses").slideUp();
+            $("#fieldAddress").val("");            
+            $("#send").val("success");
+            $("#formInvoiceData").slideUp();             
         });
 });
