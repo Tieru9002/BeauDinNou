@@ -3,8 +3,7 @@
 
 {include file='left_column.tpl'}
 
-<section id="content">
-	
+<section id="content">	
 		<section id="left-column">
 					
 			<!-- Main Content Area -->

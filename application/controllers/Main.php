@@ -153,7 +153,7 @@ class Main extends CI_Controller {
         $data["popular"] = $popular;
         $data["rootcats"] = $root_categories;
         $data["base_url"] = base_url();
-        $this->parser->parse("aboutus.tpl", $data);
+        $this->parser->parse("blog.tpl", $data);
     }
 
 }
