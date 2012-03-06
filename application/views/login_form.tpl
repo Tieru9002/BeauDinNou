@@ -19,7 +19,7 @@
             <a href="{$base_url}index.php/User/persPage"><p><u>Date personale</u></p></a>
             <a href="{$base_url}index.php/User/invoiceData"><p><u>Date de facturare</u></p></a>
             <a href="{$base_url}index.php/User/editAdresses"><p><u>Adrese de livrare</u></p></a>
-            <a href="{$base_url}index.php/User/changePassword"><p><u>Schimba parola</u></p></a>
+            <a id="changePwd_link" href="{$base_url}index.php/User/changePassword"><p><u>Schimba parola</u></p></a>
             <input type="button" name="Delogheaza-ma" class="button" id="logout_btn" value="Delogheaza-ma" >
         </div>
 
