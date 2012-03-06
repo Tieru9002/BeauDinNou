@@ -805,7 +805,28 @@ header {
 			/*height: 35px;*/
 			margin-left: 50px;
 			float: left;}
-	
+                
+	/*Change password pop-up*/
+        
+        #change_pwd_section {
+		width: 350;
+		background-image: url('../public/images/background.jpg');}
+		
+		#change_pwd_section p {
+			display: block;
+			margin-left: 30px;
+			margin-right: 30px;
+			margin-bot: 10px; }
+		
+		#change_pwd_section .field {
+			width: 290px; }
+			
+		#change_pwd_section .button {
+			width: 100px; 
+			/*height: 35px;*/
+			margin-left: 50px;
+			float: left;}
+                
 	/* Main Content Area — Sidebar incl. Cart, Popular Items, Tag Filter & Contact Details */					
 	aside {
 		width: 235px;

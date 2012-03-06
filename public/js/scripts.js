@@ -1,24 +1,26 @@
 $(document).ready(function() {
 
-	/* Test lightbox */
-	$(".various").fancybox({
-		maxWidth	: 800,
-		maxHeight	: 600,
-		fitToView	: false,
-		width		: '70%',
-		height		: '70%',
-		autoSize	: false,
-		closeClick	: false,
-		openEffect	: 'none',
-		closeEffect	: 'none',
-		type		: 'iframe'
-	});
 
 	/*Forgot Password lightbox */
 	$("#forgot_link").fancybox({
 		padding		: 0,
 		maxWidth	: 360,
 		maxHeight	: 180,
+		fitToView	: false,
+		width		: '100%',
+		height		: '100%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'elastic',
+		closeEffect	: 'elastic',
+		type		: 'iframe'
+	});
+
+        /*Change Password lightbox */
+	$("#changePwd_link").fancybox({
+		padding		: 10,
+		maxWidth	: 380,
+		maxHeight	: 260,
 		fitToView	: false,
 		width		: '100%',
 		height		: '100%',
