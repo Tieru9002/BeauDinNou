@@ -629,12 +629,52 @@ header {
 						width: 465px;
 						float: left;
 						height: 120px;}
+                        
+                        #featured .product_dreapta .titlu_dreapta {
+                            width: 465px;
+                            float: left;
+                        }
+                        
+/*                        #featured .product_dreapta .addToCart_btn {
+                            border: solid 1px #ccc;
+                            background: #ededed;
+                            font-size: 90%;
+                            padding: 2px 4px;
+                            color: #444;
+                            float: right;
+                        }
+                        #featured .product_dreapta .addToCart_btn:hover {
+                            border: solid 1px #ccc;
+                            background: #FFF;
+                            font-size: 90%;
+                            padding: 2px 4px;
+                            color: #444;
+                            cursor: pointer;
+                            float: right;
+                        }*/
+                        
+                        #featured .product_dreapta .titlu_dreapta input {
+                            border: solid 1px #ccc;
+                            padding: 2px 4px;
+                            margin-top: 8px;
+                            margin-right: 8px;
+                            background: #fff;
+                            color: #444;
+                            float: right;
+                        }
+
+                        #featured .product_dreapta .description_dreapta {
+                            width: 465px;
+                            min-height: 15px;
+                            float: left;
+                        }
 						
 						#featured .product_dreapta p {
 							float: left;
 							padding: 8px 0px 0px 8px;
 							display: block;
-							width: 465px; } 
+                                                        width: 380px;
+                                                } 
 						
 						#featured .product_dreapta h2 {
 									float: left;
