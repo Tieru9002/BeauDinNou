@@ -14,6 +14,19 @@
         {literal}
             <script type="text/javascript">
             $(document).ready(function(){
+        
+        $("#email").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#login_btn").click();
+            }
+        });
+            
+        $("#password").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#login_btn").click();
+            }
+        });    
+    
     
         $("#login_btn").click(function(){
 
