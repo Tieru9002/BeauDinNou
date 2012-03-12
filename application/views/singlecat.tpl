@@ -28,13 +28,13 @@
                             <div class="product_dreapta">
                                 <div class="titlu_dreapta">
                                     <h2><a href="{$base_url}index.php/products/singleProduct/{$product.id}">{$product.name}</a></h2>
-                                    <input type='text' value="1" size='2' name="" />
+                                    <input type='text' class="qty_text" value="1" size='2' name="" />
                                     <h3>x</h3>
-                                    <h3><span>{$product.price|substr:0:-3}</span><span class="decimals">{$product.price|substr:-3:3}</span> RON</h3>
+                                    <h3 class="price_{$product.id}"><span>{$product.price|substr:0:-3}</span><span class="decimals">{$product.price|substr:-3:3}</span> RON</h3>
                                 </div>
                                 <div class="description_dreapta">
                                     <p>{$product.description|substr:0:140} ...</p>
-                                    <input class='addToCart_btn' type='submit' name='submit' value='Cumpara' />
+                                    <input id="{$product.id}"  class='addToCart_btn' type='submit' name='{$product.id}' value='Cumpara' />
                                 </div>
                             </div>
                         </li>
@@ -47,13 +47,13 @@
                             <div class="product_dreapta">
                                 <div class="titlu_dreapta">
                                     <h2><a href="{$base_url}index.php/products/singleProduct/{$product.id}">{$product.name}</a></h2>
-                                    <input type='text' value="1" size='2' name="" />
+                                    <input class="qty_text" type='text' value="1" size='2' name="" />
                                     <h3>x</h3>
-                                    <h3><span>{$product.price|substr:0:-3}</span><span class="decimals">{$product.price|substr:-3:3}</span> RON</h3>
+                                    <h3 class="price_{$product.id}"><span>{$product.price|substr:0:-3}</span><span class="decimals">{$product.price|substr:-3:3}</span> RON</h3>
                                 </div>
                                 <div class="description_dreapta">
                                     <p>{$product.description|substr:0:140} ...</p>
-                                    <input class='addToCart_btn' type='submit' name='submit' value='Cumpara' />
+                                    <input id="{$product.id}" class='addToCart_btn' type='submit' name='{$product.id}' value='Cumpara' />
                                 </div>
                             </div>
                         </li>

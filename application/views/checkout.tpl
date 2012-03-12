@@ -4,6 +4,8 @@
 {include file='left_column.tpl'}
 
 <script type="text/javascript" src="{$base_url}public/js/sliding.form.js"></script>
+<script type="text/javascript">    
+</script>
 <section id="content">
 
     <section id="left-column">
@@ -59,7 +61,8 @@
                 <div id="wrapper">
                     <div id="steps">
                         <form id="formElem" name="formElem" action="" method="post">
-                            <fieldset class="step">
+                            {if $logged_in != 1}
+                            <fieldset  id="step1" class="step">
                                 <legend>Contul Meu</legend>
                                 <p>Daca aveti deja un cont, va rugam sa va logati. Daca sunteti logat, datele necesare pentru trimiterea comenzii se pot prelua din baza de date. Astfel, puteti expedia mai repede si mai usor comanda.</p>
                                 <p>
@@ -75,19 +78,20 @@
                                     <input class='nav_btnNext' type='button' name='' value='Continua fara cont' />
                                 </p>
                             </fieldset>
+                            {/if}
                             <fieldset class="step">
                                 <legend>Date Personale</legend>                                
                                 <p>
                                     <label for="fieldNume">Nume</label>
-                                    <input id="nume_field" name="fieldEmail" type="text" />
+                                    <input id="nume_field" name="fieldNume" type="text" value="{$user_data.nume}"/>
                                 </p>
                                 <p>
                                     <label for="fieldPrenume">Prenume</label>
-                                    <input id="prenume_field" name="fieldPrenume" type="text" />
+                                    <input id="prenume_field" name="fieldPrenume" type="text" value="{$user_data.prenume}" />
                                 </p>
                                 <p>
                                     <label for="fieldEmailAnon">Email</label>
-                                    <input id="emailAnon_field" name="fieldEmailAnon" type="text" />
+                                    <input id="emailAnon_field" name="fieldEmailAnon" type="text" value="{$user_data.email}" />
                                 </p>
                                 <p>
                                     <input type='button' class='nav_btnPrev'  name='submit' value='Inapoi' />
@@ -98,15 +102,14 @@
                                 <legend>Date de Livrare</legend>                                
                                 <p>
                                     <label for="fieldTelefon">Telefon de contact</label>
-                                    <input id="telefon_field" name="fieldTelefon" type="text" />
+                                    <input id="telefon_field" name="fieldTelefon" type="text" value="{$user_data.phone}" />
                                 </p>
                                 <p>
                                     <label for="optionAdreseInregistrate">Adrese Inregistrate</label>
                                     <select id="adreseInregistrate_option" name="optionAdreseInregistrate">
-                                        <option>N/A</option>
-                                        <option>Adresa salvata in baza de date numarul 1</option>
-                                        <option>Adresa salvata in baza de date numarul 2</option>
-                                        <option>Adresa salvata in baza de date numarul 3</option>
+                                        {foreach from=$addresses item=address name=addresses}
+                                        <option value="{$address.id}">{$address.address}</option>
+                                        {/foreach}                                        
                                         
                                     </select>
                                 </p>
@@ -127,16 +130,19 @@
                                 </p>
                                 <p>
                                     <input class='nav_btnPrev' type='button' name='submit' value='Inapoi' />
-                                    <a href="" class="a_demo_one" id="exp_btn">Expediaza Comanda</a>
+                                    <input type="submit" class="a_demo_one" id="exp_btn" value="Expediaza Comanda">
                                 </p>
+                                    <input type="hidden" name="sendorder" value="success">
                             </fieldset>
                         </form>
                     </div>
                     <div id="navigation" style="display:none;">
                         <ul>
+                            {if $logged_in != 1}
                             <li class="selected">
                                 <a href="#">Contul Meu</a>
                             </li>
+                            {/if}
                             <li>
                                 <a href="#">Date Personale</a>
                             </li>                             

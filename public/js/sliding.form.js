@@ -62,7 +62,8 @@ $(function() {
 			if(current == fieldsetCount)
 				validateSteps();
 			else
-				validateStep(prev);
+//				validateStep(prev, $this);
+                                validateStep(prev);
 			$('#formElem').children(':nth-child('+ parseInt(current) +')').find(':input:first').focus();	
 		});
         e.preventDefault();
@@ -116,8 +117,10 @@ $(function() {
 	validates one fieldset
 	and returns -1 if errors found, or 1 if not
 	*/
+//	function validateStep(step, obj){        
 	function validateStep(step){
 		if(step == fieldsetCount) return;
+//                if(step == 1 && obj.attr("id") == "step1") return;
                 if(step == 1) return;
 		
 		var error = 1;

@@ -103,9 +103,10 @@ class Usermod extends CI_Model {
         return $res;
     }
 
-    public function generateUser($phone) {
+    public function generateUser($phone, $email) {
         $data = array("status" => 2,
-            "phone" => $phone);
+            "phone" => $phone,
+            "email" => $email);
 
         $this->db->insert('users', $data);
 

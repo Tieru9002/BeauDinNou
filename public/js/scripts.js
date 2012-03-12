@@ -193,4 +193,27 @@ $(document).ready(function() {
             $("#send").val("success");
             $("#formInvoiceData").slideUp();             
         });
+        $("#adreseInregistrate_option").click(function (){
+                var adresa = $("#adreseInregistrate_option").val();
+                var text = $("#adreseInregistrate_option option[value='"+adresa+"']").text()
+
+		$("#adresa_field").val(text);
+	});
+        /*Ajax pentru cumparat de pe pagina categoriei*/
+        $(".addToCart_btn").click(function(){
+          var id  = $(this).attr("id");  
+          console.log($(".price_"+id).text());
+          var qty = $(this).parents(".product_dreapta").children(".titlu_dreapta").children(".qty_text").val();
+          var price = $(this).parents(".product_dreapta").children('.titlu_dreapta').children().attr('class');
+          console.log(price);
+          
+        $.ajax({
+            type: "POST",
+            url: "http://localhost/iarbeau/index.php/products/addToCart",
+            data: "user_id="+id+"&quantity="+qty+"&add=success",
+            success: function(html){                
+                //alert(html);                
+            }    
+        });        
+    });
 });

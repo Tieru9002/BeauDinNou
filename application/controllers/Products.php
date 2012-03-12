@@ -27,7 +27,7 @@ class Products extends CI_Controller {
                 'name' => $prod_name,
                 'options' => array('picture' => $prodbuy["picture"])
             );
-
+            
             $haystack = array("\"", "'", "(", ")");
             $cartdata["name"] = str_replace($haystack, " ", $cartdata["name"]);
             //var_dump($cartdata["name"]);
@@ -41,7 +41,7 @@ class Products extends CI_Controller {
                 // sense to standardize the format of array indexes for both conditions
                 $rowid = md5($prod_id);
             }
-            
+
 
 
             //var_dump($old_q); 
@@ -130,7 +130,7 @@ class Products extends CI_Controller {
 
     public function viewCart() {
         $this->load->model("Productmod");
-       
+
         $item_ids = "";
         foreach ($this->cart->contents() as $item) {
             $item_ids[] = $item["id"];
@@ -180,11 +180,11 @@ class Products extends CI_Controller {
     public function removeFromCart($id) {
         $this->load->model("Productmod");
         //$cartdata = $this->cart->contents();
-        $product = $this->Productmod->getProductById($id);     
-        
-        
-        $rowid = md5($id.$product["picture"]);               
-        
+        $product = $this->Productmod->getProductById($id);
+
+
+        $rowid = md5($id . $product["picture"]);
+
         $updatedata = array(
             'rowid' => $rowid,
             'qty' => 0);
@@ -197,28 +197,51 @@ class Products extends CI_Controller {
     public function checkout() {
         $this->load->model("Productmod");
         $this->load->model("Usermod");
-
+//        echo "<pre>"; var_dump($this->cart->contents()); var_dump($this->cart->total()); echo "</pre>";
         $popular = $this->Productmod->getPopularProducts();
         $root_categories = $this->Productmod->getRootCategories();
-       
-        if ($this->input->post("sendorder") == "success") {
-            $cart_id = $this->Productmod->generateCart();
-            if (!$this->session->userdata('user_id')) {
-                $new_user_id = $this->Usermod->generateUser("0726989460");
-                $address_id = $this->Usermod->generateAddress($new_user_id, "Adresa dummy");
+        
+        if ($this->session->userdata("logged_in")) {
+            $data["logged_in"] = 1;
+            $user_details = $this->Usermod->getUserDetails($this->session->userdata("id"));            
+            $data["user_data"] = $user_details;
+            $addresses = $this->Usermod->getAddressesByUserId($this->session->userdata("id"));
+            $data["addresses"] = $addresses;
+        }
+        else
+            $data["logged_in"] = 0;
+        
+        if ($this->input->post("sendorder") == "success" ) {
+            $adresa = $this->input->post("fieldAdresa");
+            $phone = $this->input->post("fieldTelefon");
+            $nume = $this->input->post("fieldNume");
+            $prenume = $this->input->post("fieldPrenume");
+            $email = $this->input->post("fieldEmailAnon");
+           
+            $cart_id = $this->Productmod->generateCart();                    
+            if (!$this->session->userdata("logged_in")) {
+                $new_user_id = $this->Usermod->generateUser($phone, $email);
+                $address_id = $this->Usermod->generateAddress($new_user_id, $adresa);
                 $order_value = $this->cart->total();
                 $order_id = $this->Productmod->generateOrder($cart_id, $new_user_id, $order_value);
             } else {
-                $order_value = $this->cart->total();
-                $order_id = $this->Productmod->generateOrder($cart_id, $this->session->userdata('user_id'), $order_value);
+                $order_value = $this->cart->total();                
+                $order_id = $this->Productmod->generateOrder($cart_id, $this->session->userdata('id'), $order_value);
             }
 
             foreach ($this->cart->contents() as $key => $value) {
                 $this->Productmod->generatePurchase($cart_id, $value["id"], $value["qty"]);
             }
-            echo "1";
+            
+            
+            
             $this->cart->destroy();
         }
+
+
+
+
+//        }
         $data["totalprice"] = $this->cart->total();
         $data['cartitems'] = $this->cart->contents();
         $data["popular"] = $popular;
@@ -227,10 +250,13 @@ class Products extends CI_Controller {
         $this->parser->parse("checkout.tpl", $data);
     }
 
-    public function search($query) {
+    public function addToCart() {
         
+        echo $this->input->post("add");
+        echo $this->input->post("user_id");
+        echo $this->input->post("quantity");
+      
     }
-        
 
 }
 
